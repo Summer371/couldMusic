@@ -44,22 +44,12 @@ class SongSheet extends React.Component {
     }
     componentDidMount(){
         this.props.getCatList();
-<<<<<<< HEAD
         this.props.getHotlist();
     }
 }
 function mapStateToProps(state) {
     return {
         catlist: state.playList.catList,
-=======
-        this.props.getHotList();
-    }
-}
-
-function mapStateToProps(state) {
-    return {
-        catList: state.playList.catList,
->>>>>>> dev
         hot:state.playList.hot
     }
 }
