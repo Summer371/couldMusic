@@ -1,0 +1,45 @@
+ul{
+    margin:0;
+    padding:0;
+}
+.discover{
+    padding: 0.1rem;
+}
+.discover .banner div img{
+    width: 90%;margin: 0 auto;border-radius: 0.1rem;
+}
+
+.discover .discoverNav{
+    display: flex;justify-content:space-between;align-items: center;text-align: center;
+}
+
+.discover .recommendSongs ul{
+    display: flex;flex-wrap: wrap;text-align: center;justify-content: space-around;
+}
+.discover .recommendSongs ul li{
+    align-items: center;width: 30%;position: relative;
+}
+.discover .recommendSongs ul li p{
+    font-size: 0.1rem;
+}
+.discover .recommendSongs  ul li img{
+    width: 100%;
+}
+.discover .recommendSongs ul li span{
+    position: absolute;font-size: 0.08rem;right: 0.1rem;color: white;
+}
+.discover .topCouldCountry .couldNav{
+    display: flex;justify-content: space-between;
+}
+.discover .topAlbum ul{
+    display: flex;flex-wrap: wrap;text-align: center;justify-content: space-around;
+}
+.discover .topAlbum ul li{
+    align-items: center;width: 30%;position: relative;
+}
+.discover .topAlbum ul li p{
+    font-size: 0.1rem;
+}
+.discover .topAlbum  ul li img{
+    width: 100%;
+}

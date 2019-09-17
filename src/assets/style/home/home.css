@@ -1,0 +1,13 @@
+.home{
+    width: 100%;height: 100%;
+}
+.home .homeNav{
+    width:100%;display: flex;justify-content: space-between;text-align: center;padding: 0.1rem;
+}
+
+.home .homeNav a{
+    color:black;font-size: 0.16rem;
+}
+.home .homeNav i{
+    color:black;font-size: 0.18rem;
+}

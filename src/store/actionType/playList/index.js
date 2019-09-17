@@ -1,0 +1,2 @@
+export const CHANGE_CATLIST ="CHANGE_CATLIST";
+export const CHANGE_HOT_LIST ="CHANGE_HOT_LIST";

@@ -1,0 +1,36 @@
+.songSheet{
+    padding:0.1rem
+}
+.songSheet .songSheetNav{
+    display: flex;justify-content: space-between;padding: 0 0 0.1rem 0;
+}
+.songSheet .songSheetSwiper{
+    padding:0.2rem 0 0.1rem 0;
+}
+.songSheet .songSheetSwiper div{
+    text-align: center;position: relative;
+}
+.songSheet .songSheetSwiper img{
+    width: 1rem;margin: 0 auto;
+}
+.songSheet .songSheetSwiper p{
+    font-size: 0.1rem;
+}
+.songSheet .songSheetSwiper span{
+    position: absolute;font-size: 0.08rem;color: white;margin-left: 0.05rem;
+}
+.songSheet .songSheetList ul {
+    display: flex;flex-wrap: wrap;
+}
+.songSheet .songSheetList ul li{
+    width: 33%;text-align: center;position: relative;
+}
+.songSheet .songSheetList ul li p{
+ font-size: 0.1rem;
+}
+.songSheet .songSheetList ul li img{
+    width: 1rem;
+}
+.songSheet .songSheetList ul li span{
+    position: absolute;font-size: 0.08rem;right: 0.1rem;color: white;
+}
