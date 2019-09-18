@@ -1,4 +1,4 @@
-import Login from "../views/login/Login";
+﻿import Login from "../views/login/Login";
 import LoginByTel from "../views/login/LoginByTel";
 import CheckNum from "../views/login/CheckNum";
 import Password from "../views/login/Password";
@@ -9,6 +9,8 @@ import EverydayRecommend from "../views/discover/everydayRecommend/EverydayRecom
 import Station from "../views/discover/station"   //电台首页
 import PayFine from '../views/discover/station/PayFine'  //付费精品
 import Djclassify from '../views/discover/station/Djclassify' //电台分类
+import Search from "../views/Search";
+import SearchList from "../views/Search/searchList"
 export default [
     {
         path:"/loginByTel",
@@ -59,6 +61,16 @@ export default [
         path:"/Djclassify",
         title:"电台分类",
         component:Djclassify
+    },
+  {
+        path:"/search",
+        title:"搜索",
+        component:Search
+    },
+    {
+        path:"/searchList",
+        title:"搜索结果",
+        component:SearchList
     },
     {
         path:"/",

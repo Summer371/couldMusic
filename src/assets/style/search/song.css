@@ -1,0 +1,76 @@
+*{
+    margin:0;
+    padding:0;
+}
+.song-title{
+    margin-top:0.1rem;
+    display:flex;
+    height:0.3rem;
+    flex-direction: row;
+
+}
+.song-title .left{
+    width:75%;
+    display:flex;
+    margin-left:0.2rem;
+}
+.song-title .left>i{
+    line-height:100%;
+    display:block;
+    margin-left:0.1rem;
+}
+.song-title .left>p{
+    line-height:100%;
+    margin-bottom:0;
+    margin-left:0.1rem;
+    color:#000;
+}
+.song-title .right{
+    display:flex;
+    width:20%;
+}
+.song-title .right>i{
+    color:#000;
+}
+.song-title .right>p{
+    margin-left:0.1rem;
+    color:#000;
+}
+.song-list2{
+    display:flex;
+}
+.song-message-left{
+    width:70%;
+    margin-left:0.3rem;
+}
+.song-message-left h3{
+    margin-bottom:0;
+    color:lightblue;
+}
+.song-message-singer{
+    display:flex;
+}
+.song-message-left b{
+    font-size:0.06rem;
+}
+.song-message-left b>span{
+    color:lightblue;
+}
+.song-message-left i{
+    display:block;
+    width:0.2rem;
+    text-align:center;
+    height:0.15rem;
+    font-size: 0.06rem;
+    border:0.01rem solid lightcoral;
+
+}
+.song-message-i{
+    display:flex;
+    height:0.4rem;
+    flex-direction: row;
+}
+.song-message-i>i{
+    font-size:0.2rem;
+    margin:0.05rem;
+}

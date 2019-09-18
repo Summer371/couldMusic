@@ -1,9 +1,11 @@
-//合并reducer
+﻿//合并reducer
 import personalized from "./personalized";
 import recommend from "./recommend";
 import playList from "./playList";
 import top from "./top";
+import search from  "./search"
 import banner from "./banner";
+import multimatch from "./multimatch"
 import {
     combineReducers
 } from "redux";
@@ -20,5 +22,7 @@ export default combineReducers({
     stationList,
     todayRecommendList,
     djBannerList,
-    PayFineList
+    PayFineList,
+    search,
+    multimatch
 })
