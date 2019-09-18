@@ -6,6 +6,9 @@ import SongSheet from "../views/discover/songSheet/SongSheet";
 import Ranking from "../views/discover/ranking/Ranking";
 import Home from "../views/Home";
 import EverydayRecommend from "../views/discover/everydayRecommend/EverydayRecommend"
+import Station from "../views/discover/station"   //电台首页
+import PayFine from '../views/discover/station/PayFine'  //付费精品
+import Djclassify from '../views/discover/station/Djclassify' //电台分类
 export default [
     {
         path:"/loginByTel",
@@ -41,6 +44,21 @@ export default [
         path:"/everydayRecommend",
         title:"每日推荐",
         component:EverydayRecommend
+    },
+    ,{
+        path:"/station",
+        title:"电台",
+        component:Station
+    },
+    ,{
+        path:"/PayFine",
+        title:"付费精品",
+        component:PayFine
+    },
+    {
+        path:"/Djclassify",
+        title:"电台分类",
+        component:Djclassify
     },
     {
         path:"/",

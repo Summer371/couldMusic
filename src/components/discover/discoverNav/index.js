@@ -23,7 +23,9 @@ export default class DiscoverNav extends React.Component{
                     <Icon type="apple" />
                     <p>排行榜</p>
                 </div>
-                <div>
+                <div onClick={()=>{
+                    this.props.history.push("/station")
+                }}>
                     <Icon type="apple" />
                     <p>电台</p>
                 </div>
