@@ -8,7 +8,8 @@ import Home from "../views/Home";
 import EverydayRecommend from "../views/discover/everydayRecommend/EverydayRecommend"
 import Station from "../views/discover/station"   //电台首页
 import PayFine from '../views/discover/station/PayFine'  //付费精品
-import Djclassify from '../views/discover/station/Djclassify' //电台分类
+import Djclassify from '../views/discover/station/Djclassify'//电台分类
+import MyPlayList from '../views/My/myLove' //我的歌单
 export default [
     {
         path:"/loginByTel",
@@ -59,6 +60,11 @@ export default [
         path:"/Djclassify",
         title:"电台分类",
         component:Djclassify
+    },
+    {
+        path:"/myMusic",
+        title:"我喜欢的",
+        component:MyPlayList
     },
     {
         path:"/",

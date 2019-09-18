@@ -6,6 +6,7 @@ import {
     NavLink
 } from "react-router-dom";
 import Discover from "./discover/Discover";
+import My from './My/My'
 import "../assets/style/home/home.css";
 export default class Home extends React.Component{
     render(){
@@ -19,7 +20,7 @@ export default class Home extends React.Component{
                         <Icon type="search" />
                     </nav>
                     <Switch>
-                        <Route path={"/my"} ></Route>
+                        <Route path={"/my"} component={My}></Route>
                         <Route path={"/video"} ></Route>
                         <Route path={"/discover"}  component={Discover}></Route>
                         <Route path={"/"}  component={Discover}></Route>

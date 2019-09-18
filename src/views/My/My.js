@@ -1,0 +1,26 @@
+import React from "react";
+import Logo from './Logo'
+import List from './List'
+import CreateList from './createList'
+import Sing from './Sing'
+import '../../assets/style/home/My.css';
+export default class My extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state={
+            id:423498289,
+        }
+    }
+    render() {
+        return (
+            <div className={"my"}>
+                <div>
+                    <Logo></Logo>
+                    <List></List>
+                    <CreateList id={this.state.id}{...this}></CreateList>
+                </div>
+                <Sing></Sing>
+            </div>
+        )
+    };
+}

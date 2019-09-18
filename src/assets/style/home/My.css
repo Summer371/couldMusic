@@ -1,0 +1,114 @@
+/*logo*/
+.my{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo{
+    width: 100%;overflow: hidden;height: 0.71rem;
+}
+.ul{padding: 0;height: 0.7rem;width: 10rem;float: left;border-bottom: 0.01rem solid #F5F5F5}
+.ul li{
+    width: 0.76rem;text-align: center;margin-top:0.1rem;float: left;
+}
+.ul span{
+    display: block;
+    font-size: 0.08rem;
+}
+.ul .tu{
+    height: 0.3rem;width: 0.3rem;border-radius:0.15rem;background: red;margin-left: 0.22rem;
+}
+.ul .tu i{
+    text-align: center;display: block;line-height: 0.3rem;
+}
+/*list*/
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;height: 2.5rem;
+    border-bottom: 0.06rem solid #EEEEE0;
+}
+.list .left{
+    width: 16.8%;
+    float: left;
+    display: flex;
+    flex-direction:column;
+    padding: 0;
+    text-align: center;
+    line-height: 0.5rem;
+
+}
+.list .left li span{
+    width: 100%;
+    height: 100%;
+
+}
+.list .left li {height: 0.5rem;}
+.list .right {
+    width: 100%;
+    line-height: 0.5rem;padding: 0;
+}
+.list .right li {height: 0.5rem;border-bottom: 1px solid #F5F5F5}
+/*create*/
+.create{
+    font-size: 0.14rem;
+}
+.create .love{
+    width:0.4rem;height: 0.4rem;
+}
+.create .myLove{
+    margin-bottom: 0.04rem;
+    padding-top: -0.04rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.create .myLove .num{
+    display: block;
+}
+.create .myLove .center{
+    margin-left: -0.2rem;
+    color: #666666;
+}
+.create .myLove .center span{
+    font-size: 0.01rem;
+}
+.create .myLove .onCenter span{
+    font-size: 0.01rem;
+}
+.create .myLove .onCenter{
+    margin-left: -1rem;
+    color: #666666;
+}
+/*Sing*/
+.Sing{
+    border-top: 1px solid #F5F5F5;
+    margin: 0 0.2rem 0 0.2rem;
+    height: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Sing .singPic{
+    float: left; width: 0.36rem;height: 0.36rem;border-radius: 18px;border: 1px solid #282c34;overflow: hidden;margin-top: 0.05rem;
+}
+.Sing .singPic .img{
+    width: 100%;
+    height: 100%;
+}
+.Sing .center .singName{
+    float: left;margin-left: 0.1rem;
+}
+.Sing .center .move{
+    display: block;
+    font-size: 0.1rem;
+}
+.Sing .btn span{
+    float: left;height: 0.3rem;width: 0.3rem;
+}
+.Sing .btn span i{
+    display: block;width: 100%;
+   font-size: 0.3rem;
+    margin-left: 0.2rem;
+}
