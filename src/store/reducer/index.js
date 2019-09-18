@@ -7,10 +7,18 @@ import banner from "./banner";
 import {
     combineReducers
 } from "redux";
+import  stationList from './station' //电台推举类型
+import todayRecommendList from './station/todayRecommend'  //电台推荐
+import djBannerList from './station/djBanner'  //电台轮播
+import PayFineList from './station/PayFine' //付费精品
 export default combineReducers({
     personalized,
     recommend,
     playList,
     top,
-    banner
+    banner,
+    stationList,
+    todayRecommendList,
+    djBannerList,
+    PayFineList
 })
