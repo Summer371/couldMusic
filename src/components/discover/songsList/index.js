@@ -28,7 +28,7 @@ class SongList extends React.Component{
         )
     }
     componentDidMount(){
-        this.props.recommendSongsList(6);
+        this.props.recommendSongsList();
     }
 }
 function mapStateToProps(state) {

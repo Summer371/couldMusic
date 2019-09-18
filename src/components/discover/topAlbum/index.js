@@ -24,7 +24,7 @@ import top from "../../../store/actionCreator/top";
         )
     }
      componentDidMount(){
-         this.props.getNewAlbumList(3);
+         this.props.getNewAlbumList();
      }
 }
 function mapStateToProps(state) {

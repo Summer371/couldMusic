@@ -32,7 +32,7 @@ class RecommendPlayList extends React.Component {
                             playlists.map((v, i) => {
                                 return (
                                     <li key={i}>
-                                        <span><Icon type="caret-right"/>{v.playCount}</span>
+                                        <span><Icon type="caret-right"/>{this.$filter.playCount(v.playCount)}</span>
                                         <img src={v.coverImgUrl} alt=""/>
                                         <p>{v.name}</p>
                                     </li>

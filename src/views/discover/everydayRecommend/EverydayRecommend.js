@@ -5,13 +5,18 @@ import {
 import {
     bindActionCreators
 } from "redux";
+import {
+    Icon
+} from "antd";
 import recommend from "../../../store/actionCreator/recommend";
 class EverydayRecommend extends React.Component{
     render(){
         console.log(this.props)
         return(
-            <div>
-                meiri
+            <div className={"everydayRecommend"}>
+                <nav className={"topNav"}>
+                    <Icon type="arrow-left" onClick={() => this.props.history.push("/")}/> <b>排行榜</b>
+                </nav>
             </div>
         )
     }

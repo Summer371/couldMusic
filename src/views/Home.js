@@ -21,6 +21,7 @@ export default class Home extends React.Component{
                     <Switch>
                         <Route path={"/my"} ></Route>
                         <Route path={"/video"} ></Route>
+                        <Route path={"/discover"}  component={Discover}></Route>
                         <Route path={"/"}  component={Discover}></Route>
                     </Switch>
             </div>
