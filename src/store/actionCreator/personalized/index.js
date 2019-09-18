@@ -17,15 +17,15 @@ function newSongs(payload) {
 }
 
 export default {
-    recommendSongsList(limit){
+    recommendSongsList(limit=6){
         return async(dispatch)=>{
             const {data}=await axios.get("/personalized?limit="+limit)
             dispatch(recommendSongsList(data.result))
         }
     },
-    newSongs(){
+    newSongs(limit=3){
         return async(dispatch)=>{
-            const {data}=await axios.get("/personalized/newsong")
+            const {data}=await axios.get("/personalized/newsong?limit="+limit)
             dispatch(newSongs(data.result))
         }
     },

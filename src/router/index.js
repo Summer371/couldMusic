@@ -45,7 +45,6 @@ export default [
     {
         path:"/",
         title:"主页",
-        exact:true,
         component:Home
     }
 

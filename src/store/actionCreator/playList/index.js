@@ -26,7 +26,6 @@ export default {
         return async (dispatch)=>{
             const {data} = await axios.get("/playlist/hot");
             dispatch(hotlist(data))
-
         }
     }
 }
