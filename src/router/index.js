@@ -10,6 +10,7 @@ import Station from "../views/discover/station"   //电台首页
 import PayFine from '../views/discover/station/PayFine'  //付费精品
 import Djclassify from '../views/discover/station/Djclassify'//电台分类
 import MyPlayList from '../views/My/myLove' //我的歌单
+import SingerSearch from "../views/Search/singerSearch";//歌手搜索列表
 import Search from "../views/Search";
 import SearchList from "../views/Search/searchList"
 export default [
@@ -48,12 +49,12 @@ export default [
         title:"每日推荐",
         component:EverydayRecommend
     },
-    ,{
+    {
         path:"/station",
         title:"电台",
         component:Station
     },
-    ,{
+    {
         path:"/PayFine",
         title:"付费精品",
         component:PayFine
@@ -72,6 +73,11 @@ export default [
         path:"/searchList",
         title:"搜索结果",
         component:SearchList
+    },
+    {
+        path:"/singer",
+        title:"歌手搜索",
+        component:SingerSearch
     },
     {
         path:"/myMusic",
