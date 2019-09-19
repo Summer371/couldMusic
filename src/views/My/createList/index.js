@@ -1,8 +1,6 @@
 import { Collapse } from 'antd';
 import React from 'react';
-import {BrowserRouter as Router,NavLink,Switch,Route} from 'react-router-dom'
 import {connect} from 'react-redux'
-import axios from 'axios';
 import {bindActionCreators} from 'redux'
 import createDispatch from '../../../store/actionCreator/userPlayList'
 const { Panel } = Collapse;

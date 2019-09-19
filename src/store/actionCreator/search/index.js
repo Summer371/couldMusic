@@ -37,6 +37,8 @@ export default {
         return async (dispatch)=>{
             const {data} = await axios.get("/search/hot/detail");
 
+
+
             dispatch(searchHot(data.data))
         }
     },

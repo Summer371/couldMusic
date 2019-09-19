@@ -53,7 +53,8 @@ export default class stationList extends React.Component {
                     radios: []
                 }
             },
-            todayRecommendList: []
+            todayRecommendList: [],
+            num:0
         }
     }
     render() {
@@ -74,30 +75,10 @@ export default class stationList extends React.Component {
         return (
             <Fragment>
                 <section style={{ dispatch:this.props.stationList !== null&&PayFineList.length>1 ? "block" : "none" }}>
-                    <div className="hear">
-                        <div className="h_hear">
-                            <span>听听</span>
-                            <i className="iconfont icon-next"></i>
-                        </div>
-                        <div className="n_hear">
-                            <li>
-                                <div><img src="" alt="" /></div>
-                                <p>11111111111111</p>
-                            </li>
-                            <li>
-                                <div><img src="" alt="" /></div>
-                                <p>11111111111111</p>
-                            </li>
-                            <li>
-                                <div><img src="" alt="" /></div>
-                                <p>11111111111111</p>
-                            </li>
-                        </div>
-                    </div>
                     <div className="recommend">
                         <div className="s_recommend">
                             <div className="sz_recommend"> <span>电台推荐</span></div>
-                            <div className="sy_chorus">
+                            <div className="sy_chorus" onClick={this.onSwitch.bind(this)}>
                                 <i className="iconfont icon-shuaxin"></i>
                                 <span>换一换</span>
                             </div>
@@ -105,11 +86,19 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 this.state.todayRecommendList.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl} alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
-                                        <p>{v.rcmdText}</p>
+                                        <p>{v.rcmdtext}</p>
                                     </li>
                                 ))
                             }
@@ -129,7 +118,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 PayFineList.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl} alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -146,7 +143,7 @@ export default class stationList extends React.Component {
                                 <i className="iconfont icon-next"></i>
                             </div>
                             <div className="sy_chorus">
-                                <i className="iconfont icon-bofang"></i>
+                                <i className="iconfont icon-bofang1"></i>
                                 <span>播放全部</span>
                             </div>
                         </div>
@@ -265,7 +262,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 book.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl} alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -401,7 +406,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 broadcastList.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl} alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -537,7 +550,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 recreation.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl} alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -673,7 +694,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 reading.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl}alt=""  /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -691,7 +720,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 talkShow.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl} alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -709,7 +746,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 knowledge.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl} alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -727,7 +772,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 business.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl}alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -745,7 +798,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 pastRecords.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl}alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -763,7 +824,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 foreign.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl}alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -781,7 +850,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 treasure.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl}alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -799,7 +876,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 folkArts.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl}alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -817,7 +902,15 @@ export default class stationList extends React.Component {
                         <div className="n_hear">
                             {
                                 journey.radios.map(v => (
-                                    <li key={v.id}>
+                                    <li key={v.id} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/ShowDetails",
+                                            state:{
+                                                id:v.id,
+                                                img:v.picUrl
+                                            }
+                                        })
+                                    }}>
                                         <div><img src={v.picUrl} alt="" /></div>
                                         <div className="box-shadow"></div>
                                         <span>{v.name}</span>
@@ -956,8 +1049,20 @@ export default class stationList extends React.Component {
     }
     componentDidMount() {
         this.props.recommend();
-        this.props.todayRecommend();
+        this.onSwitch(); //电台推荐
         this.props.PayFine(3)
+    }
+    onSwitch(){ //点击切换推荐
+        if(this.state.num===15){
+            this.setState({
+                num:0
+            })
+        }else{
+            this.setState({
+                num:this.state.num+3
+            })
+        }
+        this.props.todayRecommend(this.state.num); //电台推荐
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.stationList.length > 0 && nextProps.todayRecommendList.length > 0) {

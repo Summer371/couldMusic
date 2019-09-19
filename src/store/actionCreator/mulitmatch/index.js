@@ -26,8 +26,10 @@ export default {
     getMultimatch(keyword){
         return async (dispatch)=>{
             const {data} = await axios.get("/search/multimatch?keywords="+keyword);
-            console.log(data);
+
+
             dispatch(mulitmatch(data.result))
+
             }
 
     },
@@ -35,7 +37,6 @@ export default {
         return async (dispatch)=>{
             if(keywords!==""){
                 const {data} = await axios.get("/search?keywords="+keywords);
-                console.log(data);
                 dispatch(search(data.result.songs))
             }else{
                 dispatch(search([]))
@@ -45,7 +46,6 @@ export default {
     getSearchDefault(){
         return async (dispatch)=>{
             const {data}= await axios.get("/search/default");
-            console.log(data)
             dispatch(searchDefault(data.data.realkeyword))
         }
     }

@@ -29,7 +29,7 @@ class SearchList extends Component{
     render(){
         const {multimatchSearchResult,searchResult2,searchDefault} = this.props;
         let keyword =localStorage.keyValue ||searchDefault;
-        console.log(keyword)
+
         return(
             <Fragment>
                 <header className="search-header">
@@ -85,7 +85,7 @@ class SearchList extends Component{
         )
     }
     componentWillMount(){
-        console.log(this.props);
+
         this.props.getSearchDefault();
         this.props.getMultimatch(localStorage.keyValue);
     }

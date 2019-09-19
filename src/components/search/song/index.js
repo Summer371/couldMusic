@@ -60,7 +60,7 @@ class Song extends Component{
     }
 }
 function mapStateToProps(state) {
-    console.log(state);
+
     return {
         searchResult2: state.multimatch.searchResult2,
         multimatchSearchResult: state.multimatch.multimatchSearchResult,

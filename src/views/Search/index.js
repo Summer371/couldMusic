@@ -45,7 +45,7 @@ class Search extends Component{
                     <i className="iconfont">&#xe647;</i>
                 </div>
                 </header>
-                <ul className="search-result" ref="result"style={{display:searchResult.length>1?"block":"none"}}>
+                <ul className="search-result" ref="result" style={{display:searchResult.length>1?"block":"none"}}>
                     {
                         searchResult.map((v,i)=>{
                             return (
