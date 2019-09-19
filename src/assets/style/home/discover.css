@@ -2,6 +2,9 @@ ul{
     margin:0;
     padding:0;
 }
+*{
+    margin: 0;padding: 0;
+}
 .discover{
     padding: 0.1rem;
 }
@@ -10,9 +13,27 @@ ul{
 }
 
 .discover .discoverNav{
-    display: flex;justify-content:space-between;align-items: center;text-align: center;
+    display: flex;justify-content:space-between;align-items: center;text-align: center;padding: 0.05rem 0;
+    border-bottom: 1px solid whitesmoke;
 }
-
+.discover .discoverNav div span {
+    width: 0.4rem;background: red;border-radius: 50%;height: 0.4rem;display: block;text-align: center;line-height: 0.4rem;
+}
+.discover .discoverNav div span i{
+    font-size: 0.24rem;color:white;
+}
+.discover .discoverNav div p{
+   color: black;font-size: 0.08rem;margin-top: 0.1rem;margin-bottom: 0;
+}
+.discover .recommendSongs h3{
+    position: relative;margin: 0.1rem 0;font-weight: bolder;
+}
+.discover .recommendSongs h3 span{
+    position: absolute;right: 0;border: solid 1px grey;border-radius: 0.1rem;width: 0.6rem;text-align: center;line-height: 100%;
+}
+.discover .recommendSongs h3 span a{
+    color: black;font-size: 0.08rem;
+}
 .discover .recommendSongs ul{
     display: flex;flex-wrap: wrap;text-align: center;justify-content: space-around;
 }
@@ -20,16 +41,22 @@ ul{
     align-items: center;width: 30%;position: relative;
 }
 .discover .recommendSongs ul li p{
-    font-size: 0.1rem;
+    font-size: 0.1rem;text-align: start;
 }
 .discover .recommendSongs  ul li img{
-    width: 100%;
+    width: 100%;border-radius: 0.05rem;
 }
 .discover .recommendSongs ul li span{
     position: absolute;font-size: 0.08rem;right: 0.1rem;color: white;
 }
 .discover .topCouldCountry .couldNav{
     display: flex;justify-content: space-between;
+}
+.discover .topAlbum a{
+    color: black;
+}
+.discover .topAlbum a:active{
+    color: red;
 }
 .discover .topAlbum ul{
     display: flex;flex-wrap: wrap;text-align: center;justify-content: space-around;
@@ -38,8 +65,20 @@ ul{
     align-items: center;width: 30%;position: relative;
 }
 .discover .topAlbum ul li p{
-    font-size: 0.1rem;
+    font-size: 0.1rem;margin-bottom: 0;text-align: start;
 }
 .discover .topAlbum  ul li img{
-    width: 100%;
+    width: 100%;border-radius: 0.05rem;
+}
+.discover .listen ul{
+    display: flex;flex-wrap: wrap;text-align: center;justify-content: space-between;
+}
+.discover .listen ul li{
+    width: 30%;margin: 0.1rem 0;
+}
+.discover .listen  ul li img{
+    width: 100%;border-radius: 0.05rem;
+}
+.discover .listen ul li p{
+    font-size: 0.1rem;margin-bottom: 0;text-align: start;
 }

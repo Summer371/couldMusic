@@ -16,6 +16,7 @@ import PayFineList from './station/PayFine' //付费精品;
 import myPlayList from './myPlayList'//我的歌单中所有歌曲Id
 import userPlayList from "./userPlayList";//获取我的歌单
 import playListDetail from './myPlayList/playListDetail'//歌曲详情
+import playUrl from "./playUrl";//播放地址
 export default combineReducers({
     personalized,
     recommend,
@@ -30,5 +31,6 @@ export default combineReducers({
     userPlayList,
     playListDetail,
     search,
-    multimatch
+    multimatch,
+    playUrl
 })

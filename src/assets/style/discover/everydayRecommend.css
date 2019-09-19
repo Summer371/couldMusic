@@ -1,0 +1,21 @@
+.everydayRecommend{
+    padding: 0.05rem;
+}
+.everydayRecommend .songLists{
+    padding: 0 0.1rem;
+}
+.everydayRecommend .songLists ul li{
+    display: flex;justify-content: space-between;align-items: center;
+}
+.everydayRecommend .songLists ul li img{
+    width: 0.6rem ;border-radius: 0.1rem;
+}
+.everydayRecommend .songLists ul li div{
+    display: flex;
+}
+ .everydayRecommend .songLists ul li .songListsMiddle{
+     display: flex;flex-direction: column;padding-left: 0.1rem;
+ }
+.everydayRecommend .songLists ul li .songListsRight i{
+    margin: 0 0.05rem ;font-size: 0.2rem;
+}

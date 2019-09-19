@@ -12,7 +12,6 @@ import getSearchResult from "../../store/actionCreator/search"
 class Search extends Component{
     render(){
         const {searchResult,searchHot,searchDefault} = this.props;
-        console.log(searchResult,searchHot,searchDefault);
         return(
             <Fragment>
                 <header className="search-header">
@@ -86,7 +85,6 @@ class Search extends Component{
     }
 }
 function mapStateToProps(state) {
-    console.log(state);
     return {
         searchResult: state.search.searchResult,
         searchHot:state.search.searchHot,
