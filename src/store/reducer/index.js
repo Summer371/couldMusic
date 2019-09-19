@@ -11,6 +11,8 @@ import  stationList from './station' //电台推举类型
 import todayRecommendList from './station/todayRecommend'  //电台推荐
 import djBannerList from './station/djBanner'  //电台轮播
 import PayFineList from './station/PayFine' //付费精品
+import ShowDetailsList from './station/ShowDetails' //电台二级
+import TheHostDetailsList from './station/TheHostDetails' //电台二级详情
 export default combineReducers({
     personalized,
     recommend,
@@ -20,5 +22,7 @@ export default combineReducers({
     stationList,
     todayRecommendList,
     djBannerList,
-    PayFineList
+    PayFineList,
+    ShowDetailsList,
+    TheHostDetailsList
 })

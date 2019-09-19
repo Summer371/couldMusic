@@ -9,6 +9,8 @@ import EverydayRecommend from "../views/discover/everydayRecommend/EverydayRecom
 import Station from "../views/discover/station"   //电台首页
 import PayFine from '../views/discover/station/PayFine'  //付费精品
 import Djclassify from '../views/discover/station/Djclassify' //电台分类
+import DJHome from '../views/discover/station/rankingList/DJHome'
+import ShowDetails from '../views/discover/station/ShowDetails' //电台二次点击详情页
 export default [
     {
         path:"/loginByTel",
@@ -59,6 +61,16 @@ export default [
         path:"/Djclassify",
         title:"电台分类",
         component:Djclassify
+    },
+    {
+        path:"/DJHome",
+        title:"电台排行",
+        component:DJHome
+    },
+    {
+        path:"/ShowDetails",
+        title:"电台二级",
+        component:ShowDetails
     },
     {
         path:"/",
