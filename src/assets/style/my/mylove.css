@@ -1,0 +1,66 @@
+.playListDetail{
+    background:#003333;
+}
+.playListDetail .fiexd{
+    height: 0.4rem;
+    width: 100%;
+    line-height: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.2rem;
+    color: white;
+    padding: 0 0.2rem 0.2rem 0.2rem;
+    background: #003333;
+    position: fixed;
+}
+.playListDetail .fiexd i{
+    display: inline-block;font-size: 0.2rem;
+}
+.playListDetail .fiexd .size{margin-left: 0.2rem}
+.playListDetail .fiexd .sizeOne{margin:0 0.2rem}
+.playListPic{height: 1.2rem;float: left;margin-top: 0.7rem;width:100%;display: flex;
+    flex-direction: row;background: #003333;
+    color: white;
+}
+.playListPic img{height: 100%}
+.playListPic .num{position: absolute;color: white;left:0.55rem;}
+.playListPic .picRight{margin-left: 0.14rem}
+.playListPic .picRight .logo{display: inline-block;height: 0.2rem;width: 0.2rem;border-radius: 0.1rem }
+.playDoList{
+    display: flex;flex-direction: row;clear: both;height: 0.6rem;justify-content: space-around;
+    line-height: 0.26rem;margin-top: 0.2rem;background: #003333;color: white;
+}
+.playDoList .icon{display: block;margin-left:-0.06rem ;
+    }
+.playSingList{
+    display: flex;flex-direction: column;border: none;
+}
+.playSingList .top{
+    color: #666666;
+    background: white;
+    border-top-left-radius:0.14rem ;
+    border-top-right-radius:0.14rem ;
+    height: 0.4rem;width: 100%;
+    padding-left: 0.2rem;
+    line-height: 0.4rem;
+    border: none;
+}
+.playSingList .top i {float: left}
+.playSingList .top .center{float: left;font-size: 0.16rem;color: #282c34;margin-left: 0.15rem}
+.playSingList .singList{
+    display: flex;flex-direction: row;background: white;height: 0.4rem;line-height: 0.4rem;
+   justify-content: space-between;padding:0.08rem 0.18rem 0 0.18rem;border: none;
+}
+.singList .left{display: flex;flex-direction: row}
+.singList .left .num{width: 0.22rem}
+.playSingList .singList .singDetail{line-height: 0.16rem;margin-left: 0.18rem}
+.singDetail .detail{font-size: 0.12rem;display: block;}
+.singList .right .left{
+    display: inline-block;
+}
+#centerfiexd{
+    position: fixed;
+    top: 40px;
+    width: 100%;
+}

@@ -1,9 +1,6 @@
 import React, { Fragment } from "react";
 import { Carousel } from 'antd';
 export default class stationList extends React.Component {
-    constructor() {
-        super();
-    }
     render() {
         const {djBannerList}=this.props
         return (

@@ -1,4 +1,4 @@
-import Login from "../views/login/Login";
+﻿import Login from "../views/login/Login";
 import LoginByTel from "../views/login/LoginByTel";
 import CheckNum from "../views/login/CheckNum";
 import Password from "../views/login/Password";
@@ -8,9 +8,17 @@ import Home from "../views/Home";
 import EverydayRecommend from "../views/discover/everydayRecommend/EverydayRecommend"
 import Station from "../views/discover/station"   //电台首页
 import PayFine from '../views/discover/station/PayFine'  //付费精品
+<<<<<<< HEAD
 import Djclassify from '../views/discover/station/Djclassify' //电台分类
 import DJHome from '../views/discover/station/rankingList/DJHome'
 import ShowDetails from '../views/discover/station/ShowDetails' //电台二次点击详情页
+=======
+import Djclassify from '../views/discover/station/Djclassify'//电台分类
+import MyPlayList from '../views/My/myLove' //我的歌单
+import Search from "../views/Search";
+import SearchList from "../views/Search/searchList";
+import Player from "../views/player/Player";//播放器
+>>>>>>> ef06827f5cee2ea5941e7e76d65ee41f9db138d0
 export default [
     {
         path:"/loginByTel",
@@ -62,6 +70,26 @@ export default [
         title:"电台分类",
         component:Djclassify
     },
+  {
+        path:"/search",
+        title:"搜索",
+        component:Search
+    },
+    {
+        path:"/searchList",
+        title:"搜索结果",
+        component:SearchList
+    },
+    {
+        path:"/myMusic",
+        title:"我喜欢的",
+        component:MyPlayList
+    },
+    {
+        path:"/player",
+        title:"播放器",
+        component:Player
+    },
     {
         path:"/DJHome",
         title:"电台排行",
@@ -75,7 +103,6 @@ export default [
     {
         path:"/",
         title:"主页",
-        exact:true,
         component:Home
     }
 

@@ -16,6 +16,7 @@ import top from "../../../store/actionCreator/top";
                             <li key={i}>
                                 <img src={v.picUrl} alt=""/>
                                 <p>{v.name}</p>
+                                <p>{v.artist.name}</p>
                             </li>
                         )
                     })
@@ -24,7 +25,7 @@ import top from "../../../store/actionCreator/top";
         )
     }
      componentDidMount(){
-         this.props.getNewAlbumList(3);
+         this.props.getNewAlbumList();
      }
 }
 function mapStateToProps(state) {
