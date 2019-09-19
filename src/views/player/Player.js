@@ -11,6 +11,12 @@ import {
 import playUrl from "../../store/actionCreator/playUrl";
 import "../../assets/style/player.css";
 class Player extends React.Component{
+    constructor(){
+        super();
+        this.state={
+            play:true
+        }
+    }
     render() {
         const {songsUrl}=this.props;
         let songUrl={};
@@ -27,23 +33,35 @@ class Player extends React.Component{
                     onBack={() =>  this.props.history.push("/everydayRecommend")}
                     title={this.props.location.state.songName}
                     subTitle={this.props.location.state.singer} />
-                <div className={"rotate"}>
+                <div className={"rotate"} ref={"rotateImg"}>
                     <div>
                         <img src={this.props.location.state.img} alt=""/>
                     </div>
                 </div>
                 <div className={"playerBody"}>
-                    <audio src={songUrl.url} controls={"controls"} loop={"loop"}></audio>
+                    <audio ref={"play"} src={songUrl.url}  loop={"loop"} autoPlay={true}></audio>
                     <div className={"playerBotton"}>
                         <i className={"iconfont icon-xihuan-kongpt"}></i>
                         <i className={"iconfont icon-shangyiqu"} onClick={this.lastSong.bind(this,index)}></i>
-                        <i className={"iconfont icon-bofang"}></i>
+                        <i className={this.state.play?"iconfont icon-bofang":"iconfont icon-zanting"} onClick={this.play.bind(this)}></i>
                         <i className={"iconfont icon-xiayiqu"} onClick={this.nextSong.bind(this,index)}></i>
                         <i className={"iconfont icon-caidan"}></i>
                     </div>
                 </div>
             </div>
         )
+    }
+    play(){
+        this.setState({
+            play:!this.state.play
+        });
+        if(this.state.play){
+            this.refs.play.pause()
+        }else{
+            this.refs.play.play()
+        }
+
+
     }
     lastSong(index){
         index--;

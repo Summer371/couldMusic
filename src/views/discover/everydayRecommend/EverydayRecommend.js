@@ -21,7 +21,7 @@ class EverydayRecommend extends React.Component{
                 <div className={"head"}>
                     <p>
                         {
-                            Date.now()
+                            this.$filter.date(Date.now())
                         }
                     </p>
                 </div>
