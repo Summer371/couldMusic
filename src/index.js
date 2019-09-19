@@ -13,6 +13,7 @@ import {
 } from "react-redux";
 axios.interceptors.request.use(config=>{
     config.url="/music163"+config.url;
+    console.log(config)
     return config;
 })
 React.Component.prototype.$filter=filter;

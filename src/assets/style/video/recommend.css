@@ -1,0 +1,104 @@
+.v-ul{
+    width:100%;
+    background: #f3f3f3;
+}
+.v-ul .v-li{
+    margin-bottom: 0.1rem;
+    padding:0 0.15rem;
+    background: #FFFFFF;
+    height:3rem;
+}
+.v-li .v-img{
+    position: relative;
+}
+.v-li .v-img img{
+    width:3.45rem;
+    height:1.85rem;
+    margin-top:0.1rem;
+    border-radius:0.1rem;
+
+}
+.v-now{
+    position: absolute;
+    font-size:0.1rem;
+    color: #FFFFFF;
+    height:0.175rem;
+    width:0.625rem;
+    border:1px solid #e5e5e5;
+    text-align: center;
+    line-height:0.175rem;
+    border-radius: 0.1rem;
+    top:0.175rem;
+    right:0.16rem;
+}
+.v-action{
+    font-size:0.1rem;
+    position: absolute;
+    color: #FFFFFF;
+    bottom:0.2rem;
+    left:0.09rem;
+}
+.v-action i{
+    font-size: 0.09rem;
+    color: #FFFFFF;
+}
+.v-name{
+    height:0.58rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    /*line-height: 1.16rem;*/
+}
+.v-name .v-singing{
+    flex:1;
+    font-size:0.15rem;
+}
+.v-name img{
+    height:0.33rem;
+    border:1px solid #000000;
+    border-radius: 50%;
+}
+.v-bottom{
+    height:1rem;
+    display: flex;
+    align-items: center;
+}
+.v-bottom img{
+    height:0.3rem;
+    border-radius: 50%;
+}
+.v-live{
+    font-size: 0.11rem;
+    margin-left:0.075rem;
+    flex:1;
+}
+.v-good,.v-comment{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 0.3rem;
+}
+.v-good i,.v-comment i{
+    font-size: 0.19rem;
+}
+.v-bottom>i{
+    margin-left: 0.15rem;
+}
+.v-good span{
+    font-size: 0.05rem;
+    position: absolute;
+    padding: 0.01rem;
+    background: #FFFFFF;
+    top:-0.1rem;
+    left:0.125rem;
+}
+.v-comment span{
+    font-size: 0.05rem;
+    position: absolute;
+    padding: 0.01rem;
+    background: #FFFFFF;
+    top:-0.1rem;
+    left:0.125rem;
+    top:-0.074rem;
+    left:0.125rem;
+}

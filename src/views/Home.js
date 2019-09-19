@@ -9,6 +9,7 @@ import {
 import Search from "./Search";
 import Discover from "./discover/Discover";
 import My from './My/My'
+import Video from './Video'
 import "../assets/style/home/home.css";
 export default class Home extends React.Component{
     render(){
@@ -19,12 +20,12 @@ export default class Home extends React.Component{
                         <NavLink to={"/my"}>我的</NavLink>
                         <NavLink to={"/"}>发现</NavLink>
                         <NavLink to={"/video"}>视频</NavLink>
-            <NavLink to={"/search"}><i className="iconfont">&#xe6cf;</i></NavLink>
+                        <NavLink to={"/search"}><i className="iconfont">&#xe6cf;</i></NavLink>
                     </nav>
                     <Switch>
                         <Route path={"/my"} component={My}></Route>
-                        <Route path={"/video"} ></Route>
-                         <Route path={"/search"} component={Search}></Route>
+                        <Route path={"/video"} component={Video}></Route>
+                        <Route path={"/search"} component={Search}></Route>
                         <Route path={"/discover"}  component={Discover}></Route>
                         <Route path={"/"}  component={Discover}></Route>
                     </Switch>
