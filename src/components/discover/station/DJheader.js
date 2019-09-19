@@ -40,7 +40,9 @@ export default class stationList extends React.Component {
                             <span>电台分类</span>
                         </li>
                         <li>
-                            <div><i className="iconfont icon-changyemianpaixingbang"></i></div>
+                            <div onClick={()=>{
+                                this.props.history.push("/DJHome")
+                            }}><i className="iconfont icon-changyemianpaixingbang"></i></div>
                             <span>电台排行</span>
                         </li>
                         <li>

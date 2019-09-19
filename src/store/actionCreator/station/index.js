@@ -1,4 +1,4 @@
-import {CHANGE_STATION,CHANGE_TODAY,CHANGE_BANNER,CHANGE_PAY} from '../../actionType/station'
+import {CHANGE_STATION,CHANGE_TODAY,CHANGE_BANNER,CHANGE_PAY,CHANGE_SHOW,CHANGE_XQ} from '../../actionType/station'
 import axios from 'axios'
 export const stateList=(payload)=>{
     return{
@@ -24,6 +24,19 @@ export const PayFine=(payload)=>{
         payload
     }
 }
+export const ShowDetails=(payload)=>{
+    return{
+        type:CHANGE_SHOW,
+        payload
+    }
+}
+export const TheHostDetails=(payload)=>{
+    return{
+        type:CHANGE_XQ,
+        payload
+    }
+}
+
 
 export default {
     recommend(){
@@ -33,10 +46,12 @@ export default {
             dispatch(stateList(list))
         }
     },
-    todayRecommend(){//电台推荐
+    todayRecommend(num=0){//电台推荐
         return async (dispatch)=>{
-            const {data}=await axios.get("/dj/today/perfered")
-            let list=data.data
+            // const {data}=await axios.get("/dj/today/perfered")
+            // let list=data.data
+            const {data}=await axios.get("/dj/hot?limit=3&offset="+num+"")
+            let list=data.djRadios
             dispatch(todayRecommend(list))
         }
     },
@@ -52,6 +67,20 @@ export default {
             const {data}=await axios.get("/dj/paygift?limit="+limit+"")
             let list=data.data.list
             dispatch(PayFine(list))
+        }
+    },
+    ShowDetails(id){//电台二级
+        return async (dispatch)=>{
+            const {data}=await axios.get("/dj/program?rid="+id+"&limit=999")
+            let list=data.programs
+            dispatch(ShowDetails(list))
+        }
+    },
+    TheHostDetails(id){//电台二级详情
+        return async (dispatch)=>{
+            const {data}=await axios.get("/dj/detail?rid="+id+"")
+            let list=data.djRadio
+            dispatch(TheHostDetails(list))
         }
     }
 }
