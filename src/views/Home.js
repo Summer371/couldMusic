@@ -8,15 +8,25 @@ import {
 } from "react-router-dom";
 import Search from "./Search";
 import Discover from "./discover/Discover";
-import My from './My/My'
+
+
 import Video from './Video'
+
+import My from './My/My';
+
 import "../assets/style/home/home.css";
 export default class Home extends React.Component{
+    constructor(){
+        super();
+        this.state={
+            open:false
+        }
+    }
     render(){
         return(
             <div className={"home"}>
                     <nav className={"homeNav"}>
-                        <Icon type="menu" />
+                        <Icon type="menu"/>
                         <NavLink to={"/my"}>我的</NavLink>
                         <NavLink to={"/"}>发现</NavLink>
                         <NavLink to={"/video"}>视频</NavLink>

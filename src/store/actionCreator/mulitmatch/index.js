@@ -1,6 +1,7 @@
 import {
     CHANGE_MULITMATCH,
-    CHANGE_SEARCH_RESULT
+    CHANGE_SEARCH_RESULT,
+    CHANGE_DEFAULT,
 } from "../../actionType/multimatch";
 import axios from "axios";
 function mulitmatch(payload){
@@ -15,12 +16,20 @@ function search(payload){
         payload
     }
 }
+function searchDefault(payload){
+    return {
+        type:CHANGE_DEFAULT,
+        payload
+    }
+}
 export default {
     getMultimatch(keyword){
         return async (dispatch)=>{
             const {data} = await axios.get("/search/multimatch?keywords="+keyword);
-            console.log(data);
-            //dispatch(mulitmatch(data))
+
+
+            dispatch(mulitmatch(data.result))
+
             }
 
     },
@@ -28,11 +37,16 @@ export default {
         return async (dispatch)=>{
             if(keywords!==""){
                 const {data} = await axios.get("/search?keywords="+keywords);
-                console.log(data);
                 dispatch(search(data.result.songs))
             }else{
                 dispatch(search([]))
             }
         }
     },
+    getSearchDefault(){
+        return async (dispatch)=>{
+            const {data}= await axios.get("/search/default");
+            dispatch(searchDefault(data.data.realkeyword))
+        }
+    }
 }

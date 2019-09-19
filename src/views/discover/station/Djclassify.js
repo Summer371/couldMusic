@@ -3,11 +3,6 @@ import
     Fragment
 }
     from 'react';
-// import {connect} from "react-redux"
-// import actionCreators from '../../../store/actionCreator/station'
-// import {
-//     bindActionCreators
-// } from "redux"
 import "../../../assets/style/station/classify.css"
 
 class Djclassify extends React.Component {
@@ -157,16 +152,5 @@ class Djclassify extends React.Component {
     }
 }
 
-// function mapStateToProps(state) {
-//     return {
-//
-//     }
-// }
-//
-// function mapDispatchToProps(dispatch) {
-//     return bindActionCreators(actionCreators, dispatch)
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Djclassify)
 export default Djclassify
 

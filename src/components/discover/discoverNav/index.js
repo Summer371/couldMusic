@@ -1,8 +1,4 @@
 import React  from "react";
-import { Icon } from 'antd';
-import {
-    NavLink
-} from "react-router-dom";
 export default class DiscoverNav extends React.Component{
     render(){
         return(
@@ -10,23 +6,25 @@ export default class DiscoverNav extends React.Component{
                 <div onClick={()=>{
                     this.props.history.push("/everydayRecommend")
                 }}>
-                    <Icon type="apple" />
+                    <span><i className={"iconfont icon-weibiaoti-"} /></span>
                     <p>每日推荐</p>
                 </div>
-                <NavLink to={"/songSheet"}>
-                    <Icon type="apple" />
+                <div onClick={()=>{
+                    this.props.history.push("/songSheet")
+                }}>
+                    <span><i className={"iconfont icon-gedan"} /></span>
                     <p>歌单</p>
-                </NavLink>
+                </div>
                 <div onClick={()=>{
                     this.props.history.push("/ranking")
                 }}>
-                    <Icon type="apple" />
+                    <span><i className={"iconfont"}>&#xe7bd;</i></span>
                     <p>排行榜</p>
                 </div>
                 <div onClick={()=>{
                     this.props.history.push("/station")
                 }}>
-                    <Icon type="apple" />
+                    <span><i className={"iconfont icon-diantai"} /></span>
                     <p>电台</p>
                 </div>
             </nav>

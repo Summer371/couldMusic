@@ -10,37 +10,52 @@ import {
 } from "redux";
 import getSearchResult from "../../store/actionCreator/search"
 class Search extends Component{
+
     render(){
-        const {searchResult,searchHot,searchDefault} = this.props;
-        console.log(searchResult,searchHot,searchDefault);
+        let {searchResult,searchHot,searchDefault} = this.props;
         return(
             <Fragment>
                 <header className="search-header">
                 <div className="search-back"  onClick={(e)=>{
                     e.stopPropagation();
-                    this.props.history.go(-1)
+                    searchResult=[];
+                    this.props.history.push({
+                        pathname:"/",
+                    })
                 }}>
                     <i className="iconfont">&#xe501;</i>
                 </div>
                 <div className="search-song">
-                <input type="text" ref={"keyword"} onKeyUp={()=>{
+                <input type="text" ref={"keyword"} onKeyUp={(e)=>{
+                    let key=this.refs.keyword.value || searchDefault;
+                    if(e.keyCode===13){
+                        localStorage.keyValue=key;
+                        this.props.history.push({
+                            pathname:'/searchList/Complete',
+                        })
+                    }
                     this.props.getSearchResult(this.refs.keyword.value)
                 }} placeholder={searchDefault} />
                 </div>
-                <div className="search-singer">
+                <div className="search-singer" onClick={()=>{
+                    this.props.history.push({
+                        pathname:"/singer",
+                    })
+                }}>
                     <i className="iconfont">&#xe647;</i>
                 </div>
                 </header>
-                <ul className="search-result" ref="result"style={{display:searchResult.length>1?"block":"none"}}>
+                <ul className="search-result" ref="result" style={{display:searchResult.length>1?"block":"none"}}>
                     {
                         searchResult.map((v,i)=>{
                             return (
                                 <li key={i} onClick={()=>{
-                                    console.log("111");
-                                    this.refs.result.style.display="none"
+
+                                    this.refs.result.style.display="none";
+                                    localStorage.keyValue=v.name;
+                                    searchResult=[];
                                     this.props.history.push({
                                         pathname:"/searchList/Complete",
-                                        keyword:v.name
                                     })
                                 }}>
                                     <i className={"iconfont"}>&#xe668;</i>{v.name}
@@ -86,7 +101,6 @@ class Search extends Component{
     }
 }
 function mapStateToProps(state) {
-    console.log(state);
     return {
         searchResult: state.search.searchResult,
         searchHot:state.search.searchHot,

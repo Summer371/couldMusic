@@ -8,10 +8,14 @@ import Home from "../views/Home";
 import EverydayRecommend from "../views/discover/everydayRecommend/EverydayRecommend"
 import Station from "../views/discover/station"   //电台首页
 import PayFine from '../views/discover/station/PayFine'  //付费精品
+import DJHome from '../views/discover/station/rankingList/DJHome'
+import ShowDetails from '../views/discover/station/ShowDetails' //电台二次点击详情页
 import Djclassify from '../views/discover/station/Djclassify'//电台分类
 import MyPlayList from '../views/My/myLove' //我的歌单
+import SingerSearch from "../views/Search/singerSearch";//歌手搜索列表
 import Search from "../views/Search";
-import SearchList from "../views/Search/searchList"
+import SearchList from "../views/Search/searchList";
+import Player from "../views/player/Player";//播放器
 export default [
     {
         path:"/loginByTel",
@@ -48,12 +52,12 @@ export default [
         title:"每日推荐",
         component:EverydayRecommend
     },
-    ,{
+    {
         path:"/station",
         title:"电台",
         component:Station
     },
-    ,{
+    {
         path:"/PayFine",
         title:"付费精品",
         component:PayFine
@@ -74,9 +78,29 @@ export default [
         component:SearchList
     },
     {
+        path:"/singer",
+        title:"歌手搜索",
+        component:SingerSearch
+    },
+    {
         path:"/myMusic",
         title:"我喜欢的",
         component:MyPlayList
+    },
+    {
+        path:"/player",
+        title:"播放器",
+        component:Player
+    },
+    {
+        path:"/DJHome",
+        title:"电台排行",
+        component:DJHome
+    },
+    {
+        path:"/ShowDetails",
+        title:"电台二级",
+        component:ShowDetails
     },
     {
         path:"/",
