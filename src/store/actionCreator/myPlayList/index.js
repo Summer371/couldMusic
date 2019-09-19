@@ -9,10 +9,8 @@ function change(payload) {
 export default {
     getMyPlayList(){
         return async (dispatch)=>{
-            console.log(this)
             let {data} = await axios.get("/playlist/detail?id="+this.id);
             if(data.code===200){
-                console.log(data)
                 dispatch(change(data.playlist))
             }
         }

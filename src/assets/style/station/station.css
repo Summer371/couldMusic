@@ -39,7 +39,7 @@ img{
    position: fixed;
    width: 100vw;
 }
-.station .player{
+.player{
     height:20.42vh;
     padding:0.625vh 2.962vw;
 }
@@ -357,7 +357,7 @@ img{
     line-height: 5.208vh;
 }
 .ss_footer h4{
-    /*margin-left:1.481vw;*/
+    margin-left:1.481vw;
     font-size: 2.96vw;
 }
 .sx_footer div{
@@ -394,7 +394,7 @@ img{
     font-size: 2.96vw;
 }
 .xs_footer h4{
-    /*margin-left:1.481vw;*/
+    margin-left:1.481vw;
     font-size: 2.96vw;
 }
 .xx_footer div{
