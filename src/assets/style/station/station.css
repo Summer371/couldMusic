@@ -39,7 +39,7 @@ img{
    position: fixed;
    width: 100vw;
 }
-.player{
+.station .player{
     height:20.42vh;
     padding:0.625vh 2.962vw;
 }

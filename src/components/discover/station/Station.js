@@ -143,7 +143,7 @@ export default class stationList extends React.Component {
                                 <i className="iconfont icon-next"></i>
                             </div>
                             <div className="sy_chorus">
-                                <i className="iconfont icon-bofang"></i>
+                                <i className="iconfont icon-bofang1"></i>
                                 <span>播放全部</span>
                             </div>
                         </div>

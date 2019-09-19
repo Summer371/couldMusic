@@ -8,17 +8,13 @@ import Home from "../views/Home";
 import EverydayRecommend from "../views/discover/everydayRecommend/EverydayRecommend"
 import Station from "../views/discover/station"   //电台首页
 import PayFine from '../views/discover/station/PayFine'  //付费精品
-<<<<<<< HEAD
-import Djclassify from '../views/discover/station/Djclassify' //电台分类
 import DJHome from '../views/discover/station/rankingList/DJHome'
 import ShowDetails from '../views/discover/station/ShowDetails' //电台二次点击详情页
-=======
 import Djclassify from '../views/discover/station/Djclassify'//电台分类
 import MyPlayList from '../views/My/myLove' //我的歌单
 import Search from "../views/Search";
 import SearchList from "../views/Search/searchList";
 import Player from "../views/player/Player";//播放器
->>>>>>> ef06827f5cee2ea5941e7e76d65ee41f9db138d0
 export default [
     {
         path:"/loginByTel",
