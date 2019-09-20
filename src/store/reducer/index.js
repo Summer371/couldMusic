@@ -18,7 +18,7 @@ import TheHostDetailsList from './station/TheHostDetails' //电台二级详情
 import myPlayList from './myPlayList'//我的歌单中所有歌曲Id
 import userPlayList from "./userPlayList";//获取我的歌单
 import playListDetail from './myPlayList/playListDetail'//歌曲详情
-
+import myRecentlyPlay from './myRecentlyPlay'//播放记录
 import singer from "./singer"
 
 import playUrl from "./playUrl";//播放地址
@@ -40,9 +40,8 @@ export default combineReducers({
     playListDetail,
     search,
     multimatch,
-
+    myRecentlyPlay,
     singer,
-
     playUrl
 
 })

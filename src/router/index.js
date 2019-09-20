@@ -12,6 +12,9 @@ import DJHome from '../views/discover/station/rankingList/DJHome'
 import ShowDetails from '../views/discover/station/ShowDetails' //电台二次点击详情页
 import Djclassify from '../views/discover/station/Djclassify'//电台分类
 import MyPlayList from '../views/My/myLove' //我的歌单
+import MyRecentlyPlay from '../views/My/myRecentlyPlay'//最近播放
+import LocalMusic from '../views/My/localMusic';//本地音乐
+import Download from '../views/My/Download';//本地下载
 import SingerSearch from "../views/Search/singerSearch";//歌手搜索列表
 import Search from "../views/Search";
 import SearchList from "../views/Search/searchList";
@@ -101,6 +104,21 @@ export default [
         path:"/ShowDetails",
         title:"电台二级",
         component:ShowDetails
+    },
+    {
+        path:'/myRecentlyPlay',
+        title:'最近播放',
+        component:MyRecentlyPlay
+    },
+    {
+        path:'/localmusic',
+        title:'本地音乐',
+        component:LocalMusic
+    },
+    {
+        path:'/download',
+        title:'下载管理',
+        component:Download
     },
     {
         path:"/",
