@@ -16,6 +16,7 @@ import SingerSearch from "../views/Search/singerSearch";//歌手搜索列表
 import Search from "../views/Search";
 import SearchList from "../views/Search/searchList";
 import Player from "../views/player/Player";//播放器
+import SongSheetDetail from "../views/discover/songSheet/SongSheetDetail";//歌单详情
 export default [
     {
         path:"/loginByTel",
@@ -101,6 +102,11 @@ export default [
         path:"/ShowDetails",
         title:"电台二级",
         component:ShowDetails
+    },
+    {
+        path:"/songSheetDetail",
+        title:"歌单详情",
+        component:SongSheetDetail
     },
     {
         path:"/",

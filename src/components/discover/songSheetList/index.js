@@ -8,8 +8,8 @@ class SongLists extends React.Component{
         const songNames=[];
         songSheetDetial.map(v=>{
             ids.push(v.id);
-            imgs.push(v.album.picUrl);
-            singers.push(v.artists[0].name);
+            imgs.push(v.al.picUrl);
+            singers.push(v.ar[0].name);
             songNames.push(v.name);
         })
         return(
@@ -20,27 +20,25 @@ class SongLists extends React.Component{
                             return(
                                 <li key={i}>
                                     <div className={"songListsLeft"}>
-                                        <img src={v.album.picUrl} width={"100px"} alt=""/>
+                                        <img src={v.al.picUrl} width={"100px"} alt=""/>
                                         <div className={"songListsMiddle"}>
                                             <h4>{v.name}</h4>
-                                            <p>{v.artists[0].name}</p>
+                                            <p>{v.ar[0].name}</p>
                                         </div>
                                     </div>
                                     <div className={"songListsRight"}>
                                         <i className={"iconfont icon-zanting-wangyiicon"} onClick={()=>{
                                             this.props.history.push({
                                                 pathname:"/player",
-                                                backname:this.props.location.pathname,
                                                 state:{
                                                     id:v.id,
                                                     ids,
-                                                    img:v.album.picUrl,
+                                                    img:v.al.picUrl,
                                                     imgs,
-                                                    singer:v.artists[0].name,
+                                                    singer:v.ar[0].name,
                                                     singers,
                                                     songName:v.name,
-                                                    songNames,
-                                                    songSheetDetial
+                                                    songNames
                                                 }
                                             });
                                         }}></i>

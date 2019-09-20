@@ -14,7 +14,7 @@ export default class CheckNum extends React.Component{
     }
     login(){
         this.$axios.post(`/captcha/verify?phone=${localStorage.telNum}&captcha=${this.refs.state.checkNum.value}`).then(data=>{
-            this.props.history.push("/search")
+            this.props.history.push("/")
         })
     }
 }

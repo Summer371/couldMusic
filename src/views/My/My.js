@@ -8,7 +8,7 @@ export default class My extends React.Component{
     constructor(props) {
         super(props);
         this.state={
-            id:423498289,
+            id:0,
         }
     }
     render() {
@@ -22,5 +22,14 @@ export default class My extends React.Component{
                 <Sing></Sing>
             </div>
         )
-    };
+    }
+    componentDidMount() {
+        if(localStorage.wyId){
+            this.setState({
+                id:localStorage.wyId
+            })
+        }else{
+            this.props.history.push("/login")
+        }
+    }
 }

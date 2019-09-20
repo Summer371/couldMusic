@@ -22,9 +22,9 @@ export default class Home extends React.Component{
             <div className={"home"}>
                     <nav className={"homeNav"}>
                         <Icon type="menu"/>
-                        <NavLink to={"/my"}>我的</NavLink>
-                        <NavLink to={"/"}>发现</NavLink>
-                        <NavLink to={"/video"}>视频</NavLink>
+                        <NavLink to={"/my"} activeClassName={"activeA"}>我的</NavLink>
+                        <NavLink to={"/"} exact activeClassName={"activeA"}>发现</NavLink>
+                        <NavLink to={"/video"} activeClassName={"activeA"}>视频</NavLink>
             <NavLink to={"/search"}><i className="iconfont">&#xe6cf;</i></NavLink>
                     </nav>
                     <Switch>

@@ -19,7 +19,15 @@ class Chinese extends React.Component{
                     {
                         allPlayList.map((v,i)=>{
                             return(
-                                <li key={i}>
+                                <li key={i} onClick={()=>{
+                                    this.props.history.push({
+                                        pathname:"/songSheetDetail",
+                                        backname:this.props.location.pathname,
+                                        state:{
+                                            id:v.id
+                                        }
+                                    })
+                                }}>
                                     <span> <Icon type="caret-right"></Icon>{this.$filter.playCount(v.playCount)}</span>
                                     <img src={v.coverImgUrl} alt=""/>
                                     <p>{v.name}</p>
