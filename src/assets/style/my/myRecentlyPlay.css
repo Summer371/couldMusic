@@ -1,0 +1,24 @@
+.recentlyPlay{position: relative}
+.recentlyPlay .top{display: flex;height: 0.4rem;line-height: 0.4rem;justify-content: space-between;
+padding: 0 0.16rem 0 0.16rem;position:sticky;width: 100%;background: white;
+    top: 0;
+}
+.recentlyPlay .top .size{font-size: 0.18rem;font-weight: bolder;margin-left: 0.14rem}
+.recentlyPlay .fixed .bottom{height: 0.32rem;display: flex;justify-content: space-around;line-height: 0.32rem;
+    background:#fffdef;position:sticky;width: 100%;top: 0.4rem;border-bottom: 1px solid #bbbbbb;}
+.recentlyPlay .fixed .bottom .router{color: #003333;height: 100%;}
+.rencently .playOne {display:flex;flex-direction: row;justify-content: space-between;
+padding: 0 0.18rem;height: 0.34rem;line-height: 0.34rem;background:#fffdef;
+}
+.rencently .playOne .icon{font-size: 0.22rem;color: #000000}
+.rencently .playAll{display: flex;flex-direction: row;justify-content: space-between;padding:0 0.14rem;
+    height:0.4rem ;line-height: 0.4rem;background:#fffdef;
+}
+.rencently .playAllator{display: flex;flex-direction: row;justify-content: space-between;padding:0.08rem 0.14rem;
+    height:0.4rem ;line-height: 0.4rem;background:#336666;color: white;
+}
+.rencently .playAllator .left .Img{float:left;height: 0.3rem;width: 0.3rem;border-radius: 50%;}
+.playAll .left .span{margin-left: 0.1rem}
+.playAllator .left .span{margin-left: 0.1rem}
+.playAll .left .center{display: flex;flex-direction: column}
+.playAllator .left .center{display: flex;flex-direction: column}
