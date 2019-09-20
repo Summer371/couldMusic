@@ -2,5 +2,3 @@ export const CHANGE_STATION="CHANGE_STATION";
 export const CHANGE_TODAY="CHANGE_TODAY";
 export const CHANGE_BANNER="CHANGE_BANNER";
 export const CHANGE_PAY="CHANGE_PAY";
-export const CHANGE_SHOW="CHANGE_SHOW";
-export const CHANGE_XQ="CHANGE_XQ";

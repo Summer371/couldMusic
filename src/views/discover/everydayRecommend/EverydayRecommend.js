@@ -9,23 +9,14 @@ import {
     Icon
 } from "antd";
 import recommend from "../../../store/actionCreator/recommend";
-import SongLists from "../../../components/discover/everydayRecommend/SongLists"
-import "../../../assets/style/discover/everydayRecommend.css";
 class EverydayRecommend extends React.Component{
     render(){
+        console.log(this.props)
         return(
             <div className={"everydayRecommend"}>
                 <nav className={"topNav"}>
-                    <Icon type="arrow-left" onClick={() => this.props.history.push("/")}/>
+                    <Icon type="arrow-left" onClick={() => this.props.history.push("/")}/> <b>排行榜</b>
                 </nav>
-                <div className={"head"}>
-                    <p>
-                        {
-                            this.$filter.date(Date.now())
-                        }
-                    </p>
-                </div>
-                <SongLists {...this.props}></SongLists>
             </div>
         )
     }

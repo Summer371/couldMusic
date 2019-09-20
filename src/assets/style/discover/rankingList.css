@@ -22,11 +22,8 @@
 .ranking .officialRanking ul li dl dd{
     margin:0.1rem 0;
 }
-.ranking .recommendRanking{
-    padding:0 0.1rem;
-}
 .ranking .recommendRanking ul{
-    width:100%;display:flex;flex-wrap: wrap;justify-content: space-between;
+    width:100%;display:flex;flex-wrap: wrap;justify-content: space-around;
 }
 .ranking .recommendRanking ul li{
     position:relative;width:30%;
