@@ -2,6 +2,9 @@ import React from "react";
 import { Icon } from 'antd';
 import {connect} from "react-redux";
 import {
+    NavLink
+} from  "react-router-dom";
+import {
     bindActionCreators
 } from "redux";
 import personalized from "../../../store/actionCreator/personalized";
@@ -10,13 +13,13 @@ class SongList extends React.Component{
         const {songsList} =this.props;
         return(
             <div className={"recommendSongs"}>
-                <h4>推荐歌单</h4>
+                <h3>推荐歌单 <span><NavLink to={"songSheet"}>歌单广场</NavLink></span></h3>
                 <ul>
                     {
                         songsList.map(v=>{
                             return(
                                 <li key={v.id}>
-                                    <span><Icon type="caret-right"/>{v.playCount}</span>
+                                    <span><Icon type="caret-right"/>{this.$filter.playCount(v.playCount)}</span>
                                     <img  src={v.picUrl} alt=""/>
                                     <p>{v.name}</p>
                                 </li>

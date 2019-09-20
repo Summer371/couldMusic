@@ -18,21 +18,7 @@ class SongLists extends React.Component{
                     {
                         everydaySongs.map((v,i)=>{
                             return(
-                                <li key={i} onClick={()=>{
-                                    this.props.history.push({
-                                        pathname:"/player",
-                                        state:{
-                                            id:v.id,
-                                            ids,
-                                            img:v.album.picUrl,
-                                            imgs,
-                                            singer:v.artists[0].name,
-                                            singers,
-                                            songName:v.name,
-                                            songNames
-                                        }
-                                    });
-                                }}>
+                                <li key={i}>
                                     <div className={"songListsLeft"}>
                                         <img src={v.album.picUrl} width={"100px"} alt=""/>
                                         <div className={"songListsMiddle"}>
@@ -41,7 +27,21 @@ class SongLists extends React.Component{
                                         </div>
                                     </div>
                                     <div className={"songListsRight"}>
-                                        <i className={"iconfont icon-zanting-wangyiicon"}></i>
+                                        <i className={"iconfont icon-zanting-wangyiicon"} onClick={()=>{
+                                            this.props.history.push({
+                                                pathname:"/player",
+                                                state:{
+                                                    id:v.id,
+                                                    ids,
+                                                    img:v.album.picUrl,
+                                                    imgs,
+                                                    singer:v.artists[0].name,
+                                                    singers,
+                                                    songName:v.name,
+                                                    songNames
+                                                }
+                                            });
+                                        }}></i>
                                         <i className={"iconfont icon-xinxipt"}></i>
                                     </div>
                                 </li>

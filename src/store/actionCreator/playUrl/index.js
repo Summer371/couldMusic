@@ -1,19 +1,8 @@
-import {
-    CHANGE_SONGS_URL,
-    CHANGE_LYRIC
-} from "../../actionType/playUrl";
+import {CHANGE_SONGS_URL} from "../../actionType/playUrl";
 import axios from "axios";
-//歌曲地址
 function songsUrlList(payload) {
     return{
         type:CHANGE_SONGS_URL,
-        payload
-    }
-}
-//歌词
-function lyricList(payload) {
-    return{
-        type:CHANGE_LYRIC,
         payload
     }
 }
@@ -23,12 +12,6 @@ export default {
         return async (dispatch)=>{
             const {data} = await axios.get("/song/url?id="+id)
             dispatch(songsUrlList(data.data))
-        }
-    },
-    getLyricList(id){
-        return async (dispatch)=>{
-            const {data} = await axios.get("/lyric?id="+id)
-            dispatch(lyricList(data.lrc.lyric))
         }
     }
 }

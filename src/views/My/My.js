@@ -16,13 +16,11 @@ export default class My extends React.Component{
             <div className={"my"}>
                 <div>
                     <Logo></Logo>
-                    <List id ={this.state.id} {...this}></List>
+                    <List></List>
                     <CreateList id={this.state.id}{...this}></CreateList>
                 </div>
                 <Sing></Sing>
             </div>
         )
     };
-    componentDidMount() {
-    }
 }

@@ -67,9 +67,8 @@
 .create .myLove .num{
     display: block;
 }
-.create .myLove .left{display: flex}
 .create .myLove .center{
-    margin-left: 0.1rem;
+    margin-left: -0.2rem;
     color: #666666;
 }
 .create .myLove .center span{
@@ -79,13 +78,11 @@
     font-size: 0.01rem;
 }
 .create .myLove .onCenter{
-    margin-left: 0.1rem;
+    margin-left: -1rem;
     color: #666666;
 }
 /*Sing*/
 .Sing{
-    position: sticky;
-    bottom: 0px;
     border-top: 1px solid #F5F5F5;
     margin: 0 0.2rem 0 0.2rem;
     height: 0.5rem;

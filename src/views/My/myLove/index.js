@@ -6,6 +6,7 @@ import createDispatch from '../../../store/actionCreator/myPlayList';
 import SongList from '../../../components/My/MyPlayList/songList'
 class MyMusic extends React.Component{
     render() {
+        console.log(this.props.topList);
         let topList = this.props.topList?this.props.topList:[]
         return (
             <div className={"playListDetail"}>
@@ -31,10 +32,10 @@ class MyMusic extends React.Component{
                             <div className={"picRight"}>
                                 <li>{v.name}</li>
                                 <span>
-                                    <img className={'logo'} src={v.creator.avatarUrl} alt=""/>
-                                    <span className={"size"}>{v.creator.nickname}</span>
-                                    <span>></span>
-                                </span>
+                            <img className={'logo'} src={v.creator.avatarUrl} alt=""/>
+                            <span>{v.creator.nickname}</span>
+                            <span>></span>
+                        </span>
                             </div>
                         </div>
                     ))

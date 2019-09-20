@@ -1,2 +1,1 @@
 export const    CHANGE_SONGS_URL="CHANGE_SONGS_URL";
-export const    CHANGE_LYRIC="CHANGE_LYRIC";
