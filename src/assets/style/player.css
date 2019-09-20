@@ -26,11 +26,14 @@ height: 100%;width: 100%;padding: 0;
 .player .playerBody{
     width: 100%;
 }
+ .player  .ant-page-header-heading-title{
+     font-size: 0.16rem;
+ }
  .player .playerBody audio{
      margin: 0 auto;display: block;
  }
 .player .playerBody .playerBotton {
-    display: flex;justify-content: space-around;align-items: center;position: absolute;bottom: 0;width: 100%;
+    display: flex;justify-content: space-around;align-items: center;position: absolute;bottom: 0.1rem;width: 100%;
 }
 .player .playerBody .playerBotton i{
     font-size: 0.3rem;color: red;

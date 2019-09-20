@@ -5,10 +5,10 @@
     padding: 0 0.1rem;
 }
 .everydayRecommend .songLists ul li{
-    display: flex;justify-content: space-between;align-items: center;
+    display: flex;justify-content: space-between;align-items: center;margin: 0.08rem 0;
 }
 .everydayRecommend .songLists ul li img{
-    width: 0.6rem ;border-radius: 0.1rem;
+    width: 0.6rem ;height: 0.6rem ;border-radius: 0.1rem;
 }
 .everydayRecommend .songLists ul li div{
     display: flex;
