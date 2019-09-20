@@ -1,0 +1,28 @@
+.drawer{
+    padding-top:0.34rem;padding-right:0.14rem;
+}
+.drawer .Img{display:block;height:0.4rem;width:0.4rem;border-radius:50%;margin-left: 0.3rem}
+.drawer .one{margin-left: 0.3rem;display:flex;flex-direction:row;justify-content:space-between;height:0.44rem;align-items:center}
+.drawer .one .two{display:flex;flex-direction:row;justify-content:space-between;}
+.drawer .one .small{font-size:0.1rem;display:block;
+margin-left:0.1rem
+}
+.drawer .one .diandao{background:red;height:0.2rem;width:0.5rem;border-radius:0.1rem;text-align:center}
+.drawer .only{display:flex;flex-direction:row;justify-content:space-between;height:0.44rem;align-items:center;
+background:#000000;color:white;border-radius:0.02rem;font-size:0.1rem;margin-left: 0.14rem;
+}
+.drawer .only span{padding:0 0.12rem}
+.drawer .flex{display:flex;flex-direction:column;}
+.drawer .around{height:0.66rem;display:flex;flex-direction:row;justify-content:space-around;font-size:0.01rem;
+    align-items:center;margin:0 0.03rem;border-bottom:1px solid #666666;
+}
+.drawer .row li{display:flex;flex-direction:row; height:0.36rem;algin-items:center;padding:0 0.1rem;padding-top: 0.08rem}
+.drawer .between{display:flex;flex-direction:row;justify-content:space-between;}
+.drawer .fixed{display: flex;flex-direction: row;justify-content: space-between;height: 0.4rem;
+    align-items: center;border-top: 1px solid #bbbbbb;position: sticky;bottom: 0;background: white;
+    width: 2.52rem;
+}
+.drawer .fixed li{display: flex;}
+.drawer .three{margin-left: 0.1rem;color: red;font-size: 0.16rem}
+.drawer .four{margin-left: 0.12rem}
+.drawer .five{padding-top: 0.03rem;margin-left: 0.04rem}
