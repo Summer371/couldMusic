@@ -11,7 +11,6 @@ import {
 import recommend from "../../../store/actionCreator/recommend";
 class EverydayRecommend extends React.Component{
     render(){
-        console.log(this.props)
         return(
             <div className={"everydayRecommend"}>
                 <nav className={"topNav"}>
