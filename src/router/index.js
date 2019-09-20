@@ -15,6 +15,7 @@ import MyPlayList from '../views/My/myLove' //我的歌单
 import Search from "../views/Search";
 import SearchList from "../views/Search/searchList";
 import Player from "../views/player/Player";//播放器
+import FF from '../views/player/FF'  //v
 export default [
     {
         path:"/loginByTel",
@@ -95,6 +96,11 @@ export default [
         path:"/ShowDetails",
         title:"电台二级",
         component:ShowDetails
+    },
+    {
+        path:"/ff",
+        title:"FN",
+        component:FF
     },
     {
         path:"/",

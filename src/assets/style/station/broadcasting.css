@@ -5,6 +5,7 @@
 html,body{
    height:100% ;
    width:100%;
+    font-size:100px;
 }
 a{
     text-decoration: none;
@@ -17,7 +18,7 @@ img{
 }
 
 .hearfff{
-    height:22.29vh;
+    height:auto;
     border-bottom:0.8333vh solid #f5f5f5;
 }
 .h_hearfff{
@@ -30,7 +31,8 @@ img{
     font-weight: bold;
 }
 .n_hearfff{
-    height:16.875vh;
+    height:auto;
+    margin-bottom:0.2rem;
     display: flex;
     justify-content: space-between;
 }
@@ -40,18 +42,22 @@ img{
 }
 .n_hearfff div {
     border-radius: 5px 5px 5px 5px;
-    background:red;
     height:10.416vh;
     width:18.318vw;
+}
+.n_hearfff div img{
+    height:10.416vh;
+    width:18.318vw;
+    border-radius: 5px 5px 5px 5px;
 }
 .n_hearfff p{
     height: auto;
     word-wrap:break-word;
     word-break:break-all;
     overflow: hidden;
-    font-size:1.852vw;
+    font-size:0.1rem;
     margin-top:1vh;
-    line-height: 1.666vh;
+    line-height: 0.15rem;
     margin-bottom:0;
 }
 
@@ -105,12 +111,12 @@ img{
     float: left;
     height:7.5vh;
     width:12.562vw;
-    background:red;
     border-radius: 5px 5px 5px 5px;
 }
 .znz_chorusfff img{
     width:100%;
-    height:100%;
+    border-radius: 5px 5px 5px 5px;
+    height:7.5vh;
 }
 .zny_chorusfff{
     height:7.5vh;
@@ -130,14 +136,14 @@ img{
     height: 1.8vh;
 }
 .nzx_chorusfff span{
-    margin-left:-2vw;
+    transform-origin: left;
     display: block;
     font-size:2.22vw;
     transform: scale(0.7);
 }
 .nyx_chorusfff{
-    margin-left:-3vw;
     font-size:2.22vw;
     transform: scale(0.6);
     color:#bcbcbc;
+    transform-origin: left;
 }
