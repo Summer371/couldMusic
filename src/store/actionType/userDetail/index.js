@@ -1,0 +1,1 @@
+export const CHANGE_USER_DETAIL = "CHANGE_USER_DETAIL";

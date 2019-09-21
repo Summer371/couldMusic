@@ -1,0 +1,64 @@
+
+ .songLists{
+
+}
+ .songLists ul{
+     background: white;padding: 0.1rem;
+ }
+.songLists ul li{
+    display: flex;justify-content: space-between;align-items: center;margin: 0.05rem 0;
+}
+ .songLists ul li img{
+    width: 0.6rem ;height: 0.6rem ;border-radius: 0.1rem;
+}
+ .songLists ul li div{
+    display: flex;
+}
+ .songLists ul li .songListsMiddle{
+    display: flex;flex-direction: column;padding-left: 0.1rem;
+}
+ .songLists ul li .songListsRight i{
+    margin: 0 0.05rem ;font-size: 0.2rem;
+}
+ .songSheetDetail .songSheetDetailNav{
+     display: flex;align-items: center;font-size: 0.2rem;padding: 0.1rem;background: white;
+ }
+ .songSheetDetail .songSheetDetailNav span{
+     padding-left: 0.2rem;
+ }
+ .songSheetDetail .filter{
+     filter: blur(5px);width: 100%;height: 2.5rem;position: absolute;
+ }
+ .songSheetDetail .songSheetDetailHead {
+    height: 2.5rem;
+ }
+ .songSheetDetail .songSheetDetailHead .songSheetDetaiImg_word{
+     display: flex;
+ }
+ .songSheetDetail .songSheetDetailHead .songSheetDetaiImg{
+     padding-left: 0.1rem;z-index: 1;
+ }
+ .songSheetDetail .songSheetDetailHead .songSheetDetaiImg img{
+     width: 1.2rem;border-radius: 0.05rem;margin-top: 0.2rem;
+ }
+
+ .songSheetDetail .songSheetDetailHead .songSheetDetailWord{
+    padding:0 0.1rem;z-index: 1;color: white;padding-top: 0.3rem;
+ }
+ .songSheetDetail .songSheetDetailHead .songSheetDetailWord h3,
+ .songSheetDetail .songSheetDetailHead .songSheetDetailWord h4{
+     color: white;
+ }
+ .songSheetDetail .songSheetDetailHead .songSheetDetailWord img{
+     width: 0.3rem;border-radius: 50%;
+ }
+ .songSheetDetail .songSheetDetailHead .songSheetDetailWord p{
+    overflow: hidden;text-overflow: ellipsis;padding: 0;height: 0.56rem;line-height: 0.28rem;
+   margin-top: 0.3rem;
+ }
+ .songSheetDetail .songSheetDetailHead .iconCommit{
+     display: flex;justify-content: space-around;z-index: 1;font-size: 0.5rem;
+ }
+ .songSheetDetail .songSheetDetailHead .iconCommit i{
+     z-index: 1;font-size: 0.3rem;color: white;
+ }

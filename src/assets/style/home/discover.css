@@ -71,7 +71,7 @@ ul{
     width: 100%;border-radius: 0.05rem;
 }
 .discover .listen ul{
-    display: flex;flex-wrap: wrap;text-align: center;justify-content: space-between;
+    display: flex;flex-wrap: wrap;text-align: center;justify-content: space-around;
 }
 .discover .listen ul li{
     width: 30%;margin: 0.1rem 0;

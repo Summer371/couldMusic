@@ -12,7 +12,15 @@ import personalized from "../../../store/actionCreator/personalized";
                 {
                     newSong.map((v, i) => {
                         return (
-                            <li key={i}>
+                            <li key={i} onClick={()=>{
+                                this.props.history.push({
+                                    pathname:"/songSheetDetail",
+                                    backname:this.props.location.pathname,
+                                    state:{
+                                        id:v.id
+                                    }
+                                })
+                            }}>
                                 <img src={v.picUrl} alt=""/>
                                 <p>{v.name}</p>
                             </li>

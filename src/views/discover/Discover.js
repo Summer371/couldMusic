@@ -9,11 +9,11 @@ import Listen from "../../components/discover/listen";//听听
     render(){
         return(
             <div className={"discover"}>
-                <Banner></Banner>
+                <Banner {...this.props}></Banner>
                 <DiscoverNav {...this.props}></DiscoverNav>
-               <SongsList></SongsList>
+               <SongsList {...this.props}></SongsList>
                 <TopNew></TopNew>
-                <Listen></Listen>
+                <Listen {...this.props}></Listen>
             </div>
         )
     }

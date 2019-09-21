@@ -6,11 +6,11 @@
     justify-content: space-between;
 }
 .logo{
-    width: 100%;overflow: hidden;height: 0.71rem;
+    width: 100%;overflow: hidden;height: 0.7rem;
 }
 .ul{padding: 0;height: 0.7rem;width: 10rem;float: left;border-bottom: 0.01rem solid #F5F5F5}
 .ul li{
-    width: 0.76rem;text-align: center;margin-top:0.1rem;float: left;
+    width: 0.76rem;text-align: center;float: left;
 }
 .ul span{
     display: block;
@@ -52,7 +52,7 @@
 .list .right li {height: 0.5rem;border-bottom: 1px solid #F5F5F5}
 /*create*/
 .create{
-    font-size: 0.14rem;
+    font-size: 0.14rem;position: relative;
 }
 .create .love{
     width:0.4rem;height: 0.4rem;
@@ -67,22 +67,35 @@
 .create .myLove .num{
     display: block;
 }
+.create .myLove .left{display: flex}
 .create .myLove .center{
-    margin-left: -0.2rem;
+    margin-left: 0.1rem;
     color: #666666;
 }
 .create .myLove .center span{
     font-size: 0.01rem;
 }
+.create .myLove .songListName{height:0.5rem;padding:0 0.3rem;border-top-left-radius:0.2rem;
+line-height:0.5rem;border-bottom:1px solid #F5F5F5;
+}
+.create .position{position: absolute;left:3.1rem;
+    top: 0.1rem;}
+.create .position .jia{font-size: 0.24rem;padding-right: 0.12rem;
+}
+.create .myLove .songOption{height:100%;}
+.create .myLove .songOption li{display:flex;height:0.5rem;width:100%;line-height:0.5rem;padding:0 0.3rem}
+.create .myLove .songOption li .tu{ display:block;width:12%;font-size:0.3rem}
 .create .myLove .onCenter span{
     font-size: 0.01rem;
 }
 .create .myLove .onCenter{
-    margin-left: -1rem;
+    margin-left: 0.1rem;
     color: #666666;
 }
 /*Sing*/
 .Sing{
+    position: sticky;
+    bottom: 0px;
     border-top: 1px solid #F5F5F5;
     margin: 0 0.2rem 0 0.2rem;
     height: 0.5rem;
