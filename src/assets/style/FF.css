@@ -75,7 +75,7 @@
     display: flex;justify-content: space-around;align-items: center;position: absolute;bottom: 0;width: 100%;
 }
 .playery .playerBodyy .playerBottony i{
-    font-size: 0.3rem;color: red;
+    font-size: 0.3rem;color: #FFF;
 }
 .playery .playerBodyy .playerBottony .icon-bofang{
     font-size: 0.5rem;
@@ -94,4 +94,41 @@
     line-height: 0.4rem;
     /*border:0.01rem solid red;*/
     /*border-radius: 50%;*/
+}
+
+.progressmusic{
+    padding:0 0.1rem;
+    position: absolute;
+    bottom:0.5rem;
+    height: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    line-height: 0.4rem;
+}
+.progressmusic .musicjd{
+    margin-top:5%;
+    height:0.02rem;
+    display: block;
+    width:70%;
+    border:0.05rem;
+    background:rgba(0,0,0,0.5);
+    position: relative;
+}
+.progressmusic .musicjd span{
+    display: block;
+    height:0.08rem;
+    width:0.08rem;
+    background:#000;
+    border-radius: 50%;
+    margin-top:-0.03rem;
+    position: absolute;
+    left:0
+}
+.progressmusic .musicjd .jzcd{
+    display: block;
+    height:0.02rem;
+    background:#000;
+    position: absolute;
+    left:0
 }
