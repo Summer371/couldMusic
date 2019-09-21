@@ -10,6 +10,7 @@ import {
 } from "redux";
 import playUrl from "../../store/actionCreator/playUrl";
 import "../../assets/style/player.css";
+import "../../assets/style/font/iconfont.css";
 class Player extends React.Component{
     constructor(){
         super();
@@ -84,7 +85,7 @@ class Player extends React.Component{
                     </div>
                 </div>
                 <div className={"playerBody"}>
-                    <audio ref={"play"} src={songUrl.url}  loop={this.state.true} autoPlay={true}></audio>
+                    <audio ref={"play"} src={songUrl.url}  loop={this.state.true?"loop":""} autoPlay={true}></audio>
                     <div className={"likeIcon"}>
                         <i className={"iconfont icon-xihuan-kongpt-wangyiicon1"}></i>
                         <i className={"iconfont icon-xiazaipt-wangyiicon"}></i>
@@ -94,11 +95,9 @@ class Player extends React.Component{
                     </div>
                     <div className={"progress"} ref={"long"} >
                         <span>{this.state.time}</span>
-                        <h3 ref={"progress"} onClick={this.skip.bind(this)}
-                            onMouseMove={this.hander.bind(this)}>
+                        <h3 ref={"progress"} style={{width:"80%"}}
+                            onClick={this.skip.bind(this)}>
                         <i ref={"hander"}
-                            /*onMouseDown={this.hander.bind(this)}
-                            onMouseUp={this.hander.bind(this)}*/
                         ></i></h3><span>{this.$filter.songTime(this.state.totalTime)}</span>
                     </div>
                     <div className={"playerBotton"}>
@@ -112,32 +111,19 @@ class Player extends React.Component{
             </div>
         )
     }
-    hander(e){
-        e.stopPropagation();
-        this.refs.hander.addEventListener("mousedown",this.moveHander.bind(this));
-        /*if(e.type==="mousedown"){
-            document.documentElement.addEventListener("mousedown",this.moveHander)
-            console.log("down")
-        }else if(e.type==="mouseup"){
-            console.log("up")
-        }*/
-        console.log(e.target)
-    }
-    moveHander(e){
-        console.log("move")
-        this.refs.hander.style.left=e.clientLeft;
-    }
     loop(){
         this.setState({
             loop:!this.state.loop
         })
     }
-    skip(){
-        let {currentTime,duration}=this.refs.play;
-        let width=this.refs.progress.style.width;
-        console.log(width)
-        this.refs.play.currentTime=currentTime+5;
-        this.refs.hander.style.left=this.refs.hander.offsetLeft+20+"px"
+    skip=(e)=>{
+        let {duration}=this.refs.play;
+        let width=document.body.clientWidth*0.8;
+        this.refs.hander.style.left=e.clientX-37+"px";
+        let handerll=this.refs.hander.style.left.split("");
+        handerll.splice(-2);
+        let handerLeft=  handerll.join("")/1;
+        this.refs.play.currentTime=duration*handerLeft/width;
     }
     play(){
         this.setState({
@@ -188,8 +174,10 @@ class Player extends React.Component{
             songIds:this.props.location.state.ids
         });
 
-        let i=this.state.singers.indexOf(this.state.singer)
+        let i=this.state.singers.indexOf(this.state.singer);
 
+
+        let width=document.body.clientWidth*0.8;
        this.refs.play.oncanplay=()=>{
             this.setState({
                 totalTime:Math.floor(this.refs.play.duration)
@@ -199,7 +187,11 @@ class Player extends React.Component{
             this.setState({
                 time:this.$filter.songTime(Math.floor(this.refs.play.currentTime))
             });
+            let {currentTime,duration}=this.refs.play;
+            let precent =currentTime/duration;
+            this.refs.hander.style.left=width*precent-5+"px";
         },1000)
+        console.log(i)
     }
     componentDidMount() {
         this.getMusicUrl(this.props.location.state.ids);
