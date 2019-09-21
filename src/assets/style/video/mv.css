@@ -1,0 +1,70 @@
+.M{
+
+}
+.m-mv{
+    padding:0 0.16rem;
+   display:flex;
+   flex-wrap:wrap;
+   justify-content:space-around;
+}
+.m-title{
+    padding:0 0.16rem;
+    height:0.35rem;
+    display:flex;
+    align-items:center;
+}
+.m-how{
+    font-size:0.15rem;
+    font-weight:600;
+    flex:1;
+}
+.m-long{
+    font-size:0.11rem;
+    height:0.24rem;
+    width:0.62rem;
+    border:1px solid #f0f0f0;
+    border-radius:0.12rem;
+    text-align:center;
+    line-height:0.22rem;
+}
+.m-style{
+    margin:0.08rem 0;
+}
+.m-style .m-img{
+    height:0.9rem;
+    width:1.59rem;
+    position:relative;
+}
+.m-img img{
+    height:0.9rem;
+    width:1.59rem;
+    border-radius:0.05rem;
+}
+.m-icon{
+    position:absolute;
+    top:0;
+    right:0.1rem;
+}
+.m-img i{
+    font-size:0.1rem;
+    color:#FFFFFF;
+}
+.m-img span{
+    color:#FFFFFF;
+    font-size:0.1rem;
+    right:0.05rem;
+}
+.m-singname{
+    margin-top:0.05rem;
+    font-size:0.13rem;
+    color:#000000;
+    width:1.52rem;
+}
+.m-singcome{
+    font-size:0.12rem;
+    color:#7d7d7d;
+    width:1.52rem;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}

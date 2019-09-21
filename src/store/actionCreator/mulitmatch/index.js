@@ -26,12 +26,8 @@ export default {
     getMultimatch(keyword){
         return async (dispatch)=>{
             const {data} = await axios.get("/search/multimatch?keywords="+keyword);
-
-
             dispatch(mulitmatch(data.result))
-
             }
-
     },
     getSearchResult(keywords=""){
         return async (dispatch)=>{
