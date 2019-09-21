@@ -88,7 +88,9 @@ img{
     display: flex;
     justify-content: space-between;
 }
-
+.z_chorusfff{
+    width:100%;
+}
 .z_shufff{
     float: left;
     height:7.5vh;
@@ -122,12 +124,20 @@ img{
     height:7.5vh;
     float: left;
     margin-left:1.85vw;
+    width:75%;
 }
 .zny_chorusfff h5{
     height:3vh;
     line-height: 3vh;
     font-size:2.59vw;
     margin-bottom:0;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    display:block;
+    width:80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .znx_chorusfff{
     height:4.5416vh;

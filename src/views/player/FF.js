@@ -20,13 +20,13 @@ class FF extends React.Component {
                 url: ''
             }],
             urlList: [],
-            timer: null
+            timer: null,
+            num:0
         }
     }
 
     render() {
         let list = this.props.location.state.ShowDetailsList
-        let index = this.props.location.state.index
         let songsUrl = this.state.songsUrlList
         return (
             <div className={"playery"}>
@@ -53,9 +53,11 @@ class FF extends React.Component {
 
                     <div className={"playerBottony"}>
                         <i className={"iconfont icon-xihuan-kongpt"}></i>
-                        <i className={"iconfont icon-shangyiqu"} onClick={this.clickZuo.bind(this)}></i>
+                        <i className={"iconfont icon-shangyiqu"} onClick={this.clickZuo.bind(this)}>
+                        </i>
                         <span id={"off"} className={"paly"}>
-                            <i className={"iconfont icon-bofang "} onClick={this.clickbf.bind(this)}></i>
+                            <i className={"zbhh iconfont icon-bofang"} onClick={this.clickbf.bind(this)}>
+                            </i>
                         </span>
                         <i className={"iconfont icon-xiayiqu "} onClick={this.clickYou.bind(this)}></i>
                         <i className={"iconfont icon-caidan"}></i>
@@ -68,32 +70,41 @@ class FF extends React.Component {
     clickbf() {
         var audio = document.getElementById("audio");
         var musiIocn = document.querySelector(".rotateimg img");
-        ;
         var off = document.getElementById("off");
+        let sj=this.state.num;//获取当前音频时长
         if (off.className == "paly") {  //如果当前播放
             audio.pause(); //停止（暂停）
             off.className = "stop"; //暂停
             // musiIocn.src = "img/music130.png";  //暂停图片
             musiIocn.className = " "; //取消图片360旋转CSS3动画
+            clearInterval(this.state.timer)//关闭音频定时器
         } else if (off.className == "stop") {  //如果当前暂停
             audio.play();  //开始播放
             off.className = "paly";  //开始播放
             // musiIocn.src = "img/music131.png"; //播放图片
             musiIocn.className = "myimg";  //追加图片360旋转CSS3动画
+            this.timerMusic(sj)//开启音频定时器
+            sj=0;
         }
     }
 
     clickZuo(e) {
+        clearInterval(this.state.timer)//关闭音频定时器
         this.setState({
-            index: --this.props.location.state.index
+            index: --this.props.location.state.index,
+            num:0
         })
+        this.timerMusic()//开启音频定时器
         this.playMusic(this.state.urlList[this.props.location.state.index].mainSong.id)
     }
 
     clickYou(e) {
+        clearInterval(this.state.timer)//关闭音频定时器
         this.setState({
-            index: ++this.props.location.state.index
+            index: ++this.props.location.state.index,
+            num:0
         })
+        this.timerMusic()//开启音频定时器
         this.playMusic(this.state.urlList[this.props.location.state.index].mainSong.id)
     }
 
@@ -106,33 +117,35 @@ class FF extends React.Component {
             songsUrlList: nextProps.songsUrl
         })
     }
-
-    componentDidMount() {
-
-        this.playMusic(this.props.location.state.id)
-        this.setState({
-            urlList: this.props.location.state.ShowDetailsList
-        })
-
+    timerMusic(timerSj=0){//控制音频
         var audio = document.getElementById("audio");//获取音频
-        let num = 0;
         let ssj = 0;
         audio.oncanplay = function () { //获取音乐时长
             console.log(audio.duration)
             ssj = parseInt(audio.duration)
         }
         this.state.timer = setInterval(() => {//添加定时器
-            num++
-            if (num === ssj) { //判断歌曲是否唱完
-                num = 0;
+            this.setState({
+                num:++timerSj
+            })
+            if (this.state.num === ssj) { //判断歌曲是否唱完
                 this.setState({
-                    index: ++this.props.location.state.index
+                    index: ++this.props.location.state.index,
+                    num:0
                 })
+                clearInterval(this.state.timer)//关闭音频定时器
+                this.timerMusic(this.state.num)//开启定时器
                 this.playMusic(this.state.urlList[this.props.location.state.index].mainSong.id)
             }
         }, 1000)
     }
-
+    componentDidMount() {
+        this.playMusic(this.props.location.state.id)
+        this.setState({
+            urlList: this.props.location.state.ShowDetailsList
+        })
+        this.timerMusic()
+    }
     componentWillUnmount() {
         clearInterval(this.state.timer)
     }

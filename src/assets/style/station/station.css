@@ -68,11 +68,11 @@ img{
 }
 .sort div{
     border-radius: 50%;
-    background:red;
     height: 5vh;
     width:8.89vw;
     line-height: 5vh;
     margin-left:2.5vw;
+    background:red;
 }
 .sort li i{
     color:#fff
@@ -203,7 +203,6 @@ img{
 }
 .x_boutique div {
     border-radius: 5px 5px 5px 5px;
-    background:red;
     height:16.875vh;
     width:30vw;
 }
@@ -273,6 +272,9 @@ img{
     display: flex;
     justify-content: space-between;
 }
+.z_chorus{
+    width:90%;
+}
 .znz_chorus{
     float: left;
     height:5.208vh;
@@ -288,6 +290,9 @@ img{
     height:5.208vh;
     float: left;
     margin-left:1.85vw;
+    width:85%;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
 }
 .zny_chorus h5{
     height:2.516vh;
@@ -298,7 +303,9 @@ img{
     word-break: break-all;
     overflow: hidden;
     display:block;
-
+    width:80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .znx_chorus{
     height:2.5vh;

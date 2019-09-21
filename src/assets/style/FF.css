@@ -8,16 +8,30 @@
 
 .go_backy{
     color:#FFF;
-    height:0.8rem;
-    line-height:0.8rem;
-    font-size: 2.963vw;
+    height:0.54rem;
+    line-height:0.54rem;
+    font-size: 0.16rem;
+}
+.n_go_backy{
+    height:0.54rem;
+    line-height:0.54rem;
 }
 .go_backy span{
+    float: left;
     margin-left:1vw;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    display:block;
+    width:80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .go_backy i{
+    float: left;
     margin-left:2.962vw;
-    font-size:2.96vw;
+    margin-right:0.18rem;
+    font-size: 0.16rem;
 }
 
 .playery .rotatee{
@@ -65,4 +79,19 @@
 }
 .playery .playerBodyy .playerBottony .icon-bofang{
     font-size: 0.5rem;
+}
+
+#off {
+    width:0.45rem;
+    height:0.45rem;
+    display: block;
+}
+#off i{
+    width:0.4rem;
+    height:0.4rem;
+    display: block;
+    font-size:0.4rem;
+    line-height: 0.4rem;
+    /*border:0.01rem solid red;*/
+    /*border-radius: 50%;*/
 }
