@@ -84,7 +84,7 @@ line-height:0.5rem;border-bottom:1px solid #F5F5F5;
 }
 .create .myLove .songOption{height:100%;}
 .create .myLove .songOption li{display:flex;height:0.5rem;width:100%;line-height:0.5rem;padding:0 0.3rem}
-.create .myLove .songOption li .tu{ display:block;width:12%;background:green;font-size:0.3rem}
+.create .myLove .songOption li .tu{ display:block;width:12%;font-size:0.3rem}
 .create .myLove .onCenter span{
     font-size: 0.01rem;
 }

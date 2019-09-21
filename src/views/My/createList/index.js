@@ -1,10 +1,11 @@
 import { Collapse } from 'antd';
 import React from 'react';
+import axios from 'axios'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import { Modal } from 'antd';
+import { Modal,Input } from 'antd';
 import createDispatch from '../../../store/actionCreator/userPlayList'
-import { Drawer, Button, Radio } from 'antd';
+import { Drawer, Button, Radio,Checkbox } from 'antd';
 const RadioGroup = Radio.Group;
 const { Panel } = Collapse;
 class CreateList extends React.Component{
@@ -14,6 +15,7 @@ class CreateList extends React.Component{
             visible: false,
             placement: 'left',
             visible1: false,
+            checked:false
         }
     }
     render() {
@@ -32,13 +34,14 @@ class CreateList extends React.Component{
                                 title="新建歌单"
                                 closable={false}
                                 style={{background:"red",height:200+"px"}}
-                                bodyStyle={{height:"200px"}}
+                                cancelText={"取消"}
+                                okText={"确定"}
                                 visible={this.state.visible1}
-                                onOk={this.handleOk}
+                                onOk={this.handleOk.bind(this)}
                                 onCancel={this.handleCancel}
                             >
-                                <input type="text" placeholder={"请输入歌单标题"}/><br/>
-                                <input type="checkbox"/><label htmlFor="">设置为隐私歌单</label>
+                                <Input placeholder="请输入歌单名" id={"input"}/>
+                                <Checkbox onChange={this.onChange1}>设置为隐私歌单</Checkbox>
                             </Modal>
                         </div>
                                 {this.props.songListed?this.props.songListed.map((v,i)=>(
@@ -95,21 +98,28 @@ class CreateList extends React.Component{
         );
     };
     componentDidMount() {
+        console.log(this)
         this.props.getSongListed();
+    }
+    onChange1(e) {
+        this.setState({
+            checked:e.target.checked
+        })
     }
     showModal = () => {
         this.setState({
             visible1: true,
         });
     };
-
-    handleOk = e => {
-        console.log(e);
+    async handleOk (e) {
         this.setState({
             visible1: false,
         });
+        let input = document.querySelector("#input")
+        console.log(input.value)
+        let data = await axios.get("/playlist/create?name="+input.value)
+        //this.props.getSongListed();
     };
-
     handleCancel = e => {
         this.setState({
             visible1: false,
@@ -125,7 +135,6 @@ class CreateList extends React.Component{
             visible: false,
         });
     };
-
     onChange = e => {
         this.setState({
             placement: e.target.value,

@@ -16,7 +16,6 @@ class Drawer1 extends React.Component{
         }
     }
     render(){
-        console.log(this.props.userList);
         return(
             <div >
                 <Icon type="menu" onClick={this.showDrawer}/>
