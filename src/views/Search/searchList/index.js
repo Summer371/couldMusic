@@ -20,36 +20,43 @@ import Video from "../../../components/search/video";
 import Song from "../../../components/search/song"
 import mulitmatch from "../../../store/actionCreator/mulitmatch";
 class SearchList extends Component{
+    constructor(){
+        super();
+        this.state={
+            keyword:""
+        }
+    }
     render(){
-        const {multimatchSearchResult,searchResult} = this.props;
-        console.log(multimatchSearchResult,this.props);
+        const {multimatchSearchResult,searchResult2,searchDefault} = this.props;
+        let keyword =localStorage.keyValue ||searchDefault;
         return(
             <Fragment>
                 <header className="search-header">
                     <div className="search-back"  onClick={(e)=>{
                         e.stopPropagation();
-                        this.props.history.go(-1)
+                        this.props.history.push({
+                            pathname:"/search"
+                        })
                     }}>
                         <i className="iconfont">&#xe501;</i>
                     </div>
                     <div className="search-song">
-                        <input type="text" ref={"keyward"} onKeyUp={()=>{
-                            this.props.getSearchResult(this.refs.keyward.value)
-                        }} placeholder={this.props.location.keyword} />
+                        <input type="text" ref={"keyword"} onKeyUp={()=>{
+                            this.props.getSearchResult2(this.refs.keyword.value)
+                        }} placeholder={keyword} />
                     </div>
                     <div className="search-singer">
                         <i className="iconfont">&#xe63f;</i>
                     </div>
                 </header>
-                <ul className="search-result" ref="search" style={{display:searchResult.length>1?"block":"none"}}>
+                <ul className="search-result" ref="search" style={{display:searchResult2.length>1?"block":"none"}}>
                     {
-                        searchResult.map((v,i)=>{
+                        searchResult2.map((v,i)=>{
                             return (
                                 <li key={i} onClick={()=>{
-                                    console.log("111");
                                     this.refs.search.style.display="none"
                                     this.props.history.push({
-                                        pathname:"/searchList",
+                                        pathname:"/searchList/Complete",
                                         keyword:v.name
                                     })
                                 }}>
@@ -77,15 +84,15 @@ class SearchList extends Component{
         )
     }
     componentWillMount(){
-        console.log(this.props.location.keyword);
-        this.props.getMultimatch("海阔天空");
+        this.props.getSearchDefault();
+        this.props.getMultimatch(localStorage.keyValue);
     }
 }
 function mapStateToProps(state) {
-    console.log(state);
     return {
-        searchResult: state.multimatch.searchResult,
+        searchResult2: state.multimatch.searchResult2,
         multimatchSearchResult: state.multimatch.multimatchSearchResult,
+        searchDefault:state.multimatch.searchDefault
     }
 }
 

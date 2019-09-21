@@ -26,6 +26,7 @@ export default {
         return async (dispatch)=>{
             if(keywords!==""){
                 const {data} = await axios.get("/search?keywords="+keywords);
+
                 dispatch(search(data.result.songs))
             }else{
                 dispatch(search([]))
@@ -41,7 +42,7 @@ export default {
     getSearchDefault(){
         return async (dispatch)=>{
             const {data}= await axios.get("/search/default");
-            dispatch(searchDefault(data.data.realkeyword))
+           dispatch(searchDefault(data.data.realkeyword))
         }
     }
 }

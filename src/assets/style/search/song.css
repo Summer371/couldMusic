@@ -45,6 +45,7 @@
 }
 .song-message-left h3{
     margin-bottom:0;
+    font-size:0.15rem;
     color:lightblue;
 }
 .song-message-singer{
@@ -52,6 +53,8 @@
 }
 .song-message-left b{
     font-size:0.06rem;
+    width:80%;
+    height:0.3rem;
 }
 .song-message-left b>span{
     color:lightblue;
@@ -73,4 +76,8 @@
 .song-message-i>i{
     font-size:0.2rem;
     margin:0.05rem;
+}
+.song-404{
+    margin:0.5rem;
+    color:lightcoral;
 }

@@ -1,0 +1,72 @@
+.App h2{
+    margin-top:0.1rem;
+    font-size:0.15rem;
+}
+h2>i{
+    margin:0 0.1rem;
+}
+.allSinger{
+    margin:0.1rem 0;
+    padding-left:0.1rem;
+}
+.singerList{
+    border-top:0.01rem solid #ccc;
+    padding:0 0.1rem;
+    padding-top:0.05rem;
+}
+.singerList-li {
+    margin-bottom:0.2rem;
+    position:relative;
+}
+.singerList-li img{
+    width:0.5rem;
+    height:0.48rem;
+    border-radius: 50%;
+    margin-right:0.2rem;
+}
+.singerList-li .iconfont{
+    margin-left:0.1rem;
+}
+.singerList-li >span{
+    display:block;
+    position: absolute;
+    padding:0.035rem 0.05rem;
+    line-height:100%;
+    color:red;
+    right:0.1rem;
+    top:0.1rem;
+    border-radius: 0.1rem;
+    border:0.01rem solid red;
+}
+.singerClass{
+    height:0.5rem;
+    margin-bottom:0.1rem;
+}
+.singerClass .singerLanguage{
+    display:flex;
+    width:60%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left:5%;
+    margin-top:0.1rem;
+}
+.hotSinger{
+    background:#ddd;
+    margin-bottom:0;
+    padding-left:0.2rem;
+    color:#333;
+    height:0.3rem;
+    line-height:0.3rem;
+}
+.singerClass .singerLanguage>span{
+    display:block;
+}
+.singerClass .singerGroup{
+    margin-left:5%;
+    display:flex;
+    width:40%;
+    flex-direction: row;
+    margin-top:0.1rem;
+    justify-content: space-around;
+
+}

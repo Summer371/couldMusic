@@ -1,11 +1,17 @@
 import React from "react";
 import "../../assets/style/login.css";
-import { Icon,message } from 'antd';
+import { Icon,message,Checkbox } from 'antd';
 import 'antd/dist/antd.css';
 import {
     Link
 } from "react-router-dom"
 export default class Login extends React.Component{
+    /*constructor(){
+        super();
+        this.state={
+            checked:false
+        }
+    }*/
     loginByTel(){
         if(this.refs.sure.checked){
             this.props.history.push("/loginByTel")
@@ -28,7 +34,8 @@ export default class Login extends React.Component{
                         <Icon type="weibo-circle" style={{color:"white"}}/><Icon type="github" style={{color:"white"}}/>
                     </div>
                     <div className={"sure"}>
-                        <input type="checkbox" ref={"sure"}/><label>同意<Link to={"/"}>《用户协议》</Link>和<Link to={"/"}>《隐私政策》</Link></label>
+
+                        <input type="checkbox"  ref={"sure"}/><label>同意<Link to={"/"}>《用户协议》</Link>和<Link to={"/"}>《隐私政策》</Link></label>
                     </div>
                 </div>
             </div>

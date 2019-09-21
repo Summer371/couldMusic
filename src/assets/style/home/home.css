@@ -4,9 +4,12 @@
 .home .homeNav{
     width:100%;display: flex;justify-content: space-between;text-align: center;padding: 0.1rem;
 }
-
+#drawer{color:"white"}
 .home .homeNav a{
     color:black;font-size: 0.16rem;
+}
+.activeA{
+    color:black;font-size: 0.18rem;font-weight: bolder;
 }
 .home .homeNav i{
     color:black;font-size: 0.18rem;

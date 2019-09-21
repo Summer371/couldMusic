@@ -9,8 +9,12 @@ export default function (state=initState,{type,payload}) {
     if(type===CHANGE_SEARCH_RESULT){
         state.searchResult=payload;
     }else if(type===CHANGE_SEARCH_HOT){
+
+        state.searchHot=payload;
+    }else if(type===CHANGE_SEARCH_HOT){
         state.searchHot=payload;
     }else if(type===CHANGE_SEARCH_DEFAULT){
+
         state.searchDefault=payload;
     }
     return state;

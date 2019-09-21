@@ -10,36 +10,52 @@ import {
 } from "redux";
 import getSearchResult from "../../store/actionCreator/search"
 class Search extends Component{
+
     render(){
-        const {searchResult,searchHot,searchDefault} = this.props;
+        let {searchResult,searchHot,searchDefault} = this.props;
         return(
             <Fragment>
                 <header className="search-header">
                 <div className="search-back"  onClick={(e)=>{
                     e.stopPropagation();
-                    this.props.history.go(-1)
+                    searchResult=[];
+                    this.props.history.push({
+                        pathname:"/",
+                    })
                 }}>
                     <i className="iconfont">&#xe501;</i>
                 </div>
                 <div className="search-song">
-                <input type="text" ref={"keyword"} onKeyUp={()=>{
+                <input type="text" ref={"keyword"} onKeyUp={(e)=>{
+                    let key=this.refs.keyword.value || searchDefault;
+
+                    if(e.keyCode===13){
+                        localStorage.keyValue=key;
+                        this.props.history.push({
+                            pathname:'/searchList/Complete',
+                        })
+                    }
                     this.props.getSearchResult(this.refs.keyword.value)
                 }} placeholder={searchDefault} />
                 </div>
-                <div className="search-singer">
+                <div className="search-singer" onClick={()=>{
+                    this.props.history.push({
+                        pathname:"/singer",
+                    })
+                }}>
                     <i className="iconfont">&#xe647;</i>
                 </div>
                 </header>
-                <ul className="search-result" ref="result"style={{display:searchResult.length>1?"block":"none"}}>
+                <ul className="search-result" ref="result" style={{display:searchResult.length>1?"block":"none"}}>
                     {
                         searchResult.map((v,i)=>{
                             return (
                                 <li key={i} onClick={()=>{
-                                    console.log("111");
-                                    this.refs.result.style.display="none"
+                                    this.refs.result.style.display="none";
+                                    localStorage.keyValue=v.name;
+                                    searchResult=[];
                                     this.props.history.push({
-                                        pathname:"/searchList/Complete",
-                                        keyword:v.name
+                                        pathname:"/searchList/Complete/",
                                     })
                                 }}>
                                     <i className={"iconfont"}>&#xe668;</i>{v.name}
@@ -64,10 +80,12 @@ class Search extends Component{
                     <h3>热搜榜</h3>
                     {searchHot.map((v,i)=> {
                         return (
-                            <li key={i} className="song-detail">
+                            <li key={i} className="song-detail" onClick={()=>{
+
+                            }}>
                                 <span key={i+1}>{i+1}</span>
                                 <div key={i+2} className="song-detail-detail">
-                                    <h3 key={i+3}>{v.searchWord} <b key={i+4}>{v.score}</b>   <i key={i+6} style={{color:v.iconType===1?"lightred":"lightgreen"}}>{v.iconType===0?"":v.iconType===1?"HOT":"NEW"}</i></h3>
+                                    <h3 key={i+3}>{v.searchWord}    <i key={i+6} style={{color:v.iconType===1?"lightred":"lightgreen"}}>{v.iconType===0?"":v.iconType===1?"HOT":"NEW"}</i><b key={i+4}>{v.score}</b></h3>
                                     <p key={i+5}>{v.content}</p>
                                 </div>
                             </li>

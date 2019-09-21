@@ -2,6 +2,9 @@
     display: flex;background: #DA2E21;width: 100%;height:100%;position: absolute;
     top: 0;bottom: 0;flex-direction: column;box-sizing: border-box;
 }
+.login input{
+    width: 0.12rem;height: 0.12rem;background:white;border: 1px solid whitesmoke;
+}
 .login .bigLogo{
     display: flex;justify-content: center;align-items: center;height:70%;
 }

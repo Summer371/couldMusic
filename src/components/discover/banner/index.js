@@ -15,7 +15,15 @@ class Banner extends React.Component{
                     {
                         banner.map((v,i)=>{
                             return(
-                                <div key={i}>
+                                <div key={i} onClick={()=>{
+                                    this.props.history.push({
+                                        pathname:"/songSheetDetail",
+                                        backname:this.props.location.pathname,
+                                        state:{
+                                            id:v.id
+                                        }
+                                    })
+                                }}>
                                     <img src={v.pic} alt=""/>
                                 </div>
                             )

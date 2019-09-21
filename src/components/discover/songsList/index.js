@@ -18,7 +18,15 @@ class SongList extends React.Component{
                     {
                         songsList.map(v=>{
                             return(
-                                <li key={v.id}>
+                                <li key={v.id} onClick={()=>{
+                                    this.props.history.push({
+                                        pathname:"/songSheetDetail",
+                                        backname:this.props.location.pathname,
+                                        state:{
+                                            id:v.id
+                                        }
+                                    })
+                                }}>
                                     <span><Icon type="caret-right"/>{this.$filter.playCount(v.playCount)}</span>
                                     <img  src={v.picUrl} alt=""/>
                                     <p>{v.name}</p>
