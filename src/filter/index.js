@@ -34,5 +34,10 @@ export default {
     },
     songTime(v){
         return Math.floor(v/60)+":"+(Math.round(v%60)>=10?Math.round(v%60):"0"+Math.round(v%60))
+    },
+    FFtime(v){
+        var minutes = parseInt((v% (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = (v% (1000 * 60)) / 1000;
+        return   minutes + ":" + Math.floor(seconds) ;
     }
 }
