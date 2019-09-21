@@ -22,5 +22,8 @@ export default {
     dateDay(v){
         const time = new Date(v);
         return(time.getDate()).toString().padStart(2,"0");
+    },
+    songTime(v){
+        return Math.floor(v/60)+":"+Math.floor(v%60/60)
     }
 }

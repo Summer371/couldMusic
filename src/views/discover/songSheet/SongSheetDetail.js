@@ -45,7 +45,7 @@ class SongSheetDetail extends React.Component{
             </div>
         )
     }
-    componentWillMount(){
+    componentDidMount(){
         this.props.getListDetail(this.props.location.state?this.props.location.state.id:24381616)
     }
 }

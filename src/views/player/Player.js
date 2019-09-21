@@ -20,13 +20,14 @@ class Player extends React.Component{
             singer:null,
             songName:null,
             songImg:null,
-            songId:null,
+            songId:0,
             imgs:[],
             singers:[],
             songNames:[],
             index:0,
             loop:true,
-            time:0
+            time:0,
+            totalTime:0
         }
     }
     render() {
@@ -40,8 +41,6 @@ class Player extends React.Component{
             }
         })
         let newLyric=lyric.split("[");
-         let time=Math.floor(this.refs.play?this.refs.play.currentTime:0).toString();
-        let allTime=(this.refs.play?this.refs.play.duration/60:0).toFixed(2).toString();
         return(
             <div className={"player"}>
                 <nav className={"playerNav"}>
@@ -93,7 +92,13 @@ class Player extends React.Component{
                         <i className={"iconfont icon-xinxipt"}></i>
                     </div>
                     <div className={"progress"}>
-                        <span>{time}</span><h3><i></i></h3><span>{allTime}</span>
+                        <span>{this.state.time}</span>
+                        <h3 ref={"progress"}
+                            onMouseMove={this.hander.bind(this)}>
+                        <i ref={"hander"}
+                            onMouseDown={this.hander.bind(this)}
+                            onMouseUp={this.hander.bind(this)}
+                        ></i></h3><span>{this.state.totalTime}</span>
                     </div>
                     <div className={"playerBotton"}>
                         <i className={this.state.loop?"iconfont icon-danquxunhuan1":"iconfont icon--lbxh"} onClick={this.loop.bind(this)}></i>
@@ -106,6 +111,21 @@ class Player extends React.Component{
             </div>
         )
     }
+    hander(e){
+        /*if(e.type==="mousemove"){
+            console.log(e.target)
+
+        }else if(e.type==="mousedown"){
+            console.log(1,e.target)
+            console.log(e.clientX)
+            e.target.onmousemove=()=>{
+                e.target.style.left=e.clientX
+            }
+
+        }else if(e.type==="mouseup"){
+            console.log(2,e.target)
+        }*/
+    }
     loop(){
         this.setState({
             loop:!this.state.loop
@@ -115,16 +135,16 @@ class Player extends React.Component{
         this.refs.play.fastSeek(20)
     }
     play(){
-       console.log( this.refs.play.currentTime)
-       console.log( this.refs.play.duration)
+       console.log( this.refs.play.currentTime);
+       console.log( this.refs.play.duration);
         this.setState({
             play:!this.state.play
         });
         if(this.state.play){
-            this.refs.play.pause()
+            this.refs.play.pause();
             this.refs.img.style.animationPlayState="paused";
         }else{
-            this.refs.play.play()
+            this.refs.play.play();
             this.refs.img.style.animationPlayState = "running";
         }
     }
@@ -149,9 +169,7 @@ class Player extends React.Component{
     getMusicUrl(id){
         this.props.getSongsUrlList(id)
     }
-    componentDidMount() {
-        this.getMusicUrl(this.props.location.state.ids);
-        this.props.getLyricList(this.props.location.state.id);
+    initSongDetail(){
         this.setState({
             singer:this.props.location.state.singer,
             songName:this.props.location.state.songName,
@@ -161,7 +179,25 @@ class Player extends React.Component{
             singers:this.props.location.state.singers,
             songNames:this.props.location.state.songNames,
             songIds:this.props.location.state.ids
-        })
+        });
+
+        let i=this.state.singers.indexOf(this.state.singer)
+
+       this.refs.play.oncanplay=()=>{
+            this.setState({
+                totalTime:Math.floor(this.refs.play.duration)
+            })
+        };
+        setInterval(()=>{
+            this.setState({
+                time:Math.floor(this.refs.play.currentTime)
+            });
+        },1000)
+    }
+    componentDidMount() {
+        this.getMusicUrl(this.props.location.state.ids);
+        this.props.getLyricList(this.props.location.state.id);
+        this.initSongDetail()
     }
 }
 function mapStateToProps(state) {
