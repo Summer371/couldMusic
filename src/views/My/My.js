@@ -4,7 +4,6 @@ import List from './List'
 import CreateList from './createList'
 import Sing from './Sing'
 import '../../assets/style/home/My.css';
-
 export default class My extends React.Component {
     constructor(props) {
         super(props);

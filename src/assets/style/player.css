@@ -5,7 +5,7 @@
 height: 100%;width: 100%;padding: 0;
 }
 .player .playerNav{
-    display: flex;padding-top: 0.1rem;
+    display: flex;padding-top: 0.1rem;padding-left: 0.1rem;
 }
 .player .playerNav .songName{
     font-size: 0.14rem;padding-left: 0.1rem;
@@ -70,7 +70,7 @@ height: 100%;width: 100%;padding: 0;
     width: 100%;display: flex;align-items: center;height: 0.1rem;
 }
 .player .playerBody .progress h3{
-    width: 80%;height: 0.02rem;border: solid 1px grey;position: relative;margin-top: 0.1rem;
+    width: 3rem;height: 0.02rem;border: solid 1px grey;position: relative;margin-top: 0.1rem;
     background: grey;
 }
 .player .playerBody .progress span{
