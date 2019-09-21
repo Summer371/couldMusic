@@ -42,14 +42,10 @@ export default combineReducers({
     playListDetail,
     search,
     multimatch,
-
     singerDetail,
     singer,
     playUrl,
-
-
     myRecentlyPlay,
-
     userDetail
 
 })
