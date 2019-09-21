@@ -13,6 +13,7 @@ import ShowDetails from '../views/discover/station/ShowDetails' //电台二次�
 import Djclassify from '../views/discover/station/Djclassify'//电台分类
 import MyPlayList from '../views/My/myLove' //我的歌单
 import SingerSearch from "../views/Search/singerSearch";//歌手搜索列表
+import SingerDetail from "../views/Search/singerDetail";//歌手详细信息页
 import Search from "../views/Search";
 import SearchList from "../views/Search/searchList";
 import Player from "../views/player/Player";//播放器
@@ -101,6 +102,11 @@ export default [
         path:"/ShowDetails",
         title:"电台二级",
         component:ShowDetails
+    },
+    {
+        path:"/searchDetail",
+        title:"歌手详情",
+        component:SingerDetail
     },
     {
         path:"/",
