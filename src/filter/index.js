@@ -24,6 +24,6 @@ export default {
         return(time.getDate()).toString().padStart(2,"0");
     },
     songTime(v){
-        return Math.floor(v/60)+":"+Math.floor(v%60/60)
+        return Math.floor(v/60)+":"+(Math.round(v%60)>=10?Math.round(v%60):"0"+Math.round(v%60))
     }
 }

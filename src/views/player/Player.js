@@ -91,14 +91,14 @@ class Player extends React.Component{
                         <i className={"iconfont icon-pinglunpt1"}></i>
                         <i className={"iconfont icon-xinxipt"}></i>
                     </div>
-                    <div className={"progress"}>
+                    <div className={"progress"} ref={"long"} >
                         <span>{this.state.time}</span>
-                        <h3 ref={"progress"}
+                        <h3 ref={"progress"} onClick={this.skip.bind(this)}
                             onMouseMove={this.hander.bind(this)}>
                         <i ref={"hander"}
-                            onMouseDown={this.hander.bind(this)}
-                            onMouseUp={this.hander.bind(this)}
-                        ></i></h3><span>{this.state.totalTime}</span>
+                            /*onMouseDown={this.hander.bind(this)}
+                            onMouseUp={this.hander.bind(this)}*/
+                        ></i></h3><span>{this.$filter.songTime(this.state.totalTime)}</span>
                     </div>
                     <div className={"playerBotton"}>
                         <i className={this.state.loop?"iconfont icon-danquxunhuan1":"iconfont icon--lbxh"} onClick={this.loop.bind(this)}></i>
@@ -112,19 +112,19 @@ class Player extends React.Component{
         )
     }
     hander(e){
-        /*if(e.type==="mousemove"){
-            console.log(e.target)
-
-        }else if(e.type==="mousedown"){
-            console.log(1,e.target)
-            console.log(e.clientX)
-            e.target.onmousemove=()=>{
-                e.target.style.left=e.clientX
-            }
-
+        e.stopPropagation();
+        this.refs.hander.addEventListener("mousedown",this.moveHander.bind(this));
+        /*if(e.type==="mousedown"){
+            document.documentElement.addEventListener("mousedown",this.moveHander)
+            console.log("down")
         }else if(e.type==="mouseup"){
-            console.log(2,e.target)
+            console.log("up")
         }*/
+        console.log(e.target)
+    }
+    moveHander(e){
+        console.log("move")
+        this.refs.hander.style.left=e.clientLeft;
     }
     loop(){
         this.setState({
@@ -132,11 +132,10 @@ class Player extends React.Component{
         })
     }
     skip(){
-        this.refs.play.fastSeek(20)
+        this.refs.play.currentTime=this.refs.play.currentTime+5;
+        this.refs.hander.style.left=this.refs.hander.clientLeft+5+"px"
     }
     play(){
-       console.log( this.refs.play.currentTime);
-       console.log( this.refs.play.duration);
         this.setState({
             play:!this.state.play
         });
@@ -156,6 +155,7 @@ class Player extends React.Component{
             songImg:this.state.imgs[index],
             songId:this.state.songIds[index]
         })
+        this.props.getLyricList(this.state.songId);
     }
     nextSong(index){
         index++;
@@ -165,6 +165,7 @@ class Player extends React.Component{
             songImg:this.state.imgs[index],
             songId:this.state.songIds[index]
         })
+        this.props.getLyricList(this.state.songId);
     }
     getMusicUrl(id){
         this.props.getSongsUrlList(id)
@@ -190,7 +191,7 @@ class Player extends React.Component{
         };
         setInterval(()=>{
             this.setState({
-                time:Math.floor(this.refs.play.currentTime)
+                time:this.$filter.songTime(Math.floor(this.refs.play.currentTime))
             });
         },1000)
     }
@@ -203,7 +204,6 @@ class Player extends React.Component{
 function mapStateToProps(state) {
     return {
         songsUrl: state.playUrl.songsUrl,
-        everydaySongs:state.recommend.everydaySongs,
         lyric: state.playUrl.lyric
     }
 }
