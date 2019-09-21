@@ -30,11 +30,11 @@ class ShowDetails extends React.Component {
                         nickname:""
                     }
                 }]
-            }
+            },
         }
     }
     render() {
-        let {ShowDetailsList} = this.props;
+        let {ShowDetailsList}= this.props;
         let TheHostDetailsList=this.state.TheHostDetailsList;
         let arr = [{
             radio: {
@@ -58,11 +58,11 @@ class ShowDetails extends React.Component {
                     <div className={"tounav"}>
                         <div className="nav_header">
                             <i className="iconfont icon-xia" onClick={() => {
-                                this.props.history.push("/station")
+                                this.props.history.go(-1)
                             }
                             }></i>
                             <span onClick={() => {
-                                this.props.history.push("/station")
+                                this.props.history.go(-1)
                             }
                             }>电台</span>
                         </div>
@@ -86,7 +86,19 @@ class ShowDetails extends React.Component {
                                     <div className={"ww_dj"} key={v.id}>
                                         <div className={"w_djcon"}>
                                             <div className={"zdj"}>{v.serialNum}</div>
-                                            <div className={"ydj"}>
+                                            <div className={"ydj"} onClick={
+                                                ()=>{
+                                                    this.props.history.push({
+                                                        pathname:"/ff",
+                                                        state:{
+                                                            id:v.mainSong.id,
+                                                            index:i,
+                                                            ShowDetailsList
+                                                        }
+                                                    })
+                                                }
+
+                                            }>
                                                 <p>{v.name}</p>
                                                 <div>
                                                     <span>{this.getDate(v.createTime)}</span>
@@ -236,10 +248,11 @@ class ShowDetails extends React.Component {
     componentWillUnmount() {
         window.onscroll = null
     }
+
     componentWillReceiveProps(nextProps, nextContext) {
         this.setState(
             {
-                TheHostDetailsList:nextProps.TheHostDetailsList
+                TheHostDetailsList:nextProps.TheHostDetailsList,
             }
         )
     }
@@ -259,6 +272,8 @@ class ShowDetails extends React.Component {
         return (time.getMonth() + 1).toString().padStart(2, "0") + "-" +
             (time.getDate()).toString().padStart(2, "0")
     }
+
+
 }
 
 function mapStateToProps(state) {

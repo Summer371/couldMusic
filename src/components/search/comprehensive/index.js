@@ -16,7 +16,6 @@ import Video from "../video"
 class Comprehensive extends Component{
     render(){
         let {mv} = this.props.multimatchSearchResult;
-
         return(
             <>
                 <ul >
@@ -30,7 +29,6 @@ class Comprehensive extends Component{
                         marginLeft:"0.4rem",
                         color:"lightgreen"
                     }}
-
                     >视频</h3>
                     <Video></Video>
                     <h3 style={{
@@ -39,12 +37,6 @@ class Comprehensive extends Component{
                     }}
                     >歌手</h3>
                     <Singer></Singer>
-
-
-
-
-
-
                 </ul>
             </>
         )

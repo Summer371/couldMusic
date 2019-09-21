@@ -1,6 +1,6 @@
 import React from "react";
-import { Icon } from 'antd';
 import "../assets/style/font/iconfont.css"
+import Drawer1 from './Drawer'
 import {
     Route,
     Switch,
@@ -8,17 +8,15 @@ import {
 } from "react-router-dom";
 import Search from "./Search";
 import Discover from "./discover/Discover";
-
-
-import Video from './Video'
-
 import My from './My/My';
-
 import "../assets/style/home/home.css";
-export default class Home extends React.Component{
+import Video from "./Video"
+class Home extends React.Component{
     constructor(){
         super();
         this.state={
+            visible: false,
+            placement: 'left',
             open:false
         }
     }
@@ -26,10 +24,10 @@ export default class Home extends React.Component{
         return(
             <div className={"home"}>
                     <nav className={"homeNav"}>
-                        <Icon type="menu"/>
-                        <NavLink to={"/my"}>我的</NavLink>
-                        <NavLink to={"/"}>发现</NavLink>
-                        <NavLink to={"/video"}>视频</NavLink>
+                        <Drawer1></Drawer1>
+                        <NavLink to={"/my"} activeStyle={{color:'red',fontWeight:'bold'}}>我的</NavLink>
+                        <NavLink to={"/"} exact activeStyle={{color:'red',fontWeight:'bold'}}>发现</NavLink>
+                        <NavLink to={"/video"} activeStyle={{color:'red',fontWeight:'bold'}}>视频</NavLink>
                         <NavLink to={"/search"}><i className="iconfont">&#xe6cf;</i></NavLink>
                     </nav>
                     <Switch>
@@ -41,5 +39,6 @@ export default class Home extends React.Component{
                     </Switch>
             </div>
         )
-    }
-}
+    };
+};
+export default Home;

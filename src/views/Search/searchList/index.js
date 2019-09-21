@@ -29,21 +29,20 @@ class SearchList extends Component{
     render(){
         const {multimatchSearchResult,searchResult2,searchDefault} = this.props;
         let keyword =localStorage.keyValue ||searchDefault;
-
         return(
             <Fragment>
                 <header className="search-header">
                     <div className="search-back"  onClick={(e)=>{
                         e.stopPropagation();
                         this.props.history.push({
-                            pathname:"/",
+                            pathname:"/search"
                         })
                     }}>
                         <i className="iconfont">&#xe501;</i>
                     </div>
                     <div className="search-song">
                         <input type="text" ref={"keyword"} onKeyUp={()=>{
-                            this.props.getSearchResult(this.refs.keyword.value)
+                            this.props.getSearchResult2(this.refs.keyword.value)
                         }} placeholder={keyword} />
                     </div>
                     <div className="search-singer">
@@ -57,7 +56,7 @@ class SearchList extends Component{
                                 <li key={i} onClick={()=>{
                                     this.refs.search.style.display="none"
                                     this.props.history.push({
-                                        pathname:"/searchList/",
+                                        pathname:"/searchList/Complete",
                                         keyword:v.name
                                     })
                                 }}>
@@ -85,7 +84,6 @@ class SearchList extends Component{
         )
     }
     componentWillMount(){
-
         this.props.getSearchDefault();
         this.props.getMultimatch(localStorage.keyValue);
     }

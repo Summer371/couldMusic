@@ -42,9 +42,9 @@ class Song extends Component{
                                            <i key={i+5}>SQ</i><b>{v.artistName}-<span key={i+6}>{v.name}</span></b>
                                        </div>
                                    </div>
-                                   <div  key={i+7}className="song-message-i">
-                                       <i  key={i+8}className={"iconfont"}>&#xe618;</i>
-                                       <i  key={i+9}className={"iconfont"}>&#xe504;</i>
+                                   <div  key={i+7} className="song-message-i">
+                                       <i  key={i+8} className={"iconfont"}>&#xe618;</i>
+                                       <i  key={i+9} className={"iconfont"}>&#xe504;</i>
                                    </div>
                                </li>
                            )

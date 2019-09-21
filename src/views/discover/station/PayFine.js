@@ -17,7 +17,7 @@ class PayFine extends React.Component {
             <Fragment>
                 <header className="payfine">
                     <div className="go_back">
-                        <div className="n_go_back">
+                        <div className="n_go_back" >
                             <i className="iconfont icon-xia" onClick={()=>{
                             this.props.history.push("/station")}
                             }></i>
@@ -29,7 +29,15 @@ class PayFine extends React.Component {
                 <section className={"section"}>
                     {
                         PayFineList.map(v=>(
-                            <div className="n_content" key={v.id}>
+                            <div className="n_content" key={v.id} onClick={() => {
+                                this.props.history.push({
+                                    pathname: "/ShowDetails",
+                                    state: {
+                                        id: v.id,
+                                        img: v.picUrl
+                                    }
+                                })
+                            }}>
                                 <div className="ns_content">
                                     <img src={v.picUrl} alt=""/>
                                 </div>

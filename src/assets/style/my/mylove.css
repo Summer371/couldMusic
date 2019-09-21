@@ -27,6 +27,7 @@
 .playListPic .num{position: absolute;color: white;left:0.55rem;}
 .playListPic .picRight{margin-left: 0.14rem}
 .playListPic .picRight .logo{display: inline-block;height: 0.2rem;width: 0.2rem;border-radius: 0.1rem }
+.playListPic .picRight .size{font-size: 0.1rem}
 .playDoList{
     display: flex;flex-direction: row;clear: both;height: 0.6rem;justify-content: space-around;
     line-height: 0.26rem;margin-top: 0.2rem;background: #003333;color: white;

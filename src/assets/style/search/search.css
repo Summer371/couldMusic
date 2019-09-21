@@ -127,18 +127,30 @@ body .song-list{
 }
 .song-detail-detail{
     height:0.46rem;
-    width:60%;
+    width:90%;
     position:relative;
 }
-.song-detail-detail >h3{
+.song-detail-detail>h3{
     color:#313131;
     font-family:'楷体';
     height:0.21rem;
-
+    position: relative;
+}
+.song-detail:nth-child(2) .song-detail-detail >h3{
+    font-weight: bolder;
+}
+.song-detail:nth-child(3) .song-detail-detail >h3{
+    font-weight: bolder;
+}
+.song-detail:nth-child(4) .song-detail-detail >h3{
+    font-weight: bolder;
 }
 .song-detail-detail h3>b{
     color:#ccc;
     font-size:0.10rem;
+    position: absolute;
+    right:0.3rem;
+
 }
 .song-detail-detail h3>i{
     font-family: "Georgia";

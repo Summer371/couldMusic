@@ -46,11 +46,11 @@ export default {
             dispatch(stateList(list))
         }
     },
-    todayRecommend(num=0){//电台推荐
+    todayRecommend(num=0,limit=3){//电台推荐
         return async (dispatch)=>{
             // const {data}=await axios.get("/dj/today/perfered")
             // let list=data.data
-            const {data}=await axios.get("/dj/hot?limit=3&offset="+num+"")
+            const {data}=await axios.get("/dj/hot?limit="+limit+"&offset="+num+"")
             let list=data.djRadios
             dispatch(todayRecommend(list))
         }

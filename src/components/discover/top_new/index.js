@@ -15,7 +15,6 @@ export default class Top_New extends React.Component{
                     <Route path={"/discover/newSong"} component={NewSong}></Route>
                     <Route path={"/"} component={Topalbum}></Route>
                 </Switch>
-
             </div>
         )
     }

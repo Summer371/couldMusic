@@ -1,0 +1,134 @@
+*{
+    padding: 0;margin: 0;
+}
+.playery{
+    height: 100%;width: 100%;padding: 0;
+    background:rgba(0,0,0,0.5)
+}
+
+.go_backy{
+    color:#FFF;
+    height:0.54rem;
+    line-height:0.54rem;
+    font-size: 0.16rem;
+}
+.n_go_backy{
+    height:0.54rem;
+    line-height:0.54rem;
+}
+.go_backy span{
+    float: left;
+    margin-left:1vw;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    display:block;
+    width:80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.go_backy i{
+    float: left;
+    margin-left:2.962vw;
+    margin-right:0.18rem;
+    font-size: 0.16rem;
+}
+
+.playery .rotatee{
+    height: 60%;display: flex;justify-content: center;align-items: center;
+}
+.playery .rotatee .rotateimg{
+    position: absolute;
+    top:20%;
+    left:23%;
+    width: 2rem;height:2rem;background: black;border-radius: 50%;
+    display: flex;justify-content: center;align-items: center;margin: 0 auto;
+}
+
+
+.playery .rotatee .rotateimg img{
+    width: 70%;border-radius: 50%;
+}
+.playery .rotatee .rotateimg .myimg{
+    animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(359deg)
+    }
+}
+.playery .playerBodyy{
+    width: 100%;
+}
+.playery .playerBodyy{
+    width:100%;
+    overflow: hidden;
+}
+.playery .playerBodyy audio{
+    display: block;
+    backgroun:rgba(0,0,0,0.5)
+}
+.playery .playerBodyy .playerBottony {
+    display: flex;justify-content: space-around;align-items: center;position: absolute;bottom: 0;width: 100%;
+}
+.playery .playerBodyy .playerBottony i{
+    font-size: 0.3rem;color: #FFF;
+}
+.playery .playerBodyy .playerBottony .icon-bofang{
+    font-size: 0.5rem;
+}
+
+#off {
+    width:0.45rem;
+    height:0.45rem;
+    display: block;
+}
+#off i{
+    width:0.4rem;
+    height:0.4rem;
+    display: block;
+    font-size:0.4rem;
+    line-height: 0.4rem;
+    /*border:0.01rem solid red;*/
+    /*border-radius: 50%;*/
+}
+
+.progressmusic{
+    padding:0 0.1rem;
+    position: absolute;
+    bottom:0.5rem;
+    height: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    line-height: 0.4rem;
+}
+.progressmusic .musicjd{
+    margin-top:5%;
+    height:0.02rem;
+    display: block;
+    width:70%;
+    border:0.05rem;
+    background:rgba(0,0,0,0.5);
+    position: relative;
+}
+.progressmusic .musicjd span{
+    display: block;
+    height:0.08rem;
+    width:0.08rem;
+    background:#000;
+    border-radius: 50%;
+    margin-top:-0.03rem;
+    position: absolute;
+    left:0
+}
+.progressmusic .musicjd .jzcd{
+    display: block;
+    height:0.02rem;
+    background:#000;
+    position: absolute;
+    left:0
+}

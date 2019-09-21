@@ -134,12 +134,16 @@ img{
 .w_djyou{
     line-height: 0.6rem;
 }
+.w_djcon{
+    width:90%;
+}
 .zdj{
     line-height: 0.6rem;
     font-size: 0.12rem;
     color:#bcbcbc;
 }
 .ydj{
+    width:100%;
     margin-left:0.16rem;
 }
 .ydj p{
@@ -147,7 +151,15 @@ img{
     margin-bottom:0;
     height:0.3rem;
     font-size:0.14rem;
-    line-height: 0.5rem;
+    line-height: 0.4rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    display:block;
+    width:80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
 }
 .ydj div span{
     font-size: 0.12rem;

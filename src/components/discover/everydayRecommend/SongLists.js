@@ -1,12 +1,12 @@
 import React from "react";
 class SongLists extends React.Component{
     render(){
-        const {everydaySongs}=this.props;
+        const {songSheetDetial}=this.props;
         const ids=[];
         const imgs=[];
         const singers=[];
         const songNames=[];
-        everydaySongs.map(v=>{
+        songSheetDetial.map(v=>{
             ids.push(v.id);
             imgs.push(v.album.picUrl);
             singers.push(v.artists[0].name);
@@ -16,7 +16,7 @@ class SongLists extends React.Component{
             <div className={"songLists"}>
                 <ul>
                     {
-                        everydaySongs.map((v,i)=>{
+                        songSheetDetial.map((v,i)=>{
                             return(
                                 <li key={i}>
                                     <div className={"songListsLeft"}>
@@ -30,6 +30,7 @@ class SongLists extends React.Component{
                                         <i className={"iconfont icon-zanting-wangyiicon"} onClick={()=>{
                                             this.props.history.push({
                                                 pathname:"/player",
+                                                backname:this.props.location.pathname,
                                                 state:{
                                                     id:v.id,
                                                     ids,
@@ -38,7 +39,8 @@ class SongLists extends React.Component{
                                                     singer:v.artists[0].name,
                                                     singers,
                                                     songName:v.name,
-                                                    songNames
+                                                    songNames,
+                                                    songSheetDetial
                                                 }
                                             });
                                         }}></i>

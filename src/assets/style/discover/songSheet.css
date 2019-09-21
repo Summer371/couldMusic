@@ -4,6 +4,9 @@
 .songSheet .songSheetNav{
     display: flex;justify-content: space-between;padding: 0 0 0.1rem 0;
 }
+.songSheet .songSheetNav a{
+    color: black;
+}
 .songSheet .songSheetSwiper{
     padding:0.2rem 0 0.1rem 0;
 }

@@ -10,7 +10,15 @@ class RecommendRankingList extends React.Component{
                         rankingListDetail.map((v,i)=>{
                             if(!v.ToplistType){
                                 return(
-                                    <li key={i}>
+                                    <li key={i} onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/songSheetDetail",
+                                            backname:this.props.location.pathname,
+                                            state:{
+                                                id:v.id
+                                            }
+                                        })
+                                    }}>
                                         <span>{v.updateFrequency}</span>
                                         <img src={v.coverImgUrl} alt=""/>
                                         <p>{v.name}</p>
