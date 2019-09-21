@@ -28,7 +28,8 @@ class Player extends React.Component{
             loop:true,
             time:0,
             totalTime:0
-        }
+        };
+        this.timer=null
     }
     render() {
         const {songsUrl,lyric}=this.props;
@@ -132,8 +133,11 @@ class Player extends React.Component{
         })
     }
     skip(){
-        this.refs.play.currentTime=this.refs.play.currentTime+5;
-        this.refs.hander.style.left=this.refs.hander.clientLeft+5+"px"
+        let {currentTime,duration}=this.refs.play;
+        let width=this.refs.progress.style.width;
+        console.log(width)
+        this.refs.play.currentTime=currentTime+5;
+        this.refs.hander.style.left=this.refs.hander.offsetLeft+20+"px"
     }
     play(){
         this.setState({
@@ -153,8 +157,9 @@ class Player extends React.Component{
             singer:this.state.singers[index],
             songName:this.state.songNames[index],
             songImg:this.state.imgs[index],
-            songId:this.state.songIds[index]
-        })
+            songId:this.state.songIds[index],
+            isLyric:false
+        });
         this.props.getLyricList(this.state.songId);
     }
     nextSong(index){
@@ -163,8 +168,9 @@ class Player extends React.Component{
             singer:this.state.singers[index],
             songName:this.state.songNames[index],
             songImg:this.state.imgs[index],
-            songId:this.state.songIds[index]
-        })
+            songId:this.state.songIds[index],
+            isLyric:false
+        });
         this.props.getLyricList(this.state.songId);
     }
     getMusicUrl(id){
@@ -189,7 +195,7 @@ class Player extends React.Component{
                 totalTime:Math.floor(this.refs.play.duration)
             })
         };
-        setInterval(()=>{
+        this.timer=setInterval(()=>{
             this.setState({
                 time:this.$filter.songTime(Math.floor(this.refs.play.currentTime))
             });
@@ -199,6 +205,9 @@ class Player extends React.Component{
         this.getMusicUrl(this.props.location.state.ids);
         this.props.getLyricList(this.props.location.state.id);
         this.initSongDetail()
+    }
+    componentWillUnmount() {
+        clearInterval(this.timer)
     }
 }
 function mapStateToProps(state) {
