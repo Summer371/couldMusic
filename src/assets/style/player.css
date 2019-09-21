@@ -5,7 +5,7 @@
 height: 100%;width: 100%;padding: 0;
 }
 .player .playerNav{
-    display: flex;padding-top: 0.1rem;
+    display: flex;padding-top: 0.1rem;padding-left: 0.1rem;
 }
 .player .playerNav .songName{
     font-size: 0.14rem;padding-left: 0.1rem;

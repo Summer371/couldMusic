@@ -48,7 +48,7 @@ class Player extends React.Component{
                 <nav className={"playerNav"}>
                     <i className={"iconfont icon-fanhuipt"} onClick={() => this.props.history.go(-1)}/>
                     <div className={"songName"}>
-                        <span>{this.state.songName}</span>
+                        <span>{this.state.songName}</span>--
                         <span>{this.state.singer}</span>
                     </div>
                 </nav>
