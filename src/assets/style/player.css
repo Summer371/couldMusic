@@ -4,16 +4,28 @@
 .player{
 height: 100%;width: 100%;padding: 0;
 }
+.player .playerNav{
+    display: flex;padding-top: 0.1rem;
+}
+.player .playerNav .songName{
+    font-size: 0.14rem;padding-left: 0.1rem;
+}
+.player .icon-fenxiangpt{
+    position: absolute;right: 0.1rem;font-size: 0.3rem;top:0.3rem;
+}
+ .player .ant-page-header{
+     padding-bottom: 0;padding-top: 0.1rem;
+ }
 .player .rotate{
-    height: 60%;display: flex;justify-content: center;align-items: center;
+    height: 75%;display: flex;justify-content: center;text-align: center;
 }
-.player .rotate div{
-    width: 2.4rem;height:2.4rem;background: black;border-radius: 50%;
-    display: flex;justify-content: center;align-items: center;margin: 0 auto;
-    animation: rotate 5s linear infinite;
+.player .rotate .img{
+    width: 2.4rem;height:2.4rem;background: url("../img/playerbk.png");border-radius: 50%;
+    display: flex;justify-content: center;align-items: center;margin: 0 auto;margin-top: 15%;
+    animation: rotate 6s linear infinite;
 }
-.player .rotate div img{
-    width: 70%;border-radius: 50%;
+.player .rotate .img  img{
+    width: 1.8rem;height:1.8rem;border-radius: 50%;
 }
 @keyframes rotate {
     from {
@@ -33,11 +45,38 @@ height: 100%;width: 100%;padding: 0;
     display: flex;justify-content: space-around;align-items: center;position: absolute;bottom: 0;width: 100%;
 }
 .player .playerBody .playerBotton i{
-    font-size: 0.3rem;color: red;
+    font-size: 0.3rem;
 }
  .player .playerBody .playerBotton .icon-bofang{
      font-size: 0.5rem;
  }
 .player .playerBody .playerBotton .icon-zanting{
     font-size: 0.5rem;
+}
+.player .playerBody .likeIcon{
+    display: flex;justify-content: space-around;width: 80%;margin: 0 auto;align-items: center;
+}
+.player .playerBody .likeIcon i{
+    font-size: 0.3rem;
+}
+.player .lyric{
+    height: 100%;overflow: scroll;text-align: center;
+}
+.player .lyric div h5{
+    margin: 0 ;width: 3.75rem;
+}
+
+.player .playerBody .progress{
+    width: 100%;display: flex;align-items: center;height: 0.1rem;
+}
+.player .playerBody .progress h3{
+    width: 80%;height: 0.02rem;border: solid 1px grey;position: relative;margin-top: 0.1rem;
+    background: grey;
+}
+.player .playerBody .progress span{
+    width: 10%;height: 0.1rem;line-height: 0.2rem;text-align: center;
+}
+.player .playerBody .progress h3 i{
+    width: 0.1rem;height: 0.1rem;background: black;border-radius: 50%;display: block;
+    position: absolute;top:-0.05rem;
 }

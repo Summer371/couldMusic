@@ -16,7 +16,8 @@ export default class Password extends React.Component{
         this.$axios.post(`/login/cellphone?phone=${localStorage.telNum}&password=${this.refs.password.state.value}`).then(({data})=>{
             console.log(data)
             if(data.account.id){
-                    this.props.history.push("/search")
+                localStorage.wyId=data.account.id;
+                    this.props.history.push("/")
             }
         })
    }

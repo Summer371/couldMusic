@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    PageHeader
+    Progress
 } from "antd";
 import {
     connect
@@ -14,34 +14,94 @@ class Player extends React.Component{
     constructor(){
         super();
         this.state={
-            play:true
+            play:true,
+            isLyric:false,
+            percent:1,
+            singer:null,
+            songName:null,
+            songImg:null,
+            songId:0,
+            imgs:[],
+            singers:[],
+            songNames:[],
+            index:0,
+            loop:true,
+            time:0,
+            totalTime:0
         }
     }
     render() {
-        const {songsUrl}=this.props;
+        const {songsUrl,lyric}=this.props;
         let songUrl={};
         let index=0;
          songsUrl.map((v,i)=>{
-            if(v.id===this.props.location.state.id){
+            if(v.id===this.state.songId){
                     songUrl=v;
                     index=i;
             }
         })
+        let newLyric=lyric.split("[");
         return(
             <div className={"player"}>
-                <PageHeader
-                    onBack={() =>  this.props.history.push("/everydayRecommend")}
-                    title={this.props.location.state.songName}
-                    subTitle={this.props.location.state.singer} />
-                <div className={"rotate"} ref={"rotateImg"}>
-                    <div>
-                        <img src={this.props.location.state.img} alt=""/>
+                <nav className={"playerNav"}>
+                    <i className={"iconfont icon-fanhuipt"} onClick={() => this.props.history.go(-1)}/>
+                    <div className={"songName"}>
+                        <span>{this.state.songName}</span>
+                        <span>{this.state.singer}</span>
+                    </div>
+                </nav>
+                <i className={"iconfont icon-fenxiangpt"}></i>
+                <div className={"rotate"} ref={"rotateImg"} onClick={()=>{
+                    this.setState({
+                        isLyric:!this.state.isLyric
+                    })
+                    if(this.state.isLyric){
+                        this.refs.img.style.opacity="0";
+                        this.refs.img.style.position="absolute";
+                        this.refs.lyric.style.display="block";
+                    }else{
+                        this.refs.img.style.opacity="1";
+                        this.refs.lyric.style.display="none";
+                    }
+                }}>
+                    <div className={"img"} ref={"img"}>
+                        <img src={this.state.songImg} alt=""/>
+                    </div>
+                    <div className={"lyric"} style={{display:"none"}} ref={"lyric"}>
+                        <div>
+                            {
+                                newLyric.map((v,i)=>{
+                                    return(
+                                        <h5 key={i}>
+                                            {v}
+                                        </h5>
+                                    )
+                                })
+                            }
+                        </div>
+
                     </div>
                 </div>
                 <div className={"playerBody"}>
-                    <audio ref={"play"} src={songUrl.url}  loop={"loop"} autoPlay={true}></audio>
+                    <audio ref={"play"} src={songUrl.url}  loop={this.state.true} autoPlay={true}></audio>
+                    <div className={"likeIcon"}>
+                        <i className={"iconfont icon-xihuan-kongpt-wangyiicon1"}></i>
+                        <i className={"iconfont icon-xiazaipt-wangyiicon"}></i>
+                        <i className={"iconfont icon-jingyunyinxiaopt-wangyiicon"}></i>
+                        <i className={"iconfont icon-pinglunpt1"}></i>
+                        <i className={"iconfont icon-xinxipt"}></i>
+                    </div>
+                    <div className={"progress"} ref={"long"} >
+                        <span>{this.state.time}</span>
+                        <h3 ref={"progress"} onClick={this.skip.bind(this)}
+                            onMouseMove={this.hander.bind(this)}>
+                        <i ref={"hander"}
+                            /*onMouseDown={this.hander.bind(this)}
+                            onMouseUp={this.hander.bind(this)}*/
+                        ></i></h3><span>{this.$filter.songTime(this.state.totalTime)}</span>
+                    </div>
                     <div className={"playerBotton"}>
-                        <i className={"iconfont icon-xihuan-kongpt"}></i>
+                        <i className={this.state.loop?"iconfont icon-danquxunhuan1":"iconfont icon--lbxh"} onClick={this.loop.bind(this)}></i>
                         <i className={"iconfont icon-shangyiqu"} onClick={this.lastSong.bind(this,index)}></i>
                         <i className={this.state.play?"iconfont icon-bofang":"iconfont icon-zanting"} onClick={this.play.bind(this)}></i>
                         <i className={"iconfont icon-xiayiqu"} onClick={this.nextSong.bind(this,index)}></i>
@@ -51,35 +111,100 @@ class Player extends React.Component{
             </div>
         )
     }
+    hander(e){
+        e.stopPropagation();
+        this.refs.hander.addEventListener("mousedown",this.moveHander.bind(this));
+        /*if(e.type==="mousedown"){
+            document.documentElement.addEventListener("mousedown",this.moveHander)
+            console.log("down")
+        }else if(e.type==="mouseup"){
+            console.log("up")
+        }*/
+        console.log(e.target)
+    }
+    moveHander(e){
+        console.log("move")
+        this.refs.hander.style.left=e.clientLeft;
+    }
+    loop(){
+        this.setState({
+            loop:!this.state.loop
+        })
+    }
+    skip(){
+        this.refs.play.currentTime=this.refs.play.currentTime+5;
+        this.refs.hander.style.left=this.refs.hander.clientLeft+5+"px"
+    }
     play(){
         this.setState({
             play:!this.state.play
         });
         if(this.state.play){
-            this.refs.play.pause()
+            this.refs.play.pause();
+            this.refs.img.style.animationPlayState="paused";
         }else{
-            this.refs.play.play()
+            this.refs.play.play();
+            this.refs.img.style.animationPlayState = "running";
         }
-
-
     }
     lastSong(index){
         index--;
+        this.setState({
+            singer:this.state.singers[index],
+            songName:this.state.songNames[index],
+            songImg:this.state.imgs[index],
+            songId:this.state.songIds[index]
+        })
+        this.props.getLyricList(this.state.songId);
     }
     nextSong(index){
         index++;
+        this.setState({
+            singer:this.state.singers[index],
+            songName:this.state.songNames[index],
+            songImg:this.state.imgs[index],
+            songId:this.state.songIds[index]
+        })
+        this.props.getLyricList(this.state.songId);
     }
-    playMusic(id){
+    getMusicUrl(id){
         this.props.getSongsUrlList(id)
     }
+    initSongDetail(){
+        this.setState({
+            singer:this.props.location.state.singer,
+            songName:this.props.location.state.songName,
+            songImg:this.props.location.state.img,
+            songId:this.props.location.state.id,
+            imgs:this.props.location.state.imgs,
+            singers:this.props.location.state.singers,
+            songNames:this.props.location.state.songNames,
+            songIds:this.props.location.state.ids
+        });
+
+        let i=this.state.singers.indexOf(this.state.singer)
+
+       this.refs.play.oncanplay=()=>{
+            this.setState({
+                totalTime:Math.floor(this.refs.play.duration)
+            })
+        };
+        setInterval(()=>{
+            this.setState({
+                time:this.$filter.songTime(Math.floor(this.refs.play.currentTime))
+            });
+        },1000)
+    }
     componentDidMount() {
-        this.playMusic(this.props.location.state.ids)
+        this.getMusicUrl(this.props.location.state.ids);
+        this.props.getLyricList(this.props.location.state.id);
+        this.initSongDetail()
     }
 }
 function mapStateToProps(state) {
     return {
         songsUrl: state.playUrl.songsUrl,
-        everydaySongs:state.recommend.everydaySongs
+        lyric: state.playUrl.lyric
     }
 }
 

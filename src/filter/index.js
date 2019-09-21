@@ -14,5 +14,16 @@ export default {
             (time.getHours()).toString().padStart(2,"0")+":"+
             (time.getMinutes()).toString().padStart(2,"0")+":"+
             (time.getSeconds()).toString().padStart(2,"0");
+    },
+    dateMonth(v){
+        const time = new Date(v);
+        return(time.getMonth()+1).toString().padStart(2,"0");
+    },
+    dateDay(v){
+        const time = new Date(v);
+        return(time.getDate()).toString().padStart(2,"0");
+    },
+    songTime(v){
+        return Math.floor(v/60)+":"+(Math.round(v%60)>=10?Math.round(v%60):"0"+Math.round(v%60))
     }
 }

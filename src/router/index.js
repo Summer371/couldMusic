@@ -19,111 +19,117 @@ import SingerSearch from "../views/Search/singerSearch";//歌手搜索列表
 import Search from "../views/Search";
 import SearchList from "../views/Search/searchList";
 import Player from "../views/player/Player";//播放器
+import SongSheetDetail from "../views/discover/songSheet/SongSheetDetail";//歌单详情
 export default [
     {
-        path:"/loginByTel",
-        title:"手机号登陆",
-        component:LoginByTel
+        path: "/loginByTel",
+        title: "手机号登陆",
+        component: LoginByTel
     },
     {
-        path:"/login",
-        title:"登陆",
-        component:Login
+        path: "/login",
+        title: "登陆",
+        component: Login
     },
     {
-        path:"/checkNum",
-        title:"验证码",
-        component:CheckNum
+        path: "/checkNum",
+        title: "验证码",
+        component: CheckNum
     },
     {
-        path:"/password",
-        title:"登陆",
-        component:Password
+        path: "/password",
+        title: "登陆",
+        component: Password
     },
     {
-        path:"/songSheet",
-        title:"歌单",
-        component:SongSheet
+        path: "/songSheet",
+        title: "歌单",
+        component: SongSheet
     },
     {
-        path:"/ranking",
-        title:"排行榜",
-        component:Ranking
+        path: "/ranking",
+        title: "排行榜",
+        component: Ranking
     },
     {
-        path:"/everydayRecommend",
-        title:"每日推荐",
-        component:EverydayRecommend
+        path: "/everydayRecommend",
+        title: "每日推荐",
+        component: EverydayRecommend
     },
     {
-        path:"/station",
-        title:"电台",
-        component:Station
+        path: "/station",
+        title: "电台",
+        component: Station
     },
     {
-        path:"/PayFine",
-        title:"付费精品",
-        component:PayFine
+        path: "/PayFine",
+        title: "付费精品",
+        component: PayFine
     },
     {
-        path:"/Djclassify",
-        title:"电台分类",
-        component:Djclassify
-    },
-  {
-        path:"/search",
-        title:"搜索",
-        component:Search
+        path: "/Djclassify",
+        title: "电台分类",
+        component: Djclassify
     },
     {
-        path:"/searchList",
-        title:"搜索结果",
-        component:SearchList
+        path: "/search",
+        title: "搜索",
+        component: Search
     },
     {
-        path:"/singer",
-        title:"歌手搜索",
-        component:SingerSearch
+        path: "/searchList",
+        title: "搜索结果",
+        component: SearchList
     },
     {
-        path:"/myMusic",
-        title:"我喜欢的",
-        component:MyPlayList
+        path: "/singer",
+        title: "歌手搜索",
+        component: SingerSearch
     },
     {
-        path:"/player",
-        title:"播放器",
-        component:Player
+        path: "/myMusic",
+        title: "我喜欢的",
+        component: MyPlayList
     },
     {
-        path:"/DJHome",
-        title:"电台排行",
-        component:DJHome
+        path: "/player",
+        title: "播放器",
+        component: Player
     },
     {
-        path:"/ShowDetails",
-        title:"电台二级",
-        component:ShowDetails
+        path: "/DJHome",
+        title: "电台排行",
+        component: DJHome
     },
     {
-        path:'/myRecentlyPlay',
-        title:'最近播放',
-        component:MyRecentlyPlay
+        path: "/ShowDetails",
+        title: "电台二级",
+        component: ShowDetails
     },
     {
-        path:'/localmusic',
-        title:'本地音乐',
-        component:LocalMusic
+
+        path: "/songSheetDetail",
+        title: "歌单详情",
+        component: SongSheetDetail
+    }, {
+        path: '/myRecentlyPlay',
+        title: '最近播放',
+        component: MyRecentlyPlay
     },
     {
-        path:'/download',
-        title:'下载管理',
-        component:Download
+        path: '/localmusic',
+        title: '本地音乐',
+        component: LocalMusic
     },
     {
-        path:"/",
-        title:"主页",
-        component:Home
+        path: '/download',
+        title: '下载管理',
+        component: Download
+    },
+    {
+        path: "/",
+        title: "主页",
+        component: Home
     }
 
 ]
