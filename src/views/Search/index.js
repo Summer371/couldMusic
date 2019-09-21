@@ -28,6 +28,7 @@ class Search extends Component{
                 <div className="search-song">
                 <input type="text" ref={"keyword"} onKeyUp={(e)=>{
                     let key=this.refs.keyword.value || searchDefault;
+
                     if(e.keyCode===13){
                         localStorage.keyValue=key;
                         this.props.history.push({
@@ -50,12 +51,11 @@ class Search extends Component{
                         searchResult.map((v,i)=>{
                             return (
                                 <li key={i} onClick={()=>{
-
                                     this.refs.result.style.display="none";
                                     localStorage.keyValue=v.name;
                                     searchResult=[];
                                     this.props.history.push({
-                                        pathname:"/searchList/Complete",
+                                        pathname:"/searchList/Complete/",
                                     })
                                 }}>
                                     <i className={"iconfont"}>&#xe668;</i>{v.name}
@@ -80,10 +80,12 @@ class Search extends Component{
                     <h3>热搜榜</h3>
                     {searchHot.map((v,i)=> {
                         return (
-                            <li key={i} className="song-detail">
+                            <li key={i} className="song-detail" onClick={()=>{
+
+                            }}>
                                 <span key={i+1}>{i+1}</span>
                                 <div key={i+2} className="song-detail-detail">
-                                    <h3 key={i+3}>{v.searchWord} <b key={i+4}>{v.score}</b>   <i key={i+6} style={{color:v.iconType===1?"lightred":"lightgreen"}}>{v.iconType===0?"":v.iconType===1?"HOT":"NEW"}</i></h3>
+                                    <h3 key={i+3}>{v.searchWord}    <i key={i+6} style={{color:v.iconType===1?"lightred":"lightgreen"}}>{v.iconType===0?"":v.iconType===1?"HOT":"NEW"}</i><b key={i+4}>{v.score}</b></h3>
                                     <p key={i+5}>{v.content}</p>
                                 </div>
                             </li>

@@ -6,6 +6,15 @@ export default {
         }
         return  num+"万"
     },
+    djCount(n) {
+        let num = n;
+        if (num > 10000) {
+            num = parseInt(n / 1000)
+            return num / 10 + "万"
+        } else {
+            return num
+        }
+    },
     date(v){
         const time = new Date(v);
         return time.getFullYear()+"-"+
