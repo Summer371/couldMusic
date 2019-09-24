@@ -28,7 +28,8 @@ class Player extends React.Component{
             index:0,
             loop:true,
             time:0,
-            totalTime:0
+            totalTime:0,
+            nextTime:Date.now()
         };
         this.timer=null
     }
@@ -173,14 +174,11 @@ class Player extends React.Component{
             songNames:this.props.location.state.songNames,
             songIds:this.props.location.state.ids
         });
-
-        let i=this.state.singers.indexOf(this.state.singer);
-
-
         let width=document.body.clientWidth*0.8;
        this.refs.play.oncanplay=()=>{
             this.setState({
-                totalTime:Math.floor(this.refs.play.duration)
+                totalTime:Math.floor(this.refs.play.duration),
+                nextTime:Date.now()
             })
         };
         this.timer=setInterval(()=>{
@@ -191,12 +189,11 @@ class Player extends React.Component{
             let precent =currentTime/duration;
             this.refs.hander.style.left=width*precent-5+"px";
         },1000)
-        console.log(i)
     }
     componentDidMount() {
         this.getMusicUrl(this.props.location.state.ids);
         this.props.getLyricList(this.props.location.state.id);
-        this.initSongDetail()
+        this.initSongDetail();
     }
     componentWillUnmount() {
         clearInterval(this.timer)

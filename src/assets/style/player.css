@@ -22,7 +22,7 @@ height: 100%;width: 100%;padding: 0;
 .player .rotate .img{
     width: 2.4rem;height:2.4rem;background: url("../img/playerbk.png");border-radius: 50%;
     display: flex;justify-content: center;align-items: center;margin: 0 auto;margin-top: 15%;
-    animation: rotate 6s linear infinite;
+    animation: rotate 8s linear infinite;
 }
 .player .rotate .img  img{
     width: 1.8rem;height:1.8rem;border-radius: 50%;

@@ -28,7 +28,8 @@
     line-height:0.22rem;
 }
 .m-style{
-    margin:0.08rem 0;
+    margin:0.08rem 0;width: 50%;
+    display: flex;justify-content: center;align-items: center;flex-direction: column;
 }
 .m-style .m-img{
     height:0.9rem;
@@ -56,7 +57,7 @@
 }
 .m-singname{
     margin-top:0.05rem;
-    font-size:0.13rem;
+    font-size:0.10rem;
     color:#000000;
     width:1.52rem;
 }
@@ -67,4 +68,16 @@
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
+}
+.allMvList{
+}
+.allMvList ul li{
+    display: flex;flex-direction: column;justify-content: center;align-items: center;
+    position: relative;width: 80%;margin: 0 auto;
+}
+.allMvList ul li img{
+    width: 100%;border-radius: 0.1rem;
+}
+.allMvList ul li span{
+    position: absolute;left: 0.1rem;bottom: 0.6rem;color: white;
 }

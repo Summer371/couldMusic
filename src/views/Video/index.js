@@ -2,7 +2,6 @@ import React from "react"
 import Tv from "./recommend/index"
 import Mv from "./mv/index"
 import {
-    BrowserRouter as Router,
     Route,
     NavLink,
     Switch
@@ -14,7 +13,7 @@ class Video extends React.Component{
             <div>
                 <div className={"V-list"}>
                     <>
-                        <NavLink className={"v-recommend"}to={"/"} activeStyle={{color:"red"}} exact>推荐</NavLink>
+                        <NavLink className={"v-recommend"}to={"/video"} exact activeStyle={{color:"red"}} exact>推荐</NavLink>
                         <NavLink className={"v-recommend"}to={"/video/mv"} activeStyle={{color:"red"}}>MV</NavLink>
                         <NavLink className={"v-recommend"}to={"/now"} activeStyle={{color:"red"}}>现场</NavLink>
                         <NavLink className={"v-recommend"}to={"/dancer"} activeStyle={{color:"red"}}>舞蹈</NavLink>
@@ -24,7 +23,7 @@ class Video extends React.Component{
                         <Route path={"/video/mv"} component={Mv}></Route>
                         <Route path={"/dancer"} component={""}></Route>
                         <Route path={"/now"} component={""}></Route>
-                        <Route path={"/"} component={""}></Route>
+                        <Route path={"/video"} component={Tv}></Route>
                     </Switch>
         </div>
     )
