@@ -31,11 +31,17 @@ class ShowDetails extends React.Component {
                     }
                 }]
             },
+            ShowDetailsList:[{
+                serialNum:'',
+                name:'',
+                createTime:'',
+                listenerCount:''
+            }]
         }
     }
     render() {
-        let {ShowDetailsList}= this.props;
         let TheHostDetailsList=this.state.TheHostDetailsList;
+        let ShowDetailsList=this.state.ShowDetailsList;
         let arr = [{
             radio: {
                 name: '',
@@ -83,7 +89,7 @@ class ShowDetails extends React.Component {
                         <div className={"djconten"}>
                             {
                                 ShowDetailsList.map((v, i) => (
-                                    <div className={"ww_dj"} key={v.id}>
+                                    <div className={"ww_dj"} key={i}>
                                         <div className={"w_djcon"}>
                                             <div className={"zdj"}>{v.serialNum}</div>
                                             <div className={"ydj"} onClick={
@@ -195,10 +201,10 @@ class ShowDetails extends React.Component {
         djxqdisplay.style.display = "none"
     }
 
-    componentWillMount() {
+    componentDidMount() {
         document.documentElement.scrollTop = document.body.scrollTop = 0;
+        this.props.TheHostDetails(this.props.location.state.id);
         this.props.ShowDetails(this.props.location.state.id);
-        this.props.TheHostDetails(this.props.location.state.id)
         window.onscroll = function () {
             var winHeight = document.documentElement.scrollHeight;//总高
             var winScrollTop = document.documentElement.scrollTop;//滚动的高
@@ -246,13 +252,14 @@ class ShowDetails extends React.Component {
     }
 
     componentWillUnmount() {
-        window.onscroll = null
+        window.onscroll = null;
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
         this.setState(
             {
                 TheHostDetailsList:nextProps.TheHostDetailsList,
+                ShowDetailsList:nextProps.ShowDetailsList
             }
         )
     }
@@ -272,7 +279,6 @@ class ShowDetails extends React.Component {
         return (time.getMonth() + 1).toString().padStart(2, "0") + "-" +
             (time.getDate()).toString().padStart(2, "0")
     }
-
 
 }
 

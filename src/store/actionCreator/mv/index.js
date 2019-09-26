@@ -44,11 +44,10 @@ export default{
             dispath(getVideoId(data.data))
         }
     },
-    getVideoList(id){
+    getVideoList(id=57118){
         return async (dispath)=>{
-            const {data} = await axios.get("/video/detail?id=");
-            console.log(data,11)
-            dispath(getVideoList(data.data))
+            const {data} = await axios.get("/video/group?id="+id);
+            dispath(getVideoList(data.datas))
         }
     }
 }

@@ -23,6 +23,12 @@ import Electronic from "./Electronic";//电子
 import LightMusic from "./LightMusic";//轻音乐
 import playlist from "../../../store/actionCreator/playList";//调用redux数据
 class SongSheet extends React.Component {
+    constructor(){
+        super();
+        this.state={
+            isLoding:true
+        }
+    }
     render() {
         return (
             <div className={"songSheet"}>

@@ -17,7 +17,7 @@ class Program extends React.Component {
                 dj:{
                     nickname:'',
                     avatarUrl:'',
-                    province:'',
+                    // province:'',
                     backgroundUrl:''
                 },
                 copywriter:''
@@ -85,11 +85,11 @@ class Program extends React.Component {
                                                                 </div>
                                                                 <span>{v.copywriter}</span>
                                                             </div>
-                                                            <div className="nyx_chorusf">
-                                                                |&nbsp;
-                                                                <i className="iconfont icon-redu"></i>
-                                                                <span>{this.$filter.djCount(v.dj.province)}</span>
-                                                            </div>
+                                                            {/*<div className="nyx_chorusf">*/}
+                                                                {/*|&nbsp;*/}
+                                                                {/*<i className="iconfont icon-redu"></i>*/}
+                                                                {/*<span>{this.$filter.djCount(v.dj.province)}</span>*/}
+                                                            {/*</div>*/}
                                                         </div>
                                                     </div>
                                                 </div>

@@ -6,13 +6,17 @@ import * as serviceWorker from './serviceWorker';
 import axios from "axios";
 import store from "./store";
 import filter from "./filter";
-
 import {
     Provider
 } from "react-redux";
 axios.interceptors.request.use(config=>{
     config.url="/music163"+config.url;
     return config;
+});
+axios.interceptors.response.use((data)=>{
+
+    return data;
+
 });
 React.Component.prototype.$filter=filter;
 React.Component.prototype.$axios=axios;

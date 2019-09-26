@@ -94,7 +94,6 @@ export default class stationList extends React.Component {
         const EmotionalFM = this.state.stationList.EmotionalFM;//情感调频
         const Musicstory = this.state.stationList.Musicstory;//音乐故事
         const Electronic = this.state.stationList.Electronic;//3D电子
-
         const { PayFineList } = this.props;//付费精品
         return (
             <Fragment>
@@ -116,7 +115,9 @@ export default class stationList extends React.Component {
                                                 pathname:"/ShowDetails",
                                                 state:{
                                                     id:v.id,
-                                                    img:v.picUrl
+                                                    img:v.picUrl,
+                                                    name:v.name,
+                                                    subCount:v.subCount
                                                 }
                                             })
                                         }}>
@@ -150,7 +151,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -220,7 +223,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -289,7 +294,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -358,7 +365,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -428,7 +437,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -454,7 +465,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -480,7 +493,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -506,7 +521,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -532,7 +549,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -558,7 +577,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -584,7 +605,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -610,7 +633,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>
@@ -636,7 +661,9 @@ export default class stationList extends React.Component {
                                             pathname:"/ShowDetails",
                                             state:{
                                                 id:v.id,
-                                                img:v.picUrl
+                                                img:v.picUrl,
+                                                name:v.name,
+                                                subCount:v.subCount
                                             }
                                         })
                                     }}>

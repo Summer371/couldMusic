@@ -9,7 +9,7 @@ function changeUserList(payload){
 export default {
     getUserList(){
         return async(disptach)=>{
-            const {data} = await axios.get("/user/detail?uid="+localStorage.recentlyId);
+            const {data} = await axios.get("/user/detail?uid="+localStorage.wyId);
             disptach(changeUserList(data))
         }
     }
