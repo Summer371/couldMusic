@@ -25,6 +25,7 @@
 /*list*/
 .list {
     width: 100%;
+    font-size: 0.16rem;
     display: flex;
     flex-direction: row;height: 2.5rem;
     border-bottom: 0.06rem solid #EEEEE0;
@@ -97,6 +98,7 @@ line-height:0.5rem;border-bottom:1px solid #F5F5F5;
 }
 /*Sing*/
 .Sing{
+    font-size: 0.16rem;
     position: sticky;
     bottom: 0px;
     border-top: 1px solid #F5F5F5;

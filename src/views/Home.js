@@ -23,11 +23,12 @@ class Home extends React.Component{
     render(){
         return(
             <div className={"home"}>
-                    <nav className={"homeNav"} style={{position:"relative"}}>
+                    <nav className={"homeNav"}>
                         <Drawer1 {...this}></Drawer1>
-                        <NavLink to={"/my"} activeClassName={"activeA"}>我的</NavLink>
-                        <NavLink to={"/"} exact activeClassName={"activeA"}>发现</NavLink>
-                        <NavLink to={"/video"} activeClassName={"activeA"}>视频</NavLink>
+                        <NavLink to={"/my"} activeStyle={{color:'red',fontWeight:'bold'}}>我的</NavLink>
+                        <NavLink to={"/"} exact activeStyle={{color:'red',fontWeight:'bold'}}>发现</NavLink>
+                        <NavLink to={"/video"} activeStyle={{color:'red',fontWeight:'bold'}}>视频</NavLink>
+                        <NavLink to={"/search"}><i className="iconfont">&#xe6cf;</i></NavLink>
                     </nav>
                     <Switch>
                         <Route path={"/my"} component={My}></Route>
