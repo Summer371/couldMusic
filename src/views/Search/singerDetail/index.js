@@ -29,7 +29,7 @@ class SingerDetail extends Component{
                     backgroundSize:"100%"
                 }}>
                  <div className={"header-cover"}>
-                     <div className={"header-top"}>
+                     <div className={"header-top2"}>
                          <i className={"iconfont"} onClick={()=>{
                              this.props.history.push({
                                  pathname:"/singer"

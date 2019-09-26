@@ -10,7 +10,7 @@ import "../../../../assets/style/search/detailVideo.css"
 class SingerVideo extends Component{
     render(){
         let {singerMv}=this.props;
-        console.log(singerMv);
+
         function getNum(v=268000){
             let min= Math.floor(v/10000);
             return min+"万"

@@ -11,7 +11,7 @@ class SingerAlbum extends Component{
 
     render(){
         let {singerAlbum}=this.props;
-        console.log(singerAlbum);
+
         function getTime(v){
             let time= new Date(v);
             return time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()
