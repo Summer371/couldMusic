@@ -17,11 +17,7 @@ class Drawer1 extends React.Component{
     }
     render(){
         return(
-<<<<<<< HEAD
             <span style={{display:"inline-block",fontSize:"16px"}}>
-=======
-            <div className={"drawer"}>
->>>>>>> d6fd6b078be4be575d6e1ab24b40acfbf9518918
                 <Icon type="menu" onClick={this.showDrawer}/>
                 <RadioGroup
                     defaultValue={this.state.placement}
