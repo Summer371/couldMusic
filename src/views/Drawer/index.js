@@ -17,7 +17,7 @@ class Drawer1 extends React.Component{
     }
     render(){
         return(
-            <div >
+            <div className={"drawer"}>
                 <Icon type="menu" onClick={this.showDrawer}/>
                 <RadioGroup
                     defaultValue={this.state.placement}

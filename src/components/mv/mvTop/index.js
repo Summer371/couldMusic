@@ -10,7 +10,6 @@ import mv from "../../../store/actionCreator/mv";
  class MvTop extends React.Component{
     render(){
         const {allMv}=this.props;
-        console.log(allMv)
        return(
             <div>
                 <div className={"m-top"}>

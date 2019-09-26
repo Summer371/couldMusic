@@ -28,3 +28,9 @@
 .everydayRecommend .songLists ul li .songListsRight i{
     margin: 0 0.05rem ;font-size: 0.2rem;
 }
+.everydayRecommend .songLists ul li .songListsRight h4{
+    font-size: 0.16rem;
+}
+.everydayRecommend .songLists ul li .songListsRight p{
+    font-size: 0.14rem;
+}

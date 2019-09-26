@@ -1,6 +1,9 @@
 .ranking{
     padding:0.05rem;
 }
+.ranking h4{
+   font-size: 0.14rem;
+}
 .ranking .officialRanking{
     padding-left:0.1rem;
 }
@@ -20,7 +23,7 @@
     margin-left:0.2rem;box-sizing:border-box;
 }
 .ranking .officialRanking ul li dl dd{
-    margin:0.1rem 0;
+    margin:0.1rem 0;font-size: 0.12rem;
 }
 .ranking .recommendRanking{
     padding:0 0.1rem;
