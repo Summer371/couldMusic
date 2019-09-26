@@ -1,7 +1,7 @@
 .drawer{
-    padding-top:0.34rem;padding-right:0.14rem;
+    padding-right:0.14rem;
 }
-.drawer .Img{display:block;height:0.4rem;width:0.4rem;border-radius:50%;margin-left: 0.3rem}
+.drawer .Img{margin-top:0.34rem;display:block;height:0.4rem;width:0.4rem;border-radius:50%;margin-left: 0.3rem}
 .drawer .one{margin-left: 0.3rem;display:flex;flex-direction:row;justify-content:space-between;height:0.44rem;align-items:center}
 .drawer .one .two{display:flex;flex-direction:row;justify-content:space-between;}
 .drawer .one .small{font-size:0.1rem;display:block;

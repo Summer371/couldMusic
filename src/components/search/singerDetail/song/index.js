@@ -10,7 +10,6 @@ import "../../../../assets/style/search/detailSong.css"
 class SingerSong extends Component{
     render(){
         let {songList}=this.props;
-        console.log(songList)
         return (
 
             <>

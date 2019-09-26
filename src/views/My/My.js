@@ -4,6 +4,8 @@ import List from './List'
 import CreateList from './createList'
 import Sing from './Sing'
 import '../../assets/style/home/My.css';
+import '../../assets/style/icon/my/iconfont.css';
+
 export default class My extends React.Component {
     constructor(props) {
         super(props);

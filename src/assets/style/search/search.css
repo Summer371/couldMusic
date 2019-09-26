@@ -18,10 +18,14 @@ body{
     width:10%;
     text-align:center
 }
+.search-back i,.search-singer i{
+    font-size:0.15rem;
+}
 .search-header .search-song{
     width:80%;
 }
 .search-header .search-song input{
+    font-size:0.12rem;
     outline: none;
     height:100%;
     border:0;
@@ -49,9 +53,11 @@ body{
     line-height:0.48rem;
     border-top:0.01rem solid #ccc;
     font-family:'楷体';
+    font-size:0.15rem;
 }
 .search-result li i{
     margin-right:0.1rem;
+    font-size:0.15rem;
 }
 .search-history{
     position:relative;
@@ -67,7 +73,7 @@ body{
 }
 .search-history-header h3{
     height:0.4rem;
-
+    font-size:0.15rem;
     line-height:0.4rem;
     color:#464646;
     font-family:'楷体';
@@ -77,6 +83,7 @@ body{
     top:0;
     position:absolute;
     right:0;
+    fone-size:0.15rem;
 }
 .search-history-tag{
     height:0.4rem;
@@ -86,6 +93,7 @@ body{
 }
 .search-history-tag span{
     display:block;
+    font-size:0.12rem;
     line-height:.4rem;
     font-family:'楷体';
     padding:0 0.1rem;
@@ -98,6 +106,7 @@ body .song-list{
 }
 .song-list>h3{
     height:0.4rem;
+    font-size:0.16rem;
     line-height:0.4rem;
     color:#464646;
     padding-left:0.2rem;
@@ -111,6 +120,7 @@ body .song-list{
 .song-detail span{
     display:block;
     width:0.4rem;
+    font-size:0.12rem;
     height:0.4rem;
     text-align:center;
     line-height:0.4rem;
@@ -132,6 +142,7 @@ body .song-list{
 }
 .song-detail-detail>h3{
     color:#313131;
+    font-size:0.15rem;
     font-family:'楷体';
     height:0.21rem;
     position: relative;
@@ -147,6 +158,7 @@ body .song-list{
 }
 .song-detail-detail h3>b{
     color:#ccc;
+
     font-size:0.10rem;
     position: absolute;
     right:0.3rem;

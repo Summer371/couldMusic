@@ -2,6 +2,21 @@ ul{
     margin:0;
     padding:0;
 }
+h3{
+    font-size: 0.16rem;
+}
+h4{
+    font-size: 0.14rem;
+}
+h5{
+    font-size: 0.12rem;
+}
+p{
+    font-size: 0.10rem;
+}
+button{
+    font-size: 0.12rem;
+}
 *{
     margin: 0;padding: 0;
 }
@@ -16,17 +31,21 @@ ul{
     display: flex;justify-content:space-between;align-items: center;text-align: center;padding: 0.05rem 0;
     border-bottom: 1px solid whitesmoke;
 }
+.discover .discoverNav a{
+    font-size: 0.12rem;
+}
 .discover .discoverNav div span {
-    width: 0.4rem;background: red;border-radius: 50%;height: 0.4rem;display: block;text-align: center;line-height: 0.4rem;
+    width: 0.4rem;background: red;border-radius: 50%;
+    height: 0.4rem;display: block;text-align: center;line-height: 0rem;
 }
 .discover .discoverNav div span i{
-    font-size: 0.24rem;color:white;
+    font-size: 0.24rem;color:white;line-height: 0.4rem;
 }
 .discover .discoverNav div p{
    color: black;font-size: 0.08rem;margin-top: 0.1rem;margin-bottom: 0;
 }
 .discover .recommendSongs h3{
-    position: relative;margin: 0.1rem 0;font-weight: bolder;
+    position: relative;margin: 0.1rem 0;font-weight: bolder;font-size: 0.16rem;
 }
 .discover .recommendSongs h3 span{
     position: absolute;right: 0;border: solid 1px grey;border-radius: 0.1rem;width: 0.6rem;text-align: center;line-height: 100%;

@@ -18,8 +18,10 @@
 }
 .album-message>h3 {
     font-family: "楷体";
+    font-size:0.15rem;
 }
 .album-message> p{
+
     font-size:0.1rem;
 }
 .album-message>h3,.album-message>p{

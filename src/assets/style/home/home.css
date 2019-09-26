@@ -4,7 +4,10 @@
 .home .homeNav{
     width:100%;display: flex;justify-content: space-between;text-align: center;padding: 0.1rem;
 }
-#drawer{color:"white"}
+#drawer{color:white;}
+.drawer{
+    padding: 0;
+}
 .home .homeNav a{
     color:black;font-size: 0.16rem;
 }

@@ -6,7 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import axios from "axios";
 import store from "./store";
 import filter from "./filter";
-
 import {
     Provider
 } from "react-redux";

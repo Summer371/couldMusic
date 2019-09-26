@@ -1,4 +1,4 @@
-.recentlyPlay{position: relative}
+.recentlyPlay{position: relative;font-size: 0.16rem}
 .recentlyPlay .top{display: flex;height: 0.4rem;line-height: 0.4rem;justify-content: space-between;
 padding: 0 0.16rem 0 0.16rem;position:sticky;width: 100%;background: white;
     top: 0;

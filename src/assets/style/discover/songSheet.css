@@ -1,11 +1,14 @@
 .songSheet{
     padding:0.1rem
 }
+.ant-spin-dot{
+    margin: 0 auto;display: block;width: 0.1rem;
+}
 .songSheet .songSheetNav{
     display: flex;justify-content: space-between;padding: 0 0 0.1rem 0;
 }
 .songSheet .songSheetNav a{
-    color: black;
+    color: black;font-size: 0.14rem;
 }
 .songSheet .songSheetSwiper{
     padding:0.2rem 0 0.1rem 0;

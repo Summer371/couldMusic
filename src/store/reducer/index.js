@@ -25,6 +25,9 @@ import myRecentlyPlay from './myRecentlyPlay'//播放记录
 import userDetail from './userDetail'//用户详情；
 import singer from "./singer"
 import playUrl from "./playUrl";//播放地址
+
+import mv from "./mv"//MV推荐
+
 export default combineReducers({
     personalized,
     recommend,
@@ -42,14 +45,12 @@ export default combineReducers({
     playListDetail,
     search,
     multimatch,
-
     singerDetail,
     singer,
     playUrl,
-
-
     myRecentlyPlay,
+    userDetail,
 
-    userDetail
 
+    mv
 })
