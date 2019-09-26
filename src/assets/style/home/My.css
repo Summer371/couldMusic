@@ -88,6 +88,9 @@ line-height:0.5rem;border-bottom:1px solid #F5F5F5;
 .create .myLove .onCenter span{
     font-size: 0.01rem;
 }
+.ant-popover-placement-top{
+    width: 80%;
+}
 .create .myLove .onCenter{
     margin-left: 0.1rem;
     color: #666666;

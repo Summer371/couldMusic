@@ -1,13 +1,15 @@
-import { Collapse } from 'antd';
+import { Collapse, Popconfirm, message } from 'antd';
 import React from 'react';
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import { Modal,Input } from 'antd';
+import { Modal,Input,  } from 'antd';
 import createDispatch from '../../../store/actionCreator/userPlayList'
-import { Drawer, Button, Radio,Checkbox } from 'antd';
+import { Drawer, Radio,Checkbox } from 'antd';
+import PlayListDrawer from '../../playListDrawer'
 const RadioGroup = Radio.Group;
 const { Panel } = Collapse;
+const { confirm } = Modal;
 class CreateList extends React.Component{
     constructor(props) {
         super(props);
@@ -64,30 +66,9 @@ class CreateList extends React.Component{
                                                 </div>
                                             </div>
                                             <div className={"loveItem"}>
-                                                <span id={"aaaaa"}>{i===0?'心动模式':(<div>
-                                                    <i className={"iconfont iconcaidan-dian"} onClick={this.showDrawer}></i>
-                                                    <RadioGroup
-                                                        defaultValue={this.state.placement}
-                                                        onChange={this.onChange}
-                                                    >
-                                                    </RadioGroup>
-                                                    <Drawer
-                                                        bodyStyle={{padding:0}}
-                                                        getContainer = {false}
-                                                        placement={'bottom'}
-                                                        closable={false}
-                                                        onClose={this.onClose}
-                                                        visible={this.state.visible}
-                                                    >
-                                                        <div className={"songListName"}>歌单：{v.name}</div>
-                                                        <div className={"songOption"}>
-                                                            <li><i className="tu iconfont iconbofang"></i><span>下载</span></li>
-                                                            <li><i className="tu iconfont iconbofang"></i><span>分享</span></li>
-                                                            <li><i className="tu iconfont iconbofang"></i><span>编辑歌单信息</span></li>
-                                                            <li><i className="tu iconfont iconbofang"></i><span>删除</span></li>
-                                                        </div>
-                                                    </Drawer>
-                                                </div>)}</span>
+                                                <span id={"aaaaa"}>{i===0?'心动模式':(
+                                                    <PlayListDrawer {...this} list={v}></PlayListDrawer>
+                                                )}</span>
                                             </div>
                                         </div>
                                 )):null}
@@ -97,8 +78,21 @@ class CreateList extends React.Component{
             </div>
         );
     };
+    showDeleteConfirm(id) {
+        confirm({
+            title: '确定要删除此歌单么？',
+            okText: '删除',
+            okType: 'danger',
+            cancelText: '取消',
+            cancelType:"danger",
+            onOk() {
+                console.log(id);
+            },
+            onCancel() {
+            },
+        });
+    }
     componentDidMount() {
-        console.log(this)
         this.props.getSongListed();
     }
     onChange1(e) {
@@ -118,28 +112,13 @@ class CreateList extends React.Component{
         let input = document.querySelector("#input")
         console.log(input.value)
         let data = await axios.get("/playlist/create?name="+input.value)
-        //this.props.getSongListed();
+        this.props.getSongListed();
     };
     handleCancel = e => {
         this.setState({
             visible1: false,
         });
     };
-    showDrawer = () => {
-        this.setState({
-            visible: true,
-        });
-    };
-    onClose = () => {
-        this.setState({
-            visible: false,
-        });
-    };
-    onChange = e => {
-        this.setState({
-            placement: e.target.value,
-        });
-    }
 }
 function callback(key) {
 }

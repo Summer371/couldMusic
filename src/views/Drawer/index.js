@@ -17,7 +17,7 @@ class Drawer1 extends React.Component{
     }
     render(){
         return(
-            <div >
+            <span style={{display:"inline-block",fontSize:"16px"}}>
                 <Icon type="menu" onClick={this.showDrawer}/>
                 <RadioGroup
                     defaultValue={this.state.placement}
@@ -75,11 +75,16 @@ class Drawer1 extends React.Component{
                         <div className={"fixed"}>
                             <li><i className={"iconfont iconnight"}></i><span className={"five"}>夜间模式</span></li>
                             <li><i className={"iconfont iconshezhi"}></i><span className={"five"}>设置</span></li>
-                            <li><i className={"iconfont icontuichu"}></i><span className={"five"}>退出</span></li>
+                            <li><i className={"iconfont icontuichu"}></i><span className={"five"}
+                            onClick={()=>{
+                                localStorage.wyId ="";
+                                this.props.props.history.push("/login")
+                            }}
+                            >退出</span></li>
                         </div>
                     </div>
                 </Drawer>
-            </div>
+            </span>
         )
     }
     showDrawer = () => {

@@ -5,9 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from "axios";
 import store from "./store";
-import './icon/my/iconfont.css';
 import filter from "./filter";
-
 import {
     Provider
 } from "react-redux";

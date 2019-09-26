@@ -22,8 +22,8 @@ class Home extends React.Component{
     render(){
         return(
             <div className={"home"}>
-                    <nav className={"homeNav"}>
-                        <Drawer1></Drawer1>
+                    <nav className={"homeNav"} style={{position:"relative"}}>
+                        <Drawer1 {...this}></Drawer1>
                         <NavLink to={"/my"} activeClassName={"activeA"}>我的</NavLink>
                         <NavLink to={"/"} exact activeClassName={"activeA"}>发现</NavLink>
                         <NavLink to={"/video"} activeClassName={"activeA"}>视频</NavLink>
