@@ -1,0 +1,41 @@
+*{
+    margin:0;
+    padding:0;
+}
+.videoList{
+    height:0.8rem;
+    display:flex;
+    flex-direction: row;
+    margin:0.1rem 0;
+    padding-left:0.2rem;
+    position:relative;
+}
+.videoList span{
+    position:absolute;
+    color:#fff;
+    left:1rem;
+    top:0.05rem;
+    font-size:0.10rem;
+}
+.App .detail-h2{
+    padding-left:0.15rem;
+}
+.videoImg img{
+    height:0.8rem;
+    border-radius: 0.1rem;
+}
+.video-message{
+    padding-left:0.2rem;
+
+}
+.video-message h3,.video-message p{
+    margin:0;
+}
+.video-message h3{
+    margin-top:0.2rem;
+    font-size:0.15rem;
+}
+.video-message p{
+
+    font-size:0.08rem;
+}

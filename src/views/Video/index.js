@@ -1,15 +1,32 @@
-import React,{Component} from "react";
-export default class Video extends Component{
+import React from "react"
+import Tv from "./recommend/index"
+import Mv from "./mv/index"
+import {
+    Route,
+    NavLink,
+    Switch
+} from "react-router-dom"
+import "../../assets/style/video/video.css"
+class Video extends React.Component{
     render(){
         return(
             <div>
-                <h2>视频</h2>
-            </div>
-               
-            
-        )
-    }
-    componentWillMount(){
-        
+                <div className={"V-list"}>
+                    <>
+                        <NavLink className={"v-recommend"}to={"/video"} exact activeStyle={{color:"red"}} exact>推荐</NavLink>
+                        <NavLink className={"v-recommend"}to={"/video/mv"} activeStyle={{color:"red"}}>MV</NavLink>
+                        <NavLink className={"v-recommend"}to={"/now"} activeStyle={{color:"red"}}>现场</NavLink>
+                        <NavLink className={"v-recommend"}to={"/dancer"} activeStyle={{color:"red"}}>舞蹈</NavLink>
+                    </>
+             </div>
+                    <Switch>
+                        <Route path={"/video/mv"} component={Mv}></Route>
+                        <Route path={"/dancer"} component={""}></Route>
+                        <Route path={"/now"} component={""}></Route>
+                        <Route path={"/video"} component={Tv}></Route>
+                    </Switch>
+        </div>
+    )
     }
 }
+export default Video

@@ -1,0 +1,119 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.singerDetail-header{
+    height:2.5rem;
+    border-radius: 0.15rem;
+    background:rgba(0,0,0,0.5);
+
+}
+.header-cover{
+    position:relative;
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.4)
+}
+.singerDetail-header .header-top>i{
+    color:#fff;
+    font-size:0.15rem;
+}
+.header-top{
+    padding-top:0.3rem;
+    padding-bottom:0.3rem;
+    padding-left:0.1rem;
+    padding-right:0.1rem;
+}
+#two{
+    float:right
+}
+.singerDetail-header h3{
+    color:#fff;
+    font-size:0.16rem;
+}
+.singerDetail-header h4,.singerDetail-header p{
+    color:#ddd;
+    font-size:0.13rem;
+}
+.singer-actives{
+    margin-top:0.3rem;
+    position:relative;
+    padding-left:0.1rem;
+    padding-right:0.1rem;
+}
+.singer-actives>span,.singer-actives>b{
+    position:absolute;
+    bottom:0;
+    font-size:0.15rem;
+}
+.singer-actives>span{
+    right:0.5rem;
+    display:block;
+
+    background:#ff3a3a;
+    color:#FFE3E3;
+    font-size:0.10rem;
+    padding:0.05rem 0.05rem;
+    border-radius: 0.05rem;
+    margin-right:0.1rem;
+}
+.singer-actives>b{
+    right:0.2rem;
+    color:#FFEeEe;
+
+    background:rgba(255,255,255,0.4);
+    font-size:0.10rem;
+    padding:0.05rem 0.05rem;
+    border-radius: 0.05rem;
+}
+.singer-bottom{
+    display:flex;
+    padding-left:0.1rem;
+    padding-right:0.1rem;
+    height:0.4rem;
+    border-radius: 0.1rem;
+    background:rgba(255,255,255,0.4)
+}
+.singer-bottom .concert {
+    width:80%;
+}
+.singer-bottom i{
+    width:10%;
+    margin:0;
+    font-size:0.15rem;
+    line-height:250%;
+    color:red;
+}
+.singer-bottom .concert h4{
+    height:0.25rem;
+    font-size:0.13rem;
+    margin:0;
+}
+.singer-bottom .concert p{
+    height:0.15rem;
+    margin:0;
+    font-size:0.10rem;
+}
+.singer-bottom h3{
+    margin:0;
+    line-height:250%;
+    font-size:0.15rem;
+
+}
+.main-nav{
+    height:0.3rem;
+    display:flex;
+    padding:0 0.2rem;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.main-nav>a{
+    color:#333;
+    font-size:0.15rem;
+    line-height:200%;
+}
+.singerDetail-main{
+    border-radius: 0.05rem 0.05rem 0 0;
+}

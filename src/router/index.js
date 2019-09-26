@@ -16,9 +16,11 @@ import MyRecentlyPlay from '../views/My/myRecentlyPlay'//最近播放
 import LocalMusic from '../views/My/localMusic';//本地音乐
 import Download from '../views/My/Download';//本地下载
 import SingerSearch from "../views/Search/singerSearch";//歌手搜索列表
+import SingerDetail from "../views/Search/singerDetail";//歌手详细信息页
 import Search from "../views/Search";
 import SearchList from "../views/Search/searchList";
 import Player from "../views/player/Player";//播放器
+import FF from '../views/player/FF'  //v
 import SongSheetDetail from "../views/discover/songSheet/SongSheetDetail";//歌单详情
 export default [
     {
@@ -127,9 +129,20 @@ export default [
         component: Download
     },
     {
-        path: "/",
-        title: "主页",
-        component: Home
+
+        path:"/searchDetail",
+        title:"歌手详情",
+        component:SingerDetail
+    },
+    {
+        path:"/ff",
+        title:"FN",
+        component:FF
+    },
+    {
+        path:"/",
+        title:"主页",
+        component:Home
     }
 
 ]

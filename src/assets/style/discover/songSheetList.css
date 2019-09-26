@@ -47,13 +47,14 @@
  }
  .songSheetDetail .songSheetDetailHead .songSheetDetailWord h3,
  .songSheetDetail .songSheetDetailHead .songSheetDetailWord h4{
-     color: white;
+     color: white;font-size: 0.14rem;
  }
  .songSheetDetail .songSheetDetailHead .songSheetDetailWord img{
      width: 0.3rem;border-radius: 50%;
  }
  .songSheetDetail .songSheetDetailHead .songSheetDetailWord p{
-    overflow: hidden;text-overflow: ellipsis;padding: 0;height: 0.56rem;line-height: 0.28rem;
+    overflow: hidden;text-overflow: ellipsis;padding: 0;
+     height: 0.56rem;line-height: 0.28rem;font-size: 0.12rem;
    margin-top: 0.3rem;
  }
  .songSheetDetail .songSheetDetailHead .iconCommit{

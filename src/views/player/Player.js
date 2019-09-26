@@ -10,6 +10,7 @@ import {
 } from "redux";
 import playUrl from "../../store/actionCreator/playUrl";
 import "../../assets/style/player.css";
+import "../../assets/style/font/iconfont.css";
 class Player extends React.Component{
     constructor(){
         super();
@@ -27,8 +28,10 @@ class Player extends React.Component{
             index:0,
             loop:true,
             time:0,
-            totalTime:0
-        }
+            totalTime:0,
+            nextTime:Date.now()
+        };
+        this.timer=null
     }
     render() {
         const {songsUrl,lyric}=this.props;
@@ -46,7 +49,7 @@ class Player extends React.Component{
                 <nav className={"playerNav"}>
                     <i className={"iconfont icon-fanhuipt"} onClick={() => this.props.history.go(-1)}/>
                     <div className={"songName"}>
-                        <span>{this.state.songName}</span>
+                        <span>{this.state.songName}</span>--
                         <span>{this.state.singer}</span>
                     </div>
                 </nav>
@@ -83,7 +86,7 @@ class Player extends React.Component{
                     </div>
                 </div>
                 <div className={"playerBody"}>
-                    <audio ref={"play"} src={songUrl.url}  loop={this.state.true} autoPlay={true}></audio>
+                    <audio ref={"play"} src={songUrl.url}  loop={this.state.true?"loop":""} autoPlay={true}></audio>
                     <div className={"likeIcon"}>
                         <i className={"iconfont icon-xihuan-kongpt-wangyiicon1"}></i>
                         <i className={"iconfont icon-xiazaipt-wangyiicon"}></i>
@@ -93,11 +96,9 @@ class Player extends React.Component{
                     </div>
                     <div className={"progress"} ref={"long"} >
                         <span>{this.state.time}</span>
-                        <h3 ref={"progress"} onClick={this.skip.bind(this)}
-                            onMouseMove={this.hander.bind(this)}>
+                        <h3 ref={"progress"} style={{width:"80%"}}
+                            onClick={this.skip.bind(this)}>
                         <i ref={"hander"}
-                            /*onMouseDown={this.hander.bind(this)}
-                            onMouseUp={this.hander.bind(this)}*/
                         ></i></h3><span>{this.$filter.songTime(this.state.totalTime)}</span>
                     </div>
                     <div className={"playerBotton"}>
@@ -111,29 +112,19 @@ class Player extends React.Component{
             </div>
         )
     }
-    hander(e){
-        e.stopPropagation();
-        this.refs.hander.addEventListener("mousedown",this.moveHander.bind(this));
-        /*if(e.type==="mousedown"){
-            document.documentElement.addEventListener("mousedown",this.moveHander)
-            console.log("down")
-        }else if(e.type==="mouseup"){
-            console.log("up")
-        }*/
-        console.log(e.target)
-    }
-    moveHander(e){
-        console.log("move")
-        this.refs.hander.style.left=e.clientLeft;
-    }
     loop(){
         this.setState({
             loop:!this.state.loop
         })
     }
-    skip(){
-        this.refs.play.currentTime=this.refs.play.currentTime+5;
-        this.refs.hander.style.left=this.refs.hander.clientLeft+5+"px"
+    skip=(e)=>{
+        let {duration}=this.refs.play;
+        let width=document.body.clientWidth*0.8;
+        this.refs.hander.style.left=e.clientX-37+"px";
+        let handerll=this.refs.hander.style.left.split("");
+        handerll.splice(-2);
+        let handerLeft=  handerll.join("")/1;
+        this.refs.play.currentTime=duration*handerLeft/width;
     }
     play(){
         this.setState({
@@ -153,8 +144,9 @@ class Player extends React.Component{
             singer:this.state.singers[index],
             songName:this.state.songNames[index],
             songImg:this.state.imgs[index],
-            songId:this.state.songIds[index]
-        })
+            songId:this.state.songIds[index],
+            isLyric:false
+        });
         this.props.getLyricList(this.state.songId);
     }
     nextSong(index){
@@ -163,8 +155,9 @@ class Player extends React.Component{
             singer:this.state.singers[index],
             songName:this.state.songNames[index],
             songImg:this.state.imgs[index],
-            songId:this.state.songIds[index]
-        })
+            songId:this.state.songIds[index],
+            isLyric:false
+        });
         this.props.getLyricList(this.state.songId);
     }
     getMusicUrl(id){
@@ -181,24 +174,29 @@ class Player extends React.Component{
             songNames:this.props.location.state.songNames,
             songIds:this.props.location.state.ids
         });
-
-        let i=this.state.singers.indexOf(this.state.singer)
-
+        let width=document.body.clientWidth*0.8;
        this.refs.play.oncanplay=()=>{
             this.setState({
-                totalTime:Math.floor(this.refs.play.duration)
+                totalTime:Math.floor(this.refs.play.duration),
+                nextTime:Date.now()
             })
         };
-        setInterval(()=>{
+        this.timer=setInterval(()=>{
             this.setState({
                 time:this.$filter.songTime(Math.floor(this.refs.play.currentTime))
             });
+            let {currentTime,duration}=this.refs.play;
+            let precent =currentTime/duration;
+            this.refs.hander.style.left=width*precent-5+"px";
         },1000)
     }
     componentDidMount() {
         this.getMusicUrl(this.props.location.state.ids);
         this.props.getLyricList(this.props.location.state.id);
-        this.initSongDetail()
+        this.initSongDetail();
+    }
+    componentWillUnmount() {
+        clearInterval(this.timer)
     }
 }
 function mapStateToProps(state) {

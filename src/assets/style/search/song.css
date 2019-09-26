@@ -17,6 +17,7 @@
 .song-title .left>i{
     line-height:100%;
     display:block;
+    font-size:0.15rem;
     margin-left:0.1rem;
 }
 .song-title .left>p{
@@ -24,17 +25,21 @@
     margin-bottom:0;
     margin-left:0.1rem;
     color:#000;
+    font-size:0.15rem;
 }
 .song-title .right{
     display:flex;
     width:20%;
+
 }
 .song-title .right>i{
     color:#000;
+    font-size:0.15rem;
 }
 .song-title .right>p{
     margin-left:0.1rem;
     color:#000;
+    font-size:0.15rem;
 }
 .song-list2{
     display:flex;
@@ -45,6 +50,7 @@
 }
 .song-message-left h3{
     margin-bottom:0;
+    font-size:0.15rem;
     color:lightblue;
 }
 .song-message-singer{
@@ -52,9 +58,12 @@
 }
 .song-message-left b{
     font-size:0.06rem;
+    width:80%;
+    height:0.3rem;
 }
 .song-message-left b>span{
     color:lightblue;
+    font-size:0.12rem;
 }
 .song-message-left i{
     display:block;
@@ -75,6 +84,7 @@
     margin:0.05rem;
 }
 .song-404{
+    font-size:0.15rem;
     margin:0.5rem;
     color:lightcoral;
 }

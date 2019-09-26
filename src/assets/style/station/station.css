@@ -68,11 +68,11 @@ img{
 }
 .sort div{
     border-radius: 50%;
-    background:red;
     height: 5vh;
     width:8.89vw;
     line-height: 5vh;
     margin-left:2.5vw;
+    background:red;
 }
 .sort li i{
     color:#fff
@@ -152,23 +152,6 @@ img{
     margin-bottom:0;
     top:15.5vh;
 }
-/*.n_hear li .money{*/
-    /*position: relative;*/
-    /*height: auto;*/
-    /*word-wrap:break-word;*/
-    /*word-break:break-all;*/
-    /*overflow: hidden;*/
-    /*font-size:4.44vw;*/
-    /*width:60vw;*/
-    /*transform: scale(0.5);*/
-    /*transform-origin: left;*/
-    /*color:red;*/
-    /*top:1vh;*/
-    /*margin-bottom:0;*/
-/*}*/
-/*.n_hear li:nth-child(3) .money{*/
-    /*top:2.5vh;*/
-/*}*/
 .recommend{
     padding:0 2.962vw;
     height:30.625vh;
@@ -188,7 +171,7 @@ img{
 
 .boutique{
     padding:0 2.962vw;
-    height:32.5vh;
+    height:auto;
     background:#f9f2e2;
 }
 .s_boutique{
@@ -220,7 +203,6 @@ img{
 }
 .x_boutique div {
     border-radius: 5px 5px 5px 5px;
-    background:red;
     height:16.875vh;
     width:30vw;
 }
@@ -244,7 +226,7 @@ img{
 
 .chorus{
     padding:0 2.962vw;
-    height:32.5vh;
+    height:auto;
 }
 .s_chorus{
     height:5.625vh;
@@ -290,27 +272,40 @@ img{
     display: flex;
     justify-content: space-between;
 }
+.z_chorus{
+    width:90%;
+}
 .znz_chorus{
     float: left;
     height:5.208vh;
     width:9.26vw;
-    background:red;
     border-radius: 5px 5px 5px 5px;
 }
 .znz_chorus img{
     width:100%;
     height:100%;
+    border-radius: 5px 5px 5px 5px;
 }
 .zny_chorus{
     height:5.208vh;
     float: left;
     margin-left:1.85vw;
+    width:85%;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
 }
 .zny_chorus h5{
     height:2.516vh;
     line-height: 2.516vh;
     font-size:2.59vw;
     margin-bottom:0;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    display:block;
+    width:80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .znx_chorus{
     height:2.5vh;
@@ -322,7 +317,13 @@ img{
     margin-top:0.5vh;
     width:2.5925vw;
     height:1.4583vh;
-    background:red;
+    border-radius: 50%;
+    float: left;
+    line-height: 1.4583vh;
+}
+.nzx_chorus div img{
+    width:2.5925vw;
+    height:1.4583vh;
     border-radius: 50%;
     float: left;
     line-height: 1.4583vh;

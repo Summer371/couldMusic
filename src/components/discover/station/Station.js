@@ -52,6 +52,26 @@ export default class stationList extends React.Component {
                     categoryName: "",
                     radios: []
                 }
+                ,
+                Creativecover: {
+                    categoryName: "",
+                    radios: []
+                }
+                ,
+                EmotionalFM: {
+                    categoryName: "",
+                    radios: []
+                }
+                ,
+                Musicstory: {
+                    categoryName: "",
+                    radios: []
+                }
+                ,
+                Electronic: {
+                    categoryName: "",
+                    radios: []
+                }
             },
             todayRecommendList: [],
             num:0
@@ -70,6 +90,10 @@ export default class stationList extends React.Component {
         const treasure = this.state.stationList.treasure;//亲子宝贝
         const folkArts = this.state.stationList.folkArts;//相声曲艺
         const journey = this.state.stationList.journey;//旅途城市
+        const Creativecover = this.state.stationList.Creativecover;//创作翻唱
+        const EmotionalFM = this.state.stationList.EmotionalFM;//情感调频
+        const Musicstory = this.state.stationList.Musicstory;//音乐故事
+        const Electronic = this.state.stationList.Electronic;//3D电子
 
         const { PayFineList } = this.props;//付费精品
         return (
@@ -85,21 +109,24 @@ export default class stationList extends React.Component {
                         </div>
                         <div className="n_hear">
                             {
-                                this.state.todayRecommendList.map(v => (
-                                    <li key={v.id} onClick={()=>{
-                                        this.props.history.push({
-                                            pathname:"/ShowDetails",
-                                            state:{
-                                                id:v.id,
-                                                img:v.picUrl
-                                            }
-                                        })
-                                    }}>
-                                        <div><img src={v.picUrl} alt="" /></div>
-                                        <div className="box-shadow"></div>
-                                        <span>{v.name}</span>
-                                        <p>{v.rcmdtext}</p>
-                                    </li>
+                                this.state.todayRecommendList.map((v,i) => (
+                                    <div key={i}>
+                                        <li  onClick={()=>{
+                                            this.props.history.push({
+                                                pathname:"/ShowDetails",
+                                                state:{
+                                                    id:v.id,
+                                                    img:v.picUrl
+                                                }
+                                            })
+                                        }}>
+                                            <div><img src={v.picUrl} alt="" /></div>
+                                            <div className="box-shadow"></div>
+                                            <span>{v.name}</span>
+                                            <p>{v.rcmdtext}</p>
+                                        </li>
+                                    </div>
+
                                 ))
                             }
                         </div>
@@ -139,119 +166,45 @@ export default class stationList extends React.Component {
                     <div className="chorus">
                         <div className="s_chorus">
                             <div className="sz_chorus">
-                                <h4>创作|翻唱</h4>
+                                <h4>{Creativecover.categoryName}</h4>
                                 <i className="iconfont icon-next"></i>
                             </div>
                             <div className="sy_chorus">
-                                <i className="iconfont icon-bofang1"></i>
+                                <i className="iconfont icon-bofang"></i>
                                 <span>播放全部</span>
                             </div>
                         </div>
                         <div className="x_chorus">
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
+                            {
+                                Creativecover.radios.map(v=>(
+                                    <li key={v.id}>
+                                        <div className="z_chorus">
+                                            <div className="znz_chorus">
+                                                <img src={v.picUrl} alt="" />
                                             </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
+                                            <div className="zny_chorus">
+                                                <h5>{v.lastProgramName}</h5>
+                                                <div className="znx_chorus">
+                                                    <div className="nzx_chorus">
+                                                        <div>
+                                                            <img src={v.picUrl} alt="" />
+                                                        </div>
+                                                        <span>{v.name}</span>
+                                                    </div>
+                                                    <div className="nyx_chorus">
+                                                        |&nbsp;
+                                                        <i className="iconfont icon-redu"></i>
+                                                        <span>{v.programCount}</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
+                                        <div className="y_chorus">
+                                            <i className="iconfont icon-bofang"></i>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
+                                    </li>
+                                ))
+                            }
                         </div>
                     </div>
                     <div className="hear">
@@ -283,7 +236,7 @@ export default class stationList extends React.Component {
                     <div className="chorus">
                         <div className="s_chorus">
                             <div className="sz_chorus">
-                                <h4>情感调频</h4>
+                                <h4>{EmotionalFM.categoryName}</h4>
                                 <i className="iconfont icon-next"></i>
                             </div>
                             <div className="sy_chorus">
@@ -292,110 +245,35 @@ export default class stationList extends React.Component {
                             </div>
                         </div>
                         <div className="x_chorus">
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
+                            {EmotionalFM.radios.map(v=>(
+                                <li key={v.id}>
+                                    <div className="z_chorus">
+                                        <div className="znz_chorus">
+                                            <img src={v.picUrl} alt="" />
+                                        </div>
+                                        <div className="zny_chorus">
+                                            <h5>{v.lastProgramName}</h5>
+                                            <div className="znx_chorus">
+                                                <div className="nzx_chorus">
+                                                    <div>
+                                                        <img src={v.picUrl} alt="" />
+                                                    </div>
+                                                    <span>{v.name}</span>
                                                 </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
+                                                <div className="nyx_chorus">
+                                                    |&nbsp;
+                                                    <i className="iconfont icon-redu"></i>
+                                                    <span>{v.programCount}</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
+                                    <div className="y_chorus">
+                                        <i className="iconfont icon-bofang"></i>
                                     </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
+                                </li>
+                            ))}
+
                         </div>
                     </div>
                     <div className="hear">
@@ -427,7 +305,7 @@ export default class stationList extends React.Component {
                     <div className="chorus">
                         <div className="s_chorus">
                             <div className="sz_chorus">
-                                <h4>音乐故事</h4>
+                                <h4>{Musicstory.categoryName}</h4>
                                 <i className="iconfont icon-next"></i>
                             </div>
                             <div className="sy_chorus">
@@ -436,110 +314,35 @@ export default class stationList extends React.Component {
                             </div>
                         </div>
                         <div className="x_chorus">
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
+                            {Musicstory.radios.map(v=>(
+                                <li key={v.id}>
+                                    <div className="z_chorus">
+                                        <div className="znz_chorus">
+                                            <img src={v.picUrl} alt="" />
+                                        </div>
+                                        <div className="zny_chorus">
+                                            <h5>{v.lastProgramName}</h5>
+                                            <div className="znx_chorus">
+                                                <div className="nzx_chorus">
+                                                    <div>
+                                                        <img src={v.picUrl} alt="" />
+                                                    </div>
+                                                    <span>{v.name}</span>
                                                 </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
+                                                <div className="nyx_chorus">
+                                                    |&nbsp;
+                                                    <i className="iconfont icon-redu"></i>
+                                                    <span>{v.programCount}</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
+                                    <div className="y_chorus">
+                                        <i className="iconfont icon-bofang"></i>
                                     </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
+                                </li>
+                            ))}
+
                         </div>
                     </div>
                     <div className="hear">
@@ -571,7 +374,7 @@ export default class stationList extends React.Component {
                     <div className="chorus">
                         <div className="s_chorus">
                             <div className="sz_chorus">
-                                <h4>3D|电子</h4>
+                                <h4>{Electronic.categoryName}</h4>
                                 <i className="iconfont icon-next"></i>
                             </div>
                             <div className="sy_chorus">
@@ -580,110 +383,36 @@ export default class stationList extends React.Component {
                             </div>
                         </div>
                         <div className="x_chorus">
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
+                            {
+                                Electronic.radios.map(v=>(
+                                    <li key={v.id}>
+                                        <div className="z_chorus">
+                                            <div className="znz_chorus">
+                                                <img src={v.picUrl} alt="" />
                                             </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
+                                            <div className="zny_chorus">
+                                                <h5>{v.lastProgramName}</h5>
+                                                <div className="znx_chorus">
+                                                    <div className="nzx_chorus">
+                                                        <div>
+                                                            <img src={v.picUrl} alt="" />
+                                                        </div>
+                                                        <span>{v.name}</span>
+                                                    </div>
+                                                    <div className="nyx_chorus">
+                                                        |&nbsp;
+                                                        <i className="iconfont icon-redu"></i>
+                                                        <span>{v.programCount}</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
+                                        <div className="y_chorus">
+                                            <i className="iconfont icon-bofang"></i>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="z_chorus">
-                                    <div className="znz_chorus">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div className="zny_chorus">
-                                        <h5>雅俗共赏</h5>
-                                        <div className="znx_chorus">
-                                            <div className="nzx_chorus">
-                                                <div>
-                                                    <img src="" alt="" />
-                                                </div>
-                                                <span>不不不</span>
-                                            </div>
-                                            <div className="nyx_chorus">
-                                                |&nbsp;
-                                    <i className="iconfont icon-redu"></i>
-                                                <span>11万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="y_chorus">
-                                    <i className="iconfont icon-bofang"></i>
-                                </div>
-                            </li>
+                                    </li>
+                                ))
+                            }
                         </div>
                     </div>
                     <div className="hear">
@@ -1062,7 +791,7 @@ export default class stationList extends React.Component {
                 num:this.state.num+3
             })
         }
-        this.props.todayRecommend(this.state.num); //电台推荐
+        this.props.todayRecommend(this.state.num,3); //电台推荐
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.stationList.length > 0 && nextProps.todayRecommendList.length > 0) {
@@ -1115,6 +844,22 @@ export default class stationList extends React.Component {
                     journey: {//旅途城市
                         categoryName: nextProps.stationList[18].categoryName,
                         radios: nextProps.stationList[18].radios
+                    },
+                    Creativecover:{//创作翻唱
+                        categoryName:nextProps.stationList[0].categoryName,
+                        radios: nextProps.stationList[0].radios
+                    },
+                    EmotionalFM:{//情感调频
+                        categoryName:nextProps.stationList[2].categoryName,
+                        radios: nextProps.stationList[2].radios
+                    },
+                    Musicstory:{//音乐故事
+                        categoryName:nextProps.stationList[3].categoryName,
+                        radios: nextProps.stationList[3].radios
+                    },
+                    Electronic:{//3D电子
+                        categoryName:nextProps.stationList[2].categoryName,
+                        radios: nextProps.stationList[2].radios
                     }
                 },
                 todayRecommendList: nextProps.todayRecommendList

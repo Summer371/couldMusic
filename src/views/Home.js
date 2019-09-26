@@ -10,6 +10,7 @@ import Search from "./Search";
 import Discover from "./discover/Discover";
 import My from './My/My';
 import "../assets/style/home/home.css";
+import Video from "./Video"
 class Home extends React.Component{
     constructor(){
         super();
@@ -27,11 +28,10 @@ class Home extends React.Component{
                         <NavLink to={"/my"} activeClassName={"activeA"}>我的</NavLink>
                         <NavLink to={"/"} exact activeClassName={"activeA"}>发现</NavLink>
                         <NavLink to={"/video"} activeClassName={"activeA"}>视频</NavLink>
-                        <NavLink to={"/search"}><i className="iconfont">&#xe6cf;</i></NavLink>
                     </nav>
                     <Switch>
                         <Route path={"/my"} component={My}></Route>
-                        <Route path={"/video"} ></Route>
+                        <Route path={"/video"} component={Video}></Route>
                         <Route path={"/search"} component={Search}></Route>
                         <Route path={"/discover"}  component={Discover}></Route>
                         <Route path={"/"}  component={Discover}></Route>

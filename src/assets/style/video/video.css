@@ -1,0 +1,19 @@
+.V-list{
+    height: 0.4rem;
+    display: flex;
+    align-items: center;justify-content: space-around;
+    padding:0 0.22rem;
+    font-size:0.13rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+.V-list a{
+
+}
+.V-list>.v-recommend{
+    color:#000000;
+    text-decoration: none;
+
+    margin-right:0.5rem;
+    height:0.4rem;
+    line-height:0.4rem;
+}

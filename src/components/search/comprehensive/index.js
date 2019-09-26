@@ -16,7 +16,6 @@ import Video from "../video"
 class Comprehensive extends Component{
     render(){
         let {mv} = this.props.multimatchSearchResult;
-
         return(
             <>
                 <ul >

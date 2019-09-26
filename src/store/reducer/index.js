@@ -18,10 +18,16 @@ import TheHostDetailsList from './station/TheHostDetails' //电台二级详情
 import myPlayList from './myPlayList'//我的歌单中所有歌曲Id
 import userPlayList from "./userPlayList";//获取我的歌单
 import playListDetail from './myPlayList/playListDetail'//歌曲详情
+
+import singerDetail from "./singerDetail"//歌手详细信息
+
 import myRecentlyPlay from './myRecentlyPlay'//播放记录
 import userDetail from './userDetail'//用户详情；
 import singer from "./singer"
 import playUrl from "./playUrl";//播放地址
+
+import mv from "./mv"//MV推荐
+
 export default combineReducers({
     personalized,
     recommend,
@@ -39,8 +45,12 @@ export default combineReducers({
     playListDetail,
     search,
     multimatch,
-    myRecentlyPlay,
+    singerDetail,
     singer,
     playUrl,
-    userDetail
+    myRecentlyPlay,
+    userDetail,
+
+
+    mv
 })
