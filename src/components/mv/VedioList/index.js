@@ -9,42 +9,49 @@ import mv from "../../../store/actionCreator/mv";
 
 class VedioList extends React.Component {
     render() {
-        console.log(222,this.props)
-        return (
-                    <div className={"v-li"}>
-                        <div className={"v-img"}>
-                            <img src={require("../../../assets/img/1.jpg")}/>
-                            <div className={"v-now"}>音乐现场</div>
-                            <div className={"v-action"}><i className={"iconfont"}>&#xe621;</i>734万</div>
-                        </div>
-                        <div className={"v-name"}>
-                            <div className={"v-singing"}>陈月季-月半小夜曲速度深V是</div>
-                            <img src={require("../../../assets/img/1.jpg")}/>
-                        </div>
-                        <div className={"v-bottom"}>
-                            <img src={require("../../../assets/img/1.jpg")}/>
-                            <div className={"v-live"}>音乐现场Live</div>
-                            <div className={"v-good"}>
-                                <i className={"iconfont"}>&#xe601;</i>
-                                <span>666</span>
-                            </div>
-                            <div className={"v-comment"}>
-                                <i className={"iconfont"}>&#xe6a5;</i>
-                                <span>64545</span>
-                            </div>
-                            <i className={"iconfont"}>&#xe6c6;</i>
-                        </div>
-                    </div>
 
+        const {vedioList}=this.props;
+        return (<>
+            {
+                vedioList.map((v,i)=>{
+                    return(
+                        <div className={"v-li"} key={i}>
+                            <div className={"v-img"}>
+                                <img src={v.data.coverUrl}/>
+                                <div className={"v-now"}>{v.data.title}</div>
+                                <div className={"v-action"}><i className={"iconfont"}>&#xe621;</i>{v.data.playTime}</div>
+                            </div>
+                            <div className={"v-name"}>
+                                <div className={"v-singing"}>{v.data.title}</div>
+                                <img src={require("../../../assets/img/1.jpg")}/>
+                            </div>
+                            <div className={"v-bottom"}>
+                                <img src={require("../../../assets/img/1.jpg")}/>
+                                <div className={"v-live"}>{v.data.creator.nickname}</div>
+                                <div className={"v-good"}>
+                                    <i className={"iconfont"}>&#xe601;</i>
+                                    <span>{v.data.playTime}</span>
+                                </div>
+                                <div className={"v-comment"}>
+                                    <i className={"iconfont"}>&#xe6a5;</i>
+                                    <span>{v.data.praisedCount}</span>
+                                </div>
+                                <i className={"iconfont"}>&#xe6c6;</i>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+              </>
         )
     }
     componentDidMount() {
         let idList=[];
         this.props.vedioId.map((v,i)=>{
             idList.push(v.id)
-        })
-        console.log(idList)
-        this.props.getVideoList(idList);
+        });
+        let i=Math.floor(Math.random()*idList.length+1);
+        this.props.getVideoList(idList[i]);
     }
 }
 

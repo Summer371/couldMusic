@@ -6,7 +6,7 @@ import {
     Route
 } from "react-router-dom";
 import {
-    Icon,Spin
+    Icon
 } from "antd";
 import {
     connect
@@ -23,8 +23,13 @@ import Electronic from "./Electronic";//电子
 import LightMusic from "./LightMusic";//轻音乐
 import playlist from "../../../store/actionCreator/playList";//调用redux数据
 class SongSheet extends React.Component {
+    constructor(){
+        super();
+        this.state={
+            isLoding:true
+        }
+    }
     render() {
-        const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
         return (
             <div className={"songSheet"}>
                 <nav className={"topNav"}>
@@ -39,7 +44,6 @@ class SongSheet extends React.Component {
                     <NavLink to={"/songSheet/electronic"} activeStyle={{color: "red"}}>电子</NavLink>
                     <NavLink to={"/songSheet/lightMusic"} activeStyle={{color: "red"}}>轻音乐</NavLink>
                 </nav>
-                <Spin indicator={antIcon} />
                 <Switch>
                     <Route path={"/songSheet/highquality"} component={Highquality}></Route>
                     <Route path={"/songSheet/official"} component={Official}></Route>

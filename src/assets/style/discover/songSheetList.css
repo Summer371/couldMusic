@@ -55,11 +55,11 @@
  .songSheetDetail .songSheetDetailHead .songSheetDetailWord p{
     overflow: hidden;text-overflow: ellipsis;padding: 0;
      height: 0.56rem;line-height: 0.28rem;font-size: 0.12rem;
-   margin-top: 0.3rem;
+   margin-top: 0.2rem;
  }
  .songSheetDetail .songSheetDetailHead .iconCommit{
-     display: flex;justify-content: space-around;z-index: 1;font-size: 0.5rem;margin-top: 0.2rem;
+     display: flex;justify-content: space-around;z-index: 1;font-size: 0.5rem;margin-top: 0.1rem;
  }
  .songSheetDetail .songSheetDetailHead .iconCommit i{
-     z-index: 1;font-size: 0.3rem;color: white;
+     z-index: 1;font-size: 0.3rem;color: grey;
  }

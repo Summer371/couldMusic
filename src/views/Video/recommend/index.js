@@ -12,7 +12,6 @@ import VedioList from "../../../components/mv/VedioList";
 class Tv extends React.Component {
     render() {
         const {vedioId} = this.props;
-        console.log(vedioId)
         return (
             <div className={"video"}>
                 <div className={"v-ul"}>
@@ -27,7 +26,6 @@ class Tv extends React.Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state,777)
     return {
         vedioId: state.mv.vedioId
     }
