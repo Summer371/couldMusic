@@ -1,61 +1,65 @@
 *{
     margin: 0;padding: 0;
 }
-.login{
-    display: flex;background: #DA2E21;width: 100%;height:100%;position: absolute;
-    top: 0;bottom: 0;flex-direction: column;box-sizing: border-box;
+input,button{
+
 }
-.login input{
-    width: 0.12rem;height: 0.12rem;background:white;border: 1px solid whitesmoke;
+.login{
+display: flex;background: #DA2E21;width: 100%;height:100%;position: absolute;
+top: 0;bottom: 0;flex-direction: column;box-sizing: border-box;
+}
+.login .loginBy .sure input{
+    -webkit-appearance:checkbox;
+    -moz-appearance:checkbox;
 }
 .login .bigLogo{
-    display: flex;justify-content: center;align-items: center;height:70%;
+display: flex;justify-content: center;align-items: center;height:70%;
 }
 .loginBy{
-    display: flex;flex-direction: column;justify-content: center;align-items: center;
+display: flex;flex-direction: column;justify-content: center;align-items: center;
 }
 .loginBy button{
-    width: 2rem;margin: 0.1rem;border-radius: 0.25rem;padding: 0.05rem;
+width: 2rem;margin: 0.1rem;border-radius: 0.25rem;padding: 0.05rem;
 }
 .login .telLogin{
-    background: white;color: #DA2E21;border: white solid 1px;
+background: white;color: #DA2E21;border: white solid 1px;
 }
 .login .rightNow{
-    background: #DA2E21;color: white;border: whitesmoke solid 1px;
+background: #DA2E21;color: white;border: whitesmoke solid 1px;
 }
 .loginByOthers{
-    display: flex;justify-content: space-between;width: 1.8rem;margin: 0.1rem 0;
+display: flex;justify-content: space-between;width: 1.8rem;margin: 0.1rem 0;
 }
 .loginByOthers i{
-    font-size: 0.12rem;
+font-size: 0.12rem;
 }
 .sure{
-    color: white;font-size: 0.1rem;
+color: white;font-size: 0.1rem;
 }
 .loginByTel{
-    padding: 0.1rem;
+padding: 0.1rem;
 }
 .loginByTel span{
-    font-size: 0.14rem;margin-right: 0.1rem;
+font-size: 0.14rem;margin-right: 0.1rem;
 }
 .loginByTel p{
-    font-size: 0.14rem;margin: 0.1rem 0;color: grey;
+font-size: 0.14rem;margin: 0.1rem 0;color: grey;
 }
 .loginByTel button{
-   width: 90%;border-radius: 0.2rem;
+width: 90%;border-radius: 0.2rem;
 }
 .password{
-    padding: 0.1rem;
+padding: 0.1rem;
 }
 .password nav{
-    font-size: 0.2rem;height: 0.4rem;
+font-size: 0.2rem;height: 0.4rem;
 }
 .password button{
-    width: 90%;border-radius: 0.2rem;
+width: 90%;border-radius: 0.2rem;
 }
 .checkNum{
-    padding: 0.1rem;
+padding: 0.1rem;
 }
 .checkNum button{
-    width: 90%;border-radius: 0.2rem;
+width: 90%;border-radius: 0.2rem;
 }

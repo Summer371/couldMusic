@@ -58,7 +58,7 @@
    margin-top: 0.3rem;
  }
  .songSheetDetail .songSheetDetailHead .iconCommit{
-     display: flex;justify-content: space-around;z-index: 1;font-size: 0.5rem;
+     display: flex;justify-content: space-around;z-index: 1;font-size: 0.5rem;margin-top: 0.2rem;
  }
  .songSheetDetail .songSheetDetailHead .iconCommit i{
      z-index: 1;font-size: 0.3rem;color: white;

@@ -1,6 +1,9 @@
 .songSheet{
     padding:0.1rem
 }
+.ant-spin-dot{
+    margin: 0 auto;display: block;width: 0.1rem;
+}
 .songSheet .songSheetNav{
     display: flex;justify-content: space-between;padding: 0 0 0.1rem 0;
 }
