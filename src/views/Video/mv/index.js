@@ -10,8 +10,7 @@ import {
 import mv from "../../../store/actionCreator/mv";
 class Mv extends React.Component{
     render(){
-
-        console.log(121,this.props.getMv)
+        const {recommendMv}=this.props;
         return(
             <div className={"M"}>
                 <div className={"m-title"}>
@@ -20,7 +19,7 @@ class Mv extends React.Component{
                 </div>
                 <div className={"m-mv"}>
                     {
-                        this.props.getMv.map((v,i)=>{
+                        recommendMv.map((v,i)=>{
                             return(
                                 <div className={"m-style"} key={v.id}>
                                     <div className={"m-img"}>
@@ -44,13 +43,12 @@ class Mv extends React.Component{
         )
     }
     componentDidMount(){
-        this.props.getAddMvStop()
+        this.props.getAddMvStop();
     }
 }
 function mapStateToProps(state) {
-    console.log(222,state)
     return {
-        getMv:state.mv
+        recommendMv:state.mv.recommendMv
     }
 }
 
