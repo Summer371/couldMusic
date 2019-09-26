@@ -51,7 +51,6 @@ export default {
     },
     getSingerAlbum(id){
         return async(dispatch,limit=20)=>{
-            console.log(id)
             const {data} = await axios.get("/artist/album?id="+id);
             dispatch(singerAlbum(data.hotAlbums))
         }

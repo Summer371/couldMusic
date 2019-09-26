@@ -4,10 +4,12 @@
 }
 h2>i{
     margin:0 0.1rem;
+    font-size:0.15rem;
 }
 .allSinger{
     margin:0.1rem 0;
     padding-left:0.1rem;
+    font-size:0.12rem;
 }
 .singerList{
     border-top:0.01rem solid #ccc;
@@ -17,6 +19,7 @@ h2>i{
 .singerList-li {
     margin-bottom:0.2rem;
     position:relative;
+    font-size:0.13rem;
 }
 .singerList-li img{
     width:0.5rem;
@@ -26,6 +29,7 @@ h2>i{
 }
 .singerList-li .iconfont{
     margin-left:0.1rem;
+    font-size:0.14rem;
 }
 .singerList-li >span{
     display:block;
@@ -35,6 +39,7 @@ h2>i{
     color:red;
     right:0.1rem;
     top:0.1rem;
+    font-size:0.13rem;
     border-radius: 0.1rem;
     border:0.01rem solid red;
 }
@@ -56,10 +61,12 @@ h2>i{
     padding-left:0.2rem;
     color:#333;
     height:0.3rem;
+    font-size:0.14rem;
     line-height:0.3rem;
 }
 .singerClass .singerLanguage>span{
     display:block;
+    font-size:0.12rem;
 }
 .singerClass .singerGroup{
     margin-left:5%;
@@ -69,4 +76,7 @@ h2>i{
     margin-top:0.1rem;
     justify-content: space-around;
 
+}
+.singerClass .singerGroup>span{
+    font-size:0.13rem;
 }
