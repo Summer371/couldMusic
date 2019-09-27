@@ -18,7 +18,7 @@ class SingerIndex extends Component{
                arr.push(songList[i])
            }
        }
-        console.log(this.props);
+
         return (
             <>
                 <h2 className={"detail-h2"}><i className={"iconfont"}>&#xe62a;</i>播放全部50</h2>

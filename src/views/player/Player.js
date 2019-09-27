@@ -139,7 +139,7 @@ class Player extends React.Component{
         }
     }
     lastSong(index){
-        index--;
+        --index;
         this.setState({
             singer:this.state.singers[index],
             songName:this.state.songNames[index],
@@ -147,10 +147,10 @@ class Player extends React.Component{
             songId:this.state.songIds[index],
             isLyric:false
         });
-        this.props.getLyricList(this.state.songId);
+        this.props.getLyricList(this.state.songIds[index]);
     }
     nextSong(index){
-        index++;
+        ++index;
         this.setState({
             singer:this.state.singers[index],
             songName:this.state.songNames[index],
@@ -158,7 +158,7 @@ class Player extends React.Component{
             songId:this.state.songIds[index],
             isLyric:false
         });
-        this.props.getLyricList(this.state.songId);
+        this.props.getLyricList(this.state.songIds[index]);
     }
     getMusicUrl(id){
         this.props.getSongsUrlList(id)

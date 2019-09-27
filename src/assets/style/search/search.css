@@ -20,9 +20,12 @@ body{
 }
 .search-back i,.search-singer i{
     font-size:0.15rem;
+    display:block;
 }
 .search-header .search-song{
     width:80%;
+    height:0.3rem;
+
 }
 .search-header .search-song input{
     font-size:0.12rem;
@@ -83,7 +86,7 @@ body{
     top:0;
     position:absolute;
     right:0;
-    fone-size:0.15rem;
+    font-size:0.15rem;
 }
 .search-history-tag{
     height:0.4rem;

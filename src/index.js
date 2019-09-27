@@ -16,6 +16,11 @@ axios.interceptors.request.use(config=>{
     }
     return config;
 });
+axios.interceptors.response.use((data)=>{
+
+    return data;
+
+});
 React.Component.prototype.$filter=filter;
 React.Component.prototype.$axios=axios;
 ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
