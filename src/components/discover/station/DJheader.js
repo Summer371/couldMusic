@@ -16,7 +16,7 @@ export default class stationList extends React.Component {
                             }}>电台</span>
                         </div>
                     </div>
-                    <div className="player">
+                    <div className="playerr">
                         <ul>
                             <Carousel autoplay>
                                 {

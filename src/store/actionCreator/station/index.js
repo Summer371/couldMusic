@@ -71,7 +71,7 @@ export default {
     },
     ShowDetails(id){//电台二级
         return async (dispatch)=>{
-            const {data}=await axios.get("/dj/program?rid="+id+"&limit=999")
+            const {data}=await axios.get("/dj/program?rid="+id+"&limit=999&"+Date.now())
             let list=data.programs
             dispatch(ShowDetails(list))
         }

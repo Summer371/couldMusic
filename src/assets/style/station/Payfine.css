@@ -3,7 +3,7 @@
     padding:0;
 }
 html,body{
-   height:100% 
+   font-size:100px;
 }
 a{
     text-decoration: none;
@@ -17,8 +17,8 @@ img{
 
 .payfine{
     position: relative;
-    height:5.416vh;
-    line-height: 5.416vh;
+    height:0.52rem;
+    line-height: 0.52rem;
 }
 .n_go_back{
     width:100vw;

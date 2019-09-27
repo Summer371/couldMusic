@@ -3,8 +3,7 @@
     padding:0;
 }
 html,body{
-   height:100% ;
-   width:100%;
+   font-size:100px;
 }
 a{
     text-decoration: none;
@@ -17,37 +16,37 @@ img{
 }
 
 .programsheader{
-    height:9.375vh;
+    height:0.9rem;
     position: relative;
 }
 .flex_headerf{
     z-index: 999;
     background:#FFF;
-    height:9.375vh;
+    height:0.9rem;
     position: fixed;
     width:100vw;
 }
 .go_backf{
-    height:9.375vh;
+    height:0.9rem;
 }
 .go_backf i{
-    margin-left:2.962vw;
-    font-size:2.96vw;
+    margin-left:0.18rem;
+    font-size:0.16rem;
 }
 .n_go_backf{
-    height:5.416vh;
-    line-height: 5.416vh;
+    height:0.52rem;
+    line-height: 0.52rem;
 }
 .n_go_backf span{
-    font-size: 2.963vw;
+    font-size: 0.16rem;
     margin-left:1vw;
     font-weight: bold;
 }
 .navf{
-    line-height: 3.958vh;
+    line-height: 0.37rem;
     display: flex;
     justify-content: space-between;
-    border-bottom:0.185vw solid #ece6d8;
+    border-bottom:0.01rem solid #ece6d8;
 }
 .navf li{
     padding:0 10.962vw;

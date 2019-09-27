@@ -39,7 +39,7 @@ img{
     margin-right:0.18rem;
 }
 .navdj_bottom{
-    hieght:0.5rem;
+    height:0.5rem;
     position: absolute;
     top:1.88rem;
     color:#FFF;
@@ -72,7 +72,7 @@ img{
 }
 .showBottom nav li .djactive{
     display: inline-block;
-    hieght:0.38rem;
+    height:0.38rem;
     line-height:0.38rem;
     color:red;
     box-sizing: border-box;
@@ -121,13 +121,13 @@ img{
     padding: 0 0.18rem;
 }
 .ww_dj{
-    hight:0.6rem;
+    height:0.6rem;
     display: flex;
     justify-content: space-between;
 }
 .djconten .w_djcon{
-    hight:0.6rem;
-    windth:100%;
+    height:0.6rem;
+    width:100%;
     display: flex;
     flex-direction: row;
 }
@@ -184,7 +184,7 @@ img{
     margin-top:0.06rem;
 }
 .djconentZb{
-    hehight:0.98rem;
+    height:0.98rem;
 }
 .djconentZb h4{
     margin-bottom:0;
@@ -252,7 +252,7 @@ img{
     font-weight: bold;
     margin-bottom:0;
 }
-.djconentXq d.jconentFl li{
+.djconentXq .djconentFl li{
     float: left;
 }
 .djconentXq .djconentFl li:nth-child(1){
@@ -281,7 +281,7 @@ img{
     overflow: hidden;
 }
 .djplun h4{
-    hieght:0.46rem;
+    height:0.46rem;
     font-size:0.14rem;
     line-height: 0.46rem;
     font-weight: bold;
@@ -295,7 +295,7 @@ img{
     float: left;
 }
 .spls img{
-    higth:0.32rem;
+    height:0.32rem;
     width:0.32rem;
     border-radius: 50%;
 }
@@ -305,7 +305,7 @@ img{
 }
 .ypls span{
     display: inline-block;
-    higth:0.32rem;
+    height:0.32rem;
     line-height: 0.32rem;
     color:#a1a1a1;
     font-size: 0.12rem;

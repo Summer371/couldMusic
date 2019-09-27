@@ -11,6 +11,9 @@ import {
 } from "react-redux";
 axios.interceptors.request.use(config=>{
     config.url="/music163"+config.url;
+    config.headers = {
+        "Cache-control":"no-cache"
+    }
     return config;
 });
 React.Component.prototype.$filter=filter;
