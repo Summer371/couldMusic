@@ -37,7 +37,10 @@ font-size: 0.12rem;
 color: white;font-size: 0.1rem;
 }
 .loginByTel{
-padding: 0.1rem;
+padding: 0.1rem;display: flex;flex-direction: column;
+}
+.loginByTel input{
+    margin: 0.2rem auto;
 }
 .loginByTel span{
 font-size: 0.14rem;margin-right: 0.1rem;
@@ -46,20 +49,26 @@ font-size: 0.14rem;margin-right: 0.1rem;
 font-size: 0.14rem;margin: 0.1rem 0;color: grey;
 }
 .loginByTel button{
-width: 90%;border-radius: 0.2rem;
+width: 90%;border-radius: 0.2rem;margin: 0.2rem auto;
 }
 .password{
-padding: 0.1rem;
+padding: 0.1rem;display: flex;flex-direction: column;
+}
+.password input{
+    margin: 0.2rem auto;
 }
 .password nav{
 font-size: 0.2rem;height: 0.4rem;
 }
 .password button{
-width: 90%;border-radius: 0.2rem;
+width: 90%;border-radius: 0.2rem;margin: 0.2rem auto;
 }
 .checkNum{
-padding: 0.1rem;
+padding: 0.1rem;display: flex;flex-direction: column;
 }
 .checkNum button{
-width: 90%;border-radius: 0.2rem;
+width: 90%;border-radius: 0.2rem;margin: 0 auto;
+}
+.checkNum input{
+    margin: 0.2rem auto;
 }

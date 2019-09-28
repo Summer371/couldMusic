@@ -9,7 +9,7 @@ export default class LoginByTel extends Component{
                     <Icon type="arrow-left" onClick={()=>this.props.history.go(-1)}/> <b>手机号登录</b>
                 </nav>
                 <p >未注册的手机号登录后自动创建账号</p>
-                <span style={{color:"grey"}}>+86</span><Input style={{border:"none",width:"80%"}} placeholder="请输入手机号"  ref={"telNum"} />
+               <h3><span style={{color:"grey"}}>+86</span><Input style={{border:"none",width:"80%"}} placeholder="请输入手机号"  ref={"telNum"} /></h3>
 
                 <Button type="danger" onClick={this.next.bind(this)}>下一步</Button>
             </div>

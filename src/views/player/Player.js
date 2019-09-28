@@ -1,10 +1,8 @@
 import React from "react";
 import {
-    Progress
-} from "antd";
-import {
     connect
 } from "react-redux";
+import Lyric from "lyric-parser";
 import {
     bindActionCreators
 } from "redux";
@@ -25,6 +23,7 @@ class Player extends React.Component{
             imgs:[],
             singers:[],
             songNames:[],
+            lyric:[],
             index:0,
             loop:true,
             time:0,
@@ -43,7 +42,7 @@ class Player extends React.Component{
                     index=i;
             }
         })
-        let newLyric=lyric.split("[");
+        let newLyric=new Lyric(lyric,this.getLyric.bind(this));
         return(
             <div className={"player"}>
                 <nav className={"playerNav"}>
@@ -61,22 +60,22 @@ class Player extends React.Component{
                     if(this.state.isLyric){
                         this.refs.img.style.opacity="0";
                         this.refs.img.style.position="absolute";
-                        this.refs.lyric.style.display="block";
+                        this.refs.lyricList.style.display="block";
                     }else{
                         this.refs.img.style.opacity="1";
-                        this.refs.lyric.style.display="none";
+                        this.refs.lyricList.style.display="none";
                     }
                 }}>
                     <div className={"img"} ref={"img"}>
                         <img src={this.state.songImg} alt=""/>
                     </div>
-                    <div className={"lyric"} style={{display:"none"}} ref={"lyric"}>
+                    <div className={"lyric"} style={{display:"none"}} ref={"lyricList"}>
                         <div>
                             {
-                                newLyric.map((v,i)=>{
+                                newLyric.lines.map((v,i)=>{
                                     return(
                                         <h5 key={i}>
-                                            {v}
+                                            {v.txt}
                                         </h5>
                                     )
                                 })
@@ -111,6 +110,16 @@ class Player extends React.Component{
                 </div>
             </div>
         )
+    }
+    getLyric({lineNum, txt}){
+        if (lineNum > 5) {
+            let lineEl = this.$refs.lyricLine[lineNum - 5];
+            this.$refs.lyricList.scrollToElement(lineEl, 1000)// 滚动到元素
+        } else {
+            this.$refs.lyricList.scrollTo(0, 0, 1000)// 滚动到顶部
+        }
+
+
     }
     loop(){
         this.setState({

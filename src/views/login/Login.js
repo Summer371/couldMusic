@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/style/login.css";
-import { Icon,message,Checkbox } from 'antd';
+import { Icon,message } from 'antd';
 import 'antd/dist/antd.css';
 import {
     Link
@@ -28,7 +28,7 @@ export default class Login extends React.Component{
                 </div>
                 <div className={"loginBy"}>
                     <button className={"telLogin"} onClick={this.loginByTel.bind(this)}>手机账号登录</button>
-                    <button className={"rightNow"}>立即体验</button>
+                    <button className={"rightNow"} onClick={this.props.history.push("/")}>立即体验</button>
                     <div className={"loginByOthers"}>
                         <Icon type="qq" style={{color:"white",fontSize:14}}/><Icon type="wechat" style={{color:"white"}}/>
                         <Icon type="weibo-circle" style={{color:"white"}}/><Icon type="github" style={{color:"white"}}/>
